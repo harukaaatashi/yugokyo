@@ -1,0 +1,31 @@
+{
+  "name": "yugokyo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "『湯語教（一名 銭湯手引草）』対訳リーダー — 江戸の銭湯経営手引書を現代語で読む",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "fetch:sources": "npx tsx scripts/fetch-sources.ts",
+    "check:corpus": "npx tsx scripts/check-corpus.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.20",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

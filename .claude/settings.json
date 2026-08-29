@@ -1,0 +1,39 @@
+{
+  "_comment": "新プロジェクト用の最小権限テンプレート。<project>/.claude/settings.json にコピーして、プロジェクトに必要な分だけ allow を足す。方針: 読み取り系のみ allow / 外部送信・実行系は ask / 破壊的操作は deny",
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git ls-files:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm test:*)"
+    ],
+    "ask": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(node:*)",
+      "Bash(python3:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -fd:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(rm -rf .:*)",
+      "Bash(chmod -R 777:*)",
+      "Bash(chown -R:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}
