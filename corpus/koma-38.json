@@ -1,0 +1,13 @@
+{
+  "koma": 38,
+  "label": "裏表紙",
+  "image": "/koma/koma-38.jpg",
+  "summary": "裏表紙。これで『湯語教（洗湯手引草）』全38コマ、読了です。",
+  "sections": [
+    {
+      "kind": "illustration",
+      "note": "無地の裏表紙。左端に和装本の四つ目綴じの糸が見える。表紙・裏表紙は本文より厚い紙が使われている。"
+    }
+  ],
+  "status": "ai-draft"
+}
