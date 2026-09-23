@@ -26,10 +26,26 @@ export function useActiveKoma(
   resetKey: string
 ): ActiveSpot {
   const [active, setActive] = useState(fallback);
+  // 画面サイズが変わると「読んでいる行の帯」の位置が変わる。
+  // ウィンドウのリサイズ・端末の回転で observer を張り直すためのカウンタ
+  const [viewportKey, setViewportKey] = useState(0);
 
   useEffect(() => {
     setActive(fallback);
   }, [fallback.koma, fallback.side, resetKey]);
+
+  useEffect(() => {
+    let frame = 0;
+    const onResize = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => setViewportKey((n) => n + 1));
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -85,7 +101,7 @@ export function useActiveKoma(
       observer.observe(el);
     });
     return () => observer.disconnect();
-  }, [rootRef, offsetTop, resetKey]);
+  }, [rootRef, offsetTop, resetKey, viewportKey]);
 
   return active;
 }
