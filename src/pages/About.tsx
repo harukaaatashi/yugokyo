@@ -79,6 +79,33 @@ export default function About() {
           </li>
         </ul>
       </section>
+
+      <section className="pb-14 space-y-4 leading-loose text-[15px] border-t border-line pt-8">
+        <h2 className="font-maru font-bold text-xl text-yu-blue">利用条件</h2>
+        <ul className="space-y-3 text-sm">
+          <li>
+            <span className="font-bold">原本画像</span> — パブリックドメイン
+            （国立国会図書館の公開範囲表示: PDM）。自由に使えます。
+            出典として「国立国会図書館デジタルコレクション」を明記してください。
+          </li>
+          <li>
+            <span className="font-bold">翻刻・現代語訳・解説文</span> —{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/deed.ja"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-yu-blue transition-colors"
+            >
+              CC BY 4.0
+            </a>
+            。出典を示せば複製・改変・再配布ができます。
+            ただし前述のとおりAIによる未校正の下訳です。
+          </li>
+          <li>
+            <span className="font-bold">サイトのコード</span> — MIT License
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }

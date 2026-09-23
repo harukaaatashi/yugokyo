@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
+  imageUrl,
   komaByNumber,
   komaList,
   ndlViewerUrl,
@@ -133,7 +134,7 @@ export default function Reader() {
         className="block w-full rounded-2xl overflow-hidden border border-line focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
       >
         <img
-          src={koma.image}
+          src={imageUrl(koma.image)}
           alt={`『湯語教』${koma.koma}丁目の原本画像`}
           className="w-full h-auto"
           loading="lazy"
@@ -169,7 +170,7 @@ export default function Reader() {
           onClick={() => setZoom(false)}
         >
           <img
-            src={koma.image}
+            src={imageUrl(koma.image)}
             alt={`『湯語教』${koma.koma}丁目の原本画像（拡大）`}
             className="max-w-none w-[1600px]"
           />

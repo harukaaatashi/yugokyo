@@ -32,6 +32,14 @@ export const komaByNumber = new Map(komaList.map((k) => [k.koma, k]));
 
 export const TOTAL_KOMA = 38;
 
+/**
+ * corpus の image は "/koma/koma-01.jpg" の絶対パス。
+ * GitHub Pages のようなサブディレクトリ配信に備えて base を前置する。
+ */
+export function imageUrl(path: string): string {
+  return import.meta.env.BASE_URL.replace(/\/$/, "") + path;
+}
+
 export const NDL_ITEM_URL = "https://dl.ndl.go.jp/pid/2539997";
 
 export function ndlViewerUrl(koma: number): string {

@@ -33,6 +33,14 @@
 - 原本画像: [『洗湯手引草』国立国会図書館デジタルコレクション](https://dl.ndl.go.jp/pid/2539997)（保護期間満了・パブリックドメイン）
 - 読み比べの参照: [『湯語教／一名銭湯手引草』国書データベース（東書文庫蔵）](https://kokusho.nijl.ac.jp/biblio/100266100/)
 
+## 利用条件
+
+- **原本画像** — パブリックドメイン（NDL 公開範囲表示: PDM）。出典明記のうえ自由に利用可
+- **翻刻・現代語訳・解説** — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ja)（AIによる未校正の下訳である旨に留意）
+- **コード** — MIT License
+
+詳細は [LICENSE](./LICENSE) を参照。
+
 ## 開発
 
 ```bash

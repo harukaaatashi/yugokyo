@@ -1,0 +1,49 @@
+# 利用条件
+
+このリポジトリには、由来の異なる3種類のものが含まれます。それぞれ条件が違います。
+
+## 1. 原本画像（`public/koma/`, `sources/ndl/`）
+
+国立国会図書館デジタルコレクション『洗湯手引草』（pid 2539997）より取得。
+**パブリックドメイン（NDL の公開範囲表示: PDM）** です。著作権は消滅しており、
+自由に利用できます。利用の際は出典として「国立国会図書館デジタルコレクション」を
+明記してください（NDL の依頼事項）。
+
+## 2. 翻刻・現代語訳・解説（`corpus/*.json`, `src/pages/` 内の解説文）
+
+**CC BY 4.0（クリエイティブ・コモンズ 表示 4.0 国際）**
+https://creativecommons.org/licenses/by/4.0/deed.ja
+
+出典（このサイト名と URL）を明記すれば、複製・改変・再配布ができます。
+
+ただし **AI（Claude）による下訳で未校正です。** 誤読が含まれます。
+研究・引用の際は必ず原本画像をご確認ください。
+
+## 3. サイトのコード（`src/`, `scripts/`, 設定ファイル）
+
+MIT License
+
+Copyright (c) 2026 harukaaatashi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## 参照のみ（このリポジトリに含まれないもの）
+
+国書データベース『湯語教／一名銭湯手引草』（東書文庫蔵）は読み比べの参照にのみ
+使用しており、画像・テキストは一切収録していません。
