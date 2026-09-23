@@ -64,10 +64,14 @@ export default function Chapter() {
   const anchoredKoma = Number(hash.replace(/^#koma-/, ""));
   const initialKoma =
     chapter && komas.includes(anchoredKoma) ? anchoredKoma : (chapter?.komaFrom ?? 0);
+  const initialSpot = useMemo(
+    () => ({ koma: initialKoma, side: "r" as const }),
+    [initialKoma]
+  );
 
-  const activeKoma = useActiveKoma(
+  const active = useActiveKoma(
     rootRef,
-    initialKoma,
+    initialSpot,
     wide ? 0 : paneHeight,
     chapter?.def.id ?? ""
   );
@@ -119,10 +123,10 @@ export default function Chapter() {
   }, [chapter, hash, wide, paneHeight]);
 
   useEffect(() => {
-    if (chapter && activeKoma) {
-      saveProgress({ chapterId: chapter.def.id, koma: activeKoma });
+    if (chapter && active.koma) {
+      saveProgress({ chapterId: chapter.def.id, koma: active.koma });
     }
-  }, [chapter, activeKoma]);
+  }, [chapter, active.koma]);
 
   if (!chapter) {
     return (
@@ -152,7 +156,7 @@ export default function Chapter() {
         aria-label="原本の写真"
         className="sticky top-0 z-30 border-b border-line bg-paper lg:top-6 lg:order-2 lg:w-5/12 lg:shrink-0 lg:self-start lg:border-b-0"
       >
-        <KomaPane komas={komas} active={activeKoma} onZoom={setZoomKoma} />
+        <KomaPane komas={komas} active={active} wide={wide} onZoom={setZoomKoma} />
       </aside>
 
       <div className="min-w-0 px-5 lg:order-1 lg:w-7/12 lg:px-0">
@@ -177,6 +181,7 @@ export default function Chapter() {
                 key={item.key}
                 section={item.section}
                 koma={item.koma}
+                index={item.index}
                 onOpenKoma={setZoomKoma}
               />
             )

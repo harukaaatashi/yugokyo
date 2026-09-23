@@ -8,6 +8,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { CHAPTERS } from "../src/lib/chapters";
+import { isSplittable } from "../src/lib/pages";
 
 const root = join(import.meta.dirname ?? ".", "..");
 const corpusDir = join(root, "corpus");
@@ -34,6 +35,21 @@ for (const f of files) {
   }
   if (data.image && !existsSync(join(root, "public", data.image.replace(/^\//, "")))) {
     errors.push(`${f}: 画像 ${data.image} が見つからない`);
+  }
+  // 表示用の派生画像（npm run make:derivatives で作る）
+  const base = `koma-${String(num).padStart(2, "0")}.jpg`;
+  for (const size of ["w960", "w320"]) {
+    if (!existsSync(join(root, "public", "koma", size, base))) {
+      errors.push(`${f}: 派生画像 koma/${size}/${base} がない（npm run make:derivatives）`);
+    }
+  }
+  if (isSplittable(num)) {
+    for (const side of ["r", "l"]) {
+      const page = `koma-${String(num).padStart(2, "0")}-${side}.jpg`;
+      if (!existsSync(join(root, "public", "koma", "page", page))) {
+        errors.push(`${f}: 片ページ koma/page/${page} がない（npm run make:derivatives）`);
+      }
+    }
   }
   if (Array.isArray(data.sections)) {
     sectionsByKoma.set(num, data.sections);

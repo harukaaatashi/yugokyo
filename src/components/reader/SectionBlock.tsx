@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { ndlViewerUrl, type Section } from "../../lib/corpus";
+import { ndlViewerUrl, pageSideOf, type Section } from "../../lib/corpus";
 import Honkoku from "./Honkoku";
 import NoteDisclosure from "./NoteDisclosure";
 
@@ -15,6 +15,8 @@ import NoteDisclosure from "./NoteDisclosure";
 interface Props {
   section: Section;
   koma: number;
+  /** その丁の中での位置。右ページか左ページかの推定に使う */
+  index: number;
   onOpenKoma: (koma: number) => void;
 }
 
@@ -30,11 +32,12 @@ function Lines({ text }: { text: string }) {
   );
 }
 
-function SectionBlock({ section, koma, onOpenKoma }: Props) {
+function SectionBlock({ section, koma, index, onOpenKoma }: Props) {
+  const side = pageSideOf(koma, index);
   if (section.kind === "illustration") {
     // 絵そのものは追随パネルに出ているので、ここはその絵の説明として置く
     return (
-      <figure data-koma={koma} className="scroll-below-pane border-y border-line py-5">
+      <figure data-koma={koma} data-side={side} className="scroll-below-pane border-y border-line py-5">
         <figcaption className="text-caption text-ink">
           <span className="font-maru font-bold text-yu-blue mr-2">挿絵</span>
           {section.note}
@@ -52,7 +55,7 @@ function SectionBlock({ section, koma, onOpenKoma }: Props) {
 
   if (section.kind === "heading") {
     return (
-      <h2 data-koma={koma} className="scroll-below-pane border-t border-line pt-8">
+      <h2 data-koma={koma} data-side={side} className="scroll-below-pane border-t border-line pt-8">
         <span className="block font-maru font-bold text-xl text-yu-blue text-balance">
           {section.modern ?? section.original}
         </span>
@@ -66,7 +69,7 @@ function SectionBlock({ section, koma, onOpenKoma }: Props) {
   }
 
   return (
-    <article data-koma={koma} className="scroll-below-pane">
+    <article data-koma={koma} data-side={side} className="scroll-below-pane">
       {section.modern && (
         <p className="text-yaku text-ink">
           <Lines text={section.modern} />

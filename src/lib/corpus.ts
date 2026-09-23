@@ -1,4 +1,5 @@
 import { CHAPTERS, type ChapterDef, type Cursor } from "./chapters";
+import { isSplittable, type PageSide } from "./pages";
 
 export type SectionKind = "heading" | "text" | "illustration";
 
@@ -117,6 +118,24 @@ export function komaImageUrl(koma: number, size: KomaImageSize = "full"): string
 
 /** トップのヒーローに使う丁（8丁＝光明皇后の施浴。見開き全面の挿絵） */
 export const HERO_KOMA = 8;
+
+/**
+ * その段落が見開きの右ページか左ページかを、丁の中の位置から推定する。
+ * 日本の本は右から読むので、丁の前半の段落は右ページ、後半は左ページ。
+ * corpus に面の記載がある 2 / 7 / 12 / 14 丁では、この推定が全部当たっている。
+ */
+export function pageSideOf(koma: number, index: number): PageSide {
+  const total = komaByNumber.get(koma)?.sections.length ?? 1;
+  return index < total / 2 ? "r" : "l";
+}
+
+/** 片ページの画像。割らない丁（表紙・見開き全面の絵など）では null */
+export function komaPageUrl(koma: number, side: PageSide): string | null {
+  const k = komaByNumber.get(koma);
+  if (!k || !isSplittable(koma)) return null;
+  const name = `koma-${String(koma).padStart(2, "0")}-${side}.jpg`;
+  return imageUrl(`/koma/page/${name}`);
+}
 
 function buildChapters(): Chapter[] {
   let chapterNo = 0;

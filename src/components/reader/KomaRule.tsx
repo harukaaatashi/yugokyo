@@ -14,7 +14,12 @@ export default function KomaRule({
 }) {
   const n = item.koma.koma;
   return (
-    <div id={komaAnchorId(n)} data-koma={n} className="scroll-below-pane">
+    <div
+      id={komaAnchorId(n)}
+      data-koma={n}
+      data-side="r"
+      className="scroll-below-pane"
+    >
       <span className="block h-px bg-line" aria-hidden="true" />
       {item.continues.from && (
         <p className="mt-3 text-caption text-ink-soft">

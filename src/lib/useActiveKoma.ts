@@ -1,4 +1,5 @@
 import { useEffect, useState, type RefObject } from "react";
+import type { PageSide } from "./pages";
 
 /**
  * いま読んでいる丁を、本文の要素から検出する。
@@ -10,19 +11,25 @@ import { useEffect, useState, type RefObject } from "react";
  * ビューポートを負の rootMargin で「読んでいる行の帯」に潰し、
  * 帯にかかった要素のうち最も上のものを採用する。
  */
+export interface ActiveSpot {
+  koma: number;
+  /** 見開きの右ページか左ページか（本文の位置から推定したもの） */
+  side: PageSide;
+}
+
 export function useActiveKoma(
   rootRef: RefObject<HTMLElement>,
-  fallback: number,
+  fallback: ActiveSpot,
   /** 上部に固定された写真パネルの高さ（広い画面では 0） */
   offsetTop: number,
   /** 章が変わったら張り直すためのキー */
   resetKey: string
-): number {
+): ActiveSpot {
   const [active, setActive] = useState(fallback);
 
   useEffect(() => {
     setActive(fallback);
-  }, [fallback, resetKey]);
+  }, [fallback.koma, fallback.side, resetKey]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -59,9 +66,13 @@ export function useActiveKoma(
             best = el;
           }
         }
-        const koma = Number((best as HTMLElement | null)?.dataset.koma);
+        const el = best as HTMLElement | null;
+        const koma = Number(el?.dataset.koma);
+        const side = (el?.dataset.side === "l" ? "l" : "r") as PageSide;
         if (Number.isInteger(koma)) {
-          setActive((current) => (current === koma ? current : koma));
+          setActive((current) =>
+            current.koma === koma && current.side === side ? current : { koma, side }
+          );
         }
       },
       {
