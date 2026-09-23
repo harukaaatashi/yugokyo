@@ -105,6 +105,19 @@ export function komaAnchorId(koma: number): string {
   return `koma-${koma}`;
 }
 
+/** 表示用の縮小画像。原寸は拡大表示だけで使う（scripts/make-derivatives.ts） */
+export type KomaImageSize = "full" | "w960" | "w320";
+
+export function komaImageUrl(koma: number, size: KomaImageSize = "full"): string {
+  const k = komaByNumber.get(koma);
+  if (!k) return "";
+  if (size === "full") return imageUrl(k.image);
+  return imageUrl(k.image.replace(/^\/koma\//, `/koma/${size}/`));
+}
+
+/** トップのヒーローに使う丁（8丁＝光明皇后の施浴。見開き全面の挿絵） */
+export const HERO_KOMA = 8;
+
 function buildChapters(): Chapter[] {
   let chapterNo = 0;
 
@@ -176,6 +189,17 @@ export const TOTAL_CHAPTERS = chapters.filter(
 ).length;
 
 export const FIRST_CHAPTER_ID = chapters[0].def.id;
+
+/** 目次のサムネに使う丁。指定がなければ章内の挿絵、なければ先頭の丁 */
+export function chapterCoverKoma(chapter: Chapter): number {
+  if (chapter.def.cover) return chapter.def.cover;
+  const illustration = chapter.items.find(
+    (it) => it.type === "section" && it.section.kind === "illustration"
+  );
+  return illustration && illustration.type === "section"
+    ? illustration.koma
+    : chapter.komaFrom;
+}
 
 /** 丁番号から、その丁の先頭セクションを含む章を引く（旧 /read/:koma の転送用） */
 export function chapterForKoma(koma: number): Chapter | null {

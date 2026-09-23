@@ -7,7 +7,7 @@ export default function About() {
         </h1>
       </section>
 
-      <section className="pb-10 space-y-4 leading-loose text-[15px]">
+      <section className="pb-10 space-y-4 leading-loose text-lede">
         <h2 className="font-maru font-bold text-xl text-yu-blue">
           『湯語教』と『洗湯手引草』
         </h2>
@@ -25,17 +25,21 @@ export default function About() {
         </p>
       </section>
 
-      <section className="pb-10 space-y-4 leading-loose text-[15px] border-t border-line pt-8">
+      <section className="pb-10 space-y-4 leading-loose text-lede border-t border-line pt-8">
         <h2 className="font-maru font-bold text-xl text-yu-blue">凡例</h2>
         <ul className="list-disc pl-5 space-y-2">
           <li>
             翻刻は変体仮名を通行の字体に改め、適宜濁点・句読点を補っています。
           </li>
           <li>
-            <span className="underline decoration-kuchinashi decoration-2 underline-offset-4">
-              黄色の下線
+            <span className="underline decoration-kuchinashi-deep decoration-dotted decoration-2 underline-offset-4">
+              点線の下線
             </span>
             は読みが未確定の箇所、〓 は判読できなかった字です。
+          </li>
+          <li>
+            原文の振り仮名は原本のものです。本文をコピーするときは、
+            振り仮名は入らず地の文だけが取れます。
           </li>
           <li>現代語訳は逐語訳ではなく、意味が通ることを優先した意訳です。</li>
           <li>
@@ -55,7 +59,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="pb-10 space-y-4 leading-loose text-[15px] border-t border-line pt-8">
+      <section className="pb-10 space-y-4 leading-loose text-lede border-t border-line pt-8">
         <h2 className="font-maru font-bold text-xl text-yu-blue">出典</h2>
         <ul className="space-y-3 text-sm">
           <li>
@@ -84,7 +88,7 @@ export default function About() {
         </ul>
       </section>
 
-      <section className="pb-14 space-y-4 leading-loose text-[15px] border-t border-line pt-8">
+      <section className="pb-14 space-y-4 leading-loose text-lede border-t border-line pt-8">
         <h2 className="font-maru font-bold text-xl text-yu-blue">利用条件</h2>
         <ul className="space-y-3 text-sm">
           <li>

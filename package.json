@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "fetch:sources": "npx tsx scripts/fetch-sources.ts",
-    "check:corpus": "npx tsx scripts/check-corpus.ts"
+    "check:corpus": "npx tsx scripts/check-corpus.ts",
+    "check:ruby": "npx tsx scripts/check-ruby.ts",
+    "make:derivatives": "npx tsx scripts/make-derivatives.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

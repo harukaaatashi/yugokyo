@@ -44,10 +44,21 @@ for (const f of files) {
       if (s.kind !== "illustration" && !s.original) {
         errors.push(`${f}: sections[${i}] に original がない`);
       }
-      const braces = String(s.original ?? "");
-      const open = (braces.match(/｛/g) ?? []).length;
-      const close = (braces.match(/｝/g) ?? []).length;
+      const original = String(s.original ?? "");
+      const open = (original.match(/｛/g) ?? []).length;
+      const close = (original.match(/｝/g) ?? []).length;
       if (open !== close) errors.push(`${f}: sections[${i}] の｛｝が非対称`);
+      if (/｛[^｝]*｛/.test(original)) errors.push(`${f}: sections[${i}] の｛｝が入れ子`);
+      // ルビ括弧は全角で閉じる（半角 ) の混入は翻刻ミス）
+      if (/（[ぁ-ゖー]+\)/.test(original)) {
+        errors.push(`${f}: sections[${i}] にルビ括弧の半角 ) が混入`);
+      }
+      // heading の modern は短いラベルにする（説明は note へ）
+      if (s.kind === "heading" && String(s.modern ?? "").length > 20) {
+        errors.push(
+          `${f}: sections[${i}] heading の modern が長すぎる（20字以内。説明は note へ）`
+        );
+      }
     });
   }
 }

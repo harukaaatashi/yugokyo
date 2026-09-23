@@ -15,3 +15,33 @@
     touch-action: manipulation;
   }
 }
+
+@layer components {
+  /* 原文翻刻の行。ルビ（<ruby>）を含みうる */
+  .honkoku {
+    /* 詰めはルビの位置合わせを崩すので原文では切る */
+    font-feature-settings: "palt" 0;
+    /* body の overflow-wrap:anywhere がルビの親文字を途中で割るのを打ち消す */
+    overflow-wrap: normal;
+    word-break: normal;
+    ruby-align: center;
+  }
+  .honkoku rt {
+    @apply text-rubi text-ink-soft font-normal select-none;
+    letter-spacing: 0;
+  }
+
+  /* <details> の三角マーカーを消す */
+  .disclosure > summary {
+    list-style: none;
+  }
+  .disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* 固定された原本写真の下にアンカーが潜らないようにする。
+     高さは Chapter 側が --koma-pane-h に入れる */
+  .scroll-below-pane {
+    scroll-margin-top: calc(var(--koma-pane-h, 0px) + 1rem);
+  }
+}

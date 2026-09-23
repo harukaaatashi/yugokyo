@@ -28,11 +28,14 @@ export interface ChapterDef {
   summary: string;
   /** 章の開始位置。終端は次章の start の直前 */
   start: Cursor;
+  /** 目次のサムネに使う丁。未指定なら章内の挿絵、なければ komaFrom */
+  cover?: number;
 }
 
 export const CHAPTERS: readonly ChapterDef[] = [
   {
     id: "hyoshi",
+    cover: 1,
     kind: "front",
     title: "表紙と目録",
     summary:
@@ -42,6 +45,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   {
     // 2丁の右半分は目録。sections[2] の見出し「序」から本編がはじまる
     id: "jo",
+    cover: 3,
     kind: "chapter",
     title: "序 — 銭湯に五常の道あり",
     summary:
@@ -50,6 +54,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "yurai",
+    cover: 8,
     kind: "chapter",
     title: "洗湯之由来 — 光明皇后の施浴",
     summary:
@@ -58,6 +63,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "gokyo-jo",
+    cover: 12,
     kind: "chapter",
     title: "湯語教のはしがき",
     summary:
@@ -67,6 +73,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   {
     // 14丁の右半分は「はしがき」の末尾。sections[1] の見出し「湯語教」から本文
     id: "gokyo",
+    cover: 14,
     kind: "chapter",
     title: "湯語教 本文",
     summary:
@@ -75,6 +82,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "bangumi",
+    cover: 23,
     kind: "chapter",
     title: "湯屋番組大意略と十組割附",
     summary:
@@ -83,6 +91,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "banzai",
+    cover: 26,
     kind: "chapter",
     title: "湯屋万歳暦 — 銭湯の年表",
     summary:
@@ -91,6 +100,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "sadame",
+    cover: 29,
     kind: "chapter",
     title: "定・店法度書",
     summary:
@@ -99,6 +109,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "shomon",
+    cover: 31,
     kind: "chapter",
     title: "証文ひな形集",
     summary:
@@ -107,6 +118,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "ukejo",
+    cover: 33,
     kind: "chapter",
     title: "奉公人請状",
     summary:
@@ -115,6 +127,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "maki",
+    cover: 35,
     kind: "chapter",
     title: "諸薪・古木の相場",
     summary:
@@ -123,6 +136,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "owari",
+    cover: 36,
     kind: "chapter",
     title: "町触・刊記と三宝日",
     summary:
@@ -131,6 +145,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "urabyoshi",
+    cover: 38,
     kind: "back",
     title: "裏表紙",
     summary: "無地の裏表紙。左端に和装本の四つ目綴じの糸が見えます。",

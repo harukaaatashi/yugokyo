@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import {
+  chapterCoverKoma,
   chapters,
   FIRST_CHAPTER_ID,
+  HERO_KOMA,
+  komaImageUrl,
   loadProgress,
   TOTAL_CHAPTERS,
   TOTAL_KOMA,
@@ -31,18 +34,32 @@ export default function Home() {
           ゆごきょう
           <span className="block text-yu-blue">『湯語教』</span>
         </h1>
-        <p className="mt-6 leading-loose text-[15px]">
+        <p className="mt-6 leading-loose text-lede">
           日本最古の「銭湯経営の教科書」と言われる本があります。
           江戸の湯屋の親方・向晦亭等琳（こうかいてい とうりん）が書いた
           『湯語教（一名 銭湯手引草）』。
           お湯の沸かし方から客あしらい、湯屋の心得まで——
           170年前の銭湯のリアルが詰まっています。
         </p>
-        <p className="mt-3 leading-loose text-[15px]">
+        <p className="mt-3 leading-loose text-lede">
           このサイトでは、原本の画像・翻刻・現代語訳を並べて、
           くずし字が読めなくても最初から最後まで読み通せます。
           原本の章立てにそって{TOTAL_CHAPTERS}章に分けてあります。
         </p>
+        <figure className="mt-8">
+          <img
+            src={komaImageUrl(HERO_KOMA, "w960")}
+            alt={`『湯語教』${HERO_KOMA}丁の挿絵。湯屋で人々に湯を施す光明皇后を描いた見開き`}
+            width={960}
+            height={830}
+            decoding="async"
+            className="w-full aspect-koma object-cover object-top rounded-2xl border border-line bg-paper-warm"
+          />
+          <figcaption className="mt-2 text-caption text-ink-soft">
+            {HERO_KOMA}丁の挿絵「光明皇后の施浴」／国立国会図書館デジタルコレクション
+          </figcaption>
+        </figure>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             to={resumeTo}
@@ -65,7 +82,7 @@ export default function Home() {
         <h2 className="font-maru font-bold text-xl text-yu-blue">
           『湯語教』ってどんな本？
         </h2>
-        <div className="mt-5 space-y-4 leading-loose text-[15px]">
+        <div className="mt-5 space-y-4 leading-loose text-lede">
           <p>
             江戸時代、銭湯は庶民の暮らしの中心でした。武士も職人も長屋の住人も、
             みんな同じ湯に浸かる。そんな湯屋を切り盛りする経営者のために、
@@ -111,18 +128,24 @@ export default function Home() {
                 to={`/chapter/${c.def.id}`}
                 className="group flex gap-4 py-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
               >
-                <span className="text-xs text-ink-soft tabular-nums shrink-0 w-12">
-                  第{c.number}章
-                </span>
-                <span className="min-w-0">
-                  <span className="block font-maru font-bold text-[15px] group-hover:text-yu-blue transition-colors">
+                <img
+                  src={komaImageUrl(chapterCoverKoma(c), "w320")}
+                  alt=""
+                  width={320}
+                  height={277}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-20 shrink-0 aspect-koma object-cover object-top rounded-xl border border-line bg-paper-warm"
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-caption text-ink-soft tabular-nums">
+                    第{c.number}章 ・ {komaRange(c.komaFrom, c.komaTo)}
+                  </span>
+                  <span className="mt-1 block font-maru font-bold group-hover:text-yu-blue transition-colors">
                     {c.def.title}
                   </span>
-                  <span className="block text-sm text-ink-soft leading-relaxed mt-2">
+                  <span className="mt-2 block text-caption text-ink-soft">
                     {c.def.summary}
-                  </span>
-                  <span className="block text-xs text-ink-soft tabular-nums mt-2">
-                    {komaRange(c.komaFrom, c.komaTo)}
                   </span>
                 </span>
               </Link>
