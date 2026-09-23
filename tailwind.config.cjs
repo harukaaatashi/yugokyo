@@ -14,6 +14,10 @@ module.exports = {
         kuchinashi: "#E8A63D",
         line: "#DDD8CC",
       },
+      width: {
+        // 原本画像の実寸。拡大表示で等倍に開く
+        koma: "1600px",
+      },
       fontFamily: {
         maru: ['"Zen Maru Gothic"', "sans-serif"],
         body: ['"Zen Kaku Gothic New"', "system-ui", "sans-serif"],

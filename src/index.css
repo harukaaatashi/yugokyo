@@ -12,5 +12,6 @@
     font-feature-settings: "palt";
     line-break: strict;
     overflow-wrap: anywhere;
+    touch-action: manipulation;
   }
 }

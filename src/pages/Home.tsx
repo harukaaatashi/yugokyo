@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
-import { komaList, loadLastKoma } from "../lib/corpus";
+import {
+  chapters,
+  FIRST_CHAPTER_ID,
+  loadProgress,
+  TOTAL_CHAPTERS,
+  TOTAL_KOMA,
+} from "../lib/corpus";
+
+function komaRange(from: number, to: number): string {
+  return from === to ? `${from}丁` : `${from}〜${to}丁`;
+}
 
 export default function Home() {
-  const last = loadLastKoma();
-  const ready = komaList.length > 0;
-  const firstReadable = komaList[0]?.koma ?? 1;
+  const progress = loadProgress();
+  const resumeTo = progress
+    ? `/chapter/${progress.chapterId}#koma-${progress.koma}`
+    : `/chapter/${FIRST_CHAPTER_ID}`;
+
+  const front = chapters.find((c) => c.def.kind === "front");
+  const back = chapters.find((c) => c.def.kind === "back");
+  const main = chapters.filter((c) => c.def.kind === "chapter");
 
   return (
     <div className="max-w-2xl mx-auto px-5">
@@ -12,7 +27,7 @@ export default function Home() {
         <p className="font-maru text-yu-blue text-sm font-bold">
           嘉永四年（1851）・江戸
         </p>
-        <h1 className="font-maru font-bold text-4xl leading-snug mt-3">
+        <h1 className="font-maru font-bold text-4xl leading-snug mt-3 text-balance">
           ゆごきょう
           <span className="block text-yu-blue">『湯語教』</span>
         </h1>
@@ -26,27 +41,22 @@ export default function Home() {
         <p className="mt-3 leading-loose text-[15px]">
           このサイトでは、原本の画像・翻刻・現代語訳を並べて、
           くずし字が読めなくても最初から最後まで読み通せます。
+          原本の章立てにそって{TOTAL_CHAPTERS}章に分けてあります。
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          {ready ? (
-            <>
-              <Link
-                to={`/read/${last ?? firstReadable}`}
-                className="inline-flex items-center justify-center min-h-11 px-7 rounded-full bg-yu-blue text-white font-maru font-bold hover:bg-yu-blue-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
-              >
-                {last ? "続きから読む" : "読みはじめる"}
-              </Link>
-              {last && (
-                <Link
-                  to={`/read/${firstReadable}`}
-                  className="inline-flex items-center justify-center min-h-11 px-7 rounded-full border border-yu-blue text-yu-blue font-maru font-bold hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
-                >
-                  最初から
-                </Link>
-              )}
-            </>
-          ) : (
-            <p className="text-ink-soft text-sm">翻刻データを準備中です。</p>
+          <Link
+            to={resumeTo}
+            className="inline-flex items-center justify-center min-h-11 px-7 rounded-full bg-yu-blue text-white font-maru font-bold hover:bg-yu-blue-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+          >
+            {progress ? "続きから読む" : "読みはじめる"}
+          </Link>
+          {progress && (
+            <Link
+              to={`/chapter/${FIRST_CHAPTER_ID}`}
+              className="inline-flex items-center justify-center min-h-11 px-7 rounded-full border border-yu-blue text-yu-blue font-maru font-bold hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+            >
+              最初から
+            </Link>
           )}
         </div>
       </section>
@@ -74,26 +84,64 @@ export default function Home() {
         </div>
       </section>
 
-      {ready && (
-        <section className="py-12 border-t border-line">
+      <section className="py-12 border-t border-line">
+        <div className="flex items-baseline justify-between gap-4">
           <h2 className="font-maru font-bold text-xl text-yu-blue">目次</h2>
-          <ul className="mt-5 divide-y divide-line">
-            {komaList.map((k) => (
-              <li key={k.koma}>
-                <Link
-                  to={`/read/${k.koma}`}
-                  className="flex items-baseline gap-4 py-3 hover:text-yu-blue transition-colors"
-                >
-                  <span className="text-xs text-ink-soft tabular-nums shrink-0 w-12">
-                    {k.koma} 丁
+          <p className="text-xs text-ink-soft tabular-nums">
+            全{TOTAL_CHAPTERS}章・{TOTAL_KOMA}丁
+          </p>
+        </div>
+
+        {front && (
+          <Link
+            to={`/chapter/${front.def.id}`}
+            className="mt-5 flex items-center min-h-11 gap-4 text-xs text-ink-soft hover:text-yu-blue transition-colors rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+          >
+            <span className="shrink-0 w-12">扉</span>
+            <span>
+              {front.def.title}（{komaRange(front.komaFrom, front.komaTo)}）
+            </span>
+          </Link>
+        )}
+
+        <ul className="mt-3 divide-y divide-line border-t border-line">
+          {main.map((c) => (
+            <li key={c.def.id}>
+              <Link
+                to={`/chapter/${c.def.id}`}
+                className="group flex gap-4 py-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+              >
+                <span className="text-xs text-ink-soft tabular-nums shrink-0 w-12">
+                  第{c.number}章
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-maru font-bold text-[15px] group-hover:text-yu-blue transition-colors">
+                    {c.def.title}
                   </span>
-                  <span className="text-[15px]">{k.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+                  <span className="block text-sm text-ink-soft leading-relaxed mt-2">
+                    {c.def.summary}
+                  </span>
+                  <span className="block text-xs text-ink-soft tabular-nums mt-2">
+                    {komaRange(c.komaFrom, c.komaTo)}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {back && (
+          <Link
+            to={`/chapter/${back.def.id}`}
+            className="mt-2 flex items-center min-h-11 gap-4 text-xs text-ink-soft hover:text-yu-blue transition-colors rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+          >
+            <span className="shrink-0 w-12">巻末</span>
+            <span>
+              {back.def.title}（{komaRange(back.komaFrom, back.komaTo)}）
+            </span>
+          </Link>
+        )}
+      </section>
     </div>
   );
 }

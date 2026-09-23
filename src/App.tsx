@@ -1,11 +1,14 @@
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
-import Reader from "./pages/Reader";
+import Chapter from "./pages/Chapter";
+import KomaRedirect from "./pages/KomaRedirect";
 import About from "./pages/About";
+import { FIRST_CHAPTER_ID } from "./lib/corpus";
 
 export default function App() {
   const { pathname } = useLocation();
-  const inReader = pathname.startsWith("/read");
+  const inReader =
+    pathname.startsWith("/chapter") || pathname.startsWith("/read");
   return (
     <div className="min-h-dvh flex flex-col">
       <header className="px-5 py-4 flex items-baseline justify-between max-w-2xl w-full mx-auto">
@@ -13,7 +16,10 @@ export default function App() {
           湯語教
         </Link>
         <nav className="flex gap-5 text-sm text-ink-soft">
-          <Link to="/read/1" className="hover:text-yu-blue transition-colors">
+          <Link
+            to={`/chapter/${FIRST_CHAPTER_ID}`}
+            className="hover:text-yu-blue transition-colors"
+          >
             読む
           </Link>
           <Link to="/about" className="hover:text-yu-blue transition-colors">
@@ -24,7 +30,9 @@ export default function App() {
       <main className={`flex-1 w-full ${inReader ? "pb-24" : ""}`}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/read/:koma" element={<Reader />} />
+          <Route path="/chapter/:id" element={<Chapter />} />
+          {/* 公開済みの丁単位URLを章へ転送する互換ルート */}
+          <Route path="/read/:koma" element={<KomaRedirect />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>

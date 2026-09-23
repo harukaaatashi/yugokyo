@@ -53,4 +53,6 @@ npm run fetch:sources # NDLから原本画像を再取得
 ```
 
 - 翻刻データは `corpus/koma-XX.json`（1見開き＝1ファイル）
+- 章立ては `src/lib/chapters.ts`。原本の章境界は丁の途中に来るため、
+  章は `{ koma, section }` で開始位置だけを持ち、終端は次章の直前として導出する
 - UIルールは `DESIGN.md` が唯一の正

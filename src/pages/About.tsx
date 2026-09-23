@@ -38,6 +38,10 @@ export default function About() {
             は読みが未確定の箇所、〓 は判読できなかった字です。
           </li>
           <li>現代語訳は逐語訳ではなく、意味が通ることを優先した意訳です。</li>
+          <li>
+            本文は原本の章立てにそって区切っています。原本の丁（見開き）の
+            切れ目は、本文中の原本画像と「◯丁」の目印で示しています。
+          </li>
         </ul>
         <div className="rounded-2xl bg-paper-warm px-5 py-4 text-sm leading-relaxed">
           <p className="font-maru font-bold text-yu-blue">
