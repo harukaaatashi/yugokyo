@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { komaImageUrl, komaPageUrl, ndlViewerUrl } from "../../lib/corpus";
+import { komaImageUrl, komaPageUrl } from "../../lib/corpus";
 import { isSplittable, type PageSide } from "../../lib/pages";
 import type { ActiveSpot } from "../../lib/useActiveKoma";
 
@@ -16,6 +16,9 @@ import type { ActiveSpot } from "../../lib/useActiveKoma";
  *
  * 写真の下の帯には「原文」スイッチも置く。パネルは常に見えているので、
  * 読んでいる途中でも原文の表示を切り替えられる。
+ *
+ * NDLへのリンクはここには置かない（常に見える帯が読む以外の用事で混まないように）。
+ * 原本を確かめたい人は、写真を拡大した画面と章末の出典表記から辿れる。
  */
 
 interface Props {
@@ -150,14 +153,6 @@ export default function KomaPane({
             />
           </span>
         </button>
-        <a
-          href={ndlViewerUrl(koma)}
-          target="_blank"
-          rel="noreferrer"
-          className="shrink-0 inline-flex min-h-11 items-center text-caption text-ink-soft underline underline-offset-4 hover:text-yu-blue transition-colors"
-        >
-          NDLで見る
-        </a>
       </div>
     </div>
   );
