@@ -1,4 +1,5 @@
 import { komaAnchorId, type FlowItem } from "../../lib/corpus";
+import { useUi } from "../../lib/i18n";
 
 /**
  * 章のなかで丁が変わる位置に置く、紙の変わり目の印。
@@ -12,6 +13,7 @@ export default function KomaRule({
 }: {
   item: Extract<FlowItem, { type: "koma" }>;
 }) {
+  const ui = useUi();
   const n = item.koma.koma;
   return (
     <div
@@ -23,7 +25,7 @@ export default function KomaRule({
       <span className="block h-px bg-line" aria-hidden="true" />
       {item.continues.from && (
         <p className="mt-3 text-caption text-ink-soft">
-          この丁は前の章の続きから始まります。
+          {ui.continuesFrom}
         </p>
       )}
     </div>

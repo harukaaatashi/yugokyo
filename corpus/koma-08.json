@@ -6,13 +6,16 @@
   "sections": [
     {
       "kind": "illustration",
-      "note": "右ページ: 宮中の浴室。合掌する光明皇后のまわりで、侍女たちが小桶を手にやせ衰えた病人たちの身体を洗ってやっている。奥にはかまどの火と湯気。左ページ: 洗われた病人が正体を現し、蓮台に乗った仏が雲の中から光を放つ。皇后と侍女たちがそれを拝む。落款に「雪山等琳筆」とあり、著者の等琳自身が描いた挿絵と分かる。"
+      "note": "右ページ: 宮中の浴室。合掌する光明皇后のまわりで、侍女たちが小桶を手にやせ衰えた病人たちの身体を洗ってやっている。奥にはかまどの火と湯気。左ページ: 洗われた病人が正体を現し、蓮台に乗った仏が雲の中から光を放つ。皇后と侍女たちがそれを拝む。落款に「雪山等琳筆」とあり、著者の等琳自身が描いた挿絵と分かる。",
+      "noteEn": "Right page: a bath hall in the palace. Around Empress Kōmyō, her palms joined in prayer, her ladies-in-waiting hold small buckets and wash the bodies of emaciated sick people. At the back are the fire of a furnace and rising steam. Left page: the sick person who was washed reveals their true form—a Buddha on a lotus pedestal, shining out from the clouds. The Empress and her ladies bow in worship. The signature reads “Painted by Sessan Tōrin,” showing that the illustrations were drawn by the author, Tōrin, himself."
     },
     {
       "kind": "text",
       "original": "（この見開きは絵のみ）",
       "modern": "「千人の垢を流す」誓いを立てた光明皇后が、最後に現れた重い病の者の身体まで自ら洗ってやると、その病人はまばゆい光を放ち、仏（阿閦仏）の姿を現した——という伝説の場面。江戸の湯屋はこの話を「銭湯のはじまり」として大切に語り継ぎました。",
-      "note": "施浴（せよく）は寺院が庶民に風呂をふるまう慈善行為。奈良・法華寺の浴室（からぶろ）が光明皇后ゆかりの地として知られます。"
+      "english": "The scene from the legend: Empress Kōmyō, who had vowed to “wash the grime from a thousand people,” at last personally washes even the gravely ill person who appears at the very end—whereupon the sick person gives off a dazzling light and reveals the form of a Buddha, Akshobhya Buddha (Ashuku). Edo bathhouses cherished this story and kept telling it as “how bathhouses began.”",
+      "note": "施浴（せよく）は寺院が庶民に風呂をふるまう慈善行為。奈良・法華寺の浴室（からぶろ）が光明皇后ゆかりの地として知られます。",
+      "noteEn": "Seyoku (“charity bathing”) was an act of charity in which temples offered baths to ordinary people. The bath hall (karaburo) of Hokkeji temple in Nara is known as a place linked to Empress Kōmyō."
     }
   ],
   "status": "ai-draft"

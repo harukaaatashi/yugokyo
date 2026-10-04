@@ -1,5 +1,7 @@
 import { memo } from "react";
-import { ndlViewerUrl, pageSideOf, type Section } from "../../lib/corpus";
+import { localized, ndlViewerUrl, pageSideOf, type Section } from "../../lib/corpus";
+import { UI } from "../../lib/i18n";
+import type { Lang } from "../../lib/lang";
 import Honkoku from "./Honkoku";
 import NoteDisclosure from "./NoteDisclosure";
 
@@ -22,6 +24,8 @@ interface Props {
   index: number;
   /** 原文翻刻を出すか（既定は訳だけ） */
   showGenbun: boolean;
+  /** 表示言語。memo を効かせるため context ではなく props で受ける */
+  lang: Lang;
   onOpenKoma: (koma: number) => void;
 }
 
@@ -37,22 +41,24 @@ function Lines({ text }: { text: string }) {
   );
 }
 
-function SectionBlock({ section, koma, index, showGenbun, onOpenKoma }: Props) {
+function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Props) {
   const side = pageSideOf(koma, index);
+  const ui = UI[lang];
+  const { text, textLang, note, noteLang } = localized(section, lang);
   if (section.kind === "illustration") {
     // 絵そのものは追随パネルに出ているので、ここはその絵の説明として置く
     return (
       <figure data-koma={koma} data-side={side} className="scroll-below-pane border-y border-line py-5">
         <figcaption className="text-caption text-ink">
-          <span className="font-maru font-bold text-yu-blue mr-2">挿絵</span>
-          {section.note}
+          <span className="font-maru font-bold text-yu-blue mr-2">{ui.illustration}</span>
+          <span lang={noteLang}>{note}</span>
         </figcaption>
         <button
           type="button"
           onClick={() => onOpenKoma(koma)}
           className="mt-3 inline-flex items-center min-h-11 px-4 rounded-full border border-yu-blue text-yu-blue font-maru font-bold text-caption hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
         >
-          この絵を大きく見る
+          {ui.viewLarger}
         </button>
       </figure>
     );
@@ -61,11 +67,14 @@ function SectionBlock({ section, koma, index, showGenbun, onOpenKoma }: Props) {
   if (section.kind === "heading") {
     return (
       <h2 data-koma={koma} data-side={side} className="scroll-below-pane border-t border-line pt-8">
-        <span className="block font-maru font-bold text-xl text-yu-blue text-balance">
-          {section.modern ?? section.original}
+        <span
+          lang={text ? textLang : "ja"}
+          className="block font-maru font-bold text-xl text-yu-blue text-balance"
+        >
+          {text ?? section.original}
         </span>
-        {showGenbun && section.original && section.modern && (
-          <span className="mt-1 block font-genbun text-genbun text-ink-muted honkoku">
+        {showGenbun && section.original && text && (
+          <span lang="ja" className="mt-1 block font-genbun text-genbun text-ink-muted honkoku">
             <Honkoku text={section.original} />
           </span>
         )}
@@ -75,21 +84,22 @@ function SectionBlock({ section, koma, index, showGenbun, onOpenKoma }: Props) {
 
   return (
     <article data-koma={koma} data-side={side} className="scroll-below-pane">
-      {section.modern && (
-        <p className="text-yaku text-ink">
-          <Lines text={section.modern} />
+      {text && (
+        <p lang={textLang} className="text-yaku text-ink">
+          <Lines text={text} />
         </p>
       )}
       {/* 訳がない段落は原文しか中身がないので、スイッチに関わらず出す */}
-      {section.original && (showGenbun || !section.modern) && (
+      {section.original && (showGenbun || !text) && (
         <blockquote
+          lang="ja"
           cite={ndlViewerUrl(koma)}
           className="mt-4 border-l-2 border-line pl-4 font-genbun text-genbun text-ink-muted honkoku"
         >
           <Honkoku text={section.original} />
         </blockquote>
       )}
-      {section.note && <NoteDisclosure>{section.note}</NoteDisclosure>}
+      {note && <NoteDisclosure lang={noteLang}>{note}</NoteDisclosure>}
     </article>
   );
 }

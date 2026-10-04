@@ -8,19 +8,25 @@
       "kind": "text",
       "original": "｛書きし｝白癬（たむし）｛に｝なや｛める｝人の｛ため｝……｛判読困難な箇所がつづく｝",
       "modern": "（前置きの結びの段。たむし＝皮膚病に悩む人への言及などが読み取れるが、崩し字が強く大半は未判読。）",
-      "note": "このページ右半分は序の末尾。読める語（白癬・湯上がり・紅など）から、入浴の効能を並べていたと思われます。"
+      "english": "(The closing passage of the preface. A mention of people suffering from ringworm, a skin complaint, can be made out, but the cursive is heavily broken and most of it remains undeciphered.)",
+      "note": "このページ右半分は序の末尾。読める語（白癬・湯上がり・紅など）から、入浴の効能を並べていたと思われます。",
+      "noteEn": "The right half of this page is the end of the preface. Judging from the words that can be read (ringworm, after the bath, rouge, and so on), it seems to have listed the benefits of bathing."
     },
     {
       "kind": "heading",
       "original": "湯語教（ゆごきやう）",
       "modern": "湯語教 — ここから本文",
-      "note": "大きな文字に総ルビ、『実語教』の体裁そのまま。"
+      "english": "The Yugokyō — main text",
+      "note": "大きな文字に総ルビ、『実語教』の体裁そのまま。",
+      "noteEn": "Large characters with a reading printed beside every one—exactly the layout of the Jitsugokyō (“Teaching of True Words”)."
     },
     {
       "kind": "text",
       "original": "薪（まき）高（たか）き故（ゆゑ）に｛多くを焚（た）かず｝\n株（かぶ）肥（こ）ゆる故に｛人に｝｛頭（かうべ）を下げず｝\n客数多（きゃくあまた）有（あ）るを以（もっ）て富貴（ふうき）と為（な）す\n湯屋（ゆや）は是（これ）一生（いっしゃう）の財（たから）\n身（み）滅（めっ）すれば則（すなは）ち子（こ）は株主（かぶぬし）と成（な）る\n湯株（ゆかぶ）は是（これ）万代（ばんだい）の財（たから）\n命（いのち）終（をは）るとも株（かぶ）は滅（めっ）せず",
       "modern": "薪が高い（値上がりした）からといって、焚くのをけちってはいけない。\n湯屋株が太ったからといって、人に頭を下げないようではいけない。\n客がたくさん入ってこそ「富貴」というものだ。\n湯屋は一生の財産。\n自分が死んでも、子どもが株主になって継いでいく。\n湯屋株こそ万代の財産。\n命が終わっても、株は滅びない。",
-      "note": "元ネタの『実語教』は「山高きが故に貴からず……富はこれ一生の財、身滅すれば即ち共に滅す。智はこれ万代の財、命終れば即ち随って行く」。「智」を「湯屋株」に置き換えるのがこの本最大の笑いどころ。湯屋株は幕府公認の営業権で、実際に売買・相続されました。ルビがほぼ全文に振られているため、ここからの翻刻は序よりずっと確度が高めです。"
+      "english": "Just because firewood is dear (prices have gone up), don’t skimp on burning it.\nJust because your bathhouse license has grown fat, don’t stop bowing to others.\nA crowd of customers—that is true “wealth and honor.”\nA bathhouse is a fortune for a lifetime.\nWhen you die, your child becomes the license holder and carries it on.\nA bathhouse license is a fortune for ten thousand ages.\nYour life may end, but the license never dies.",
+      "note": "元ネタの『実語教』は「山高きが故に貴からず……富はこれ一生の財、身滅すれば即ち共に滅す。智はこれ万代の財、命終れば即ち随って行く」。「智」を「湯屋株」に置き換えるのがこの本最大の笑いどころ。湯屋株は幕府公認の営業権で、実際に売買・相続されました。ルビがほぼ全文に振られているため、ここからの翻刻は序よりずっと確度が高めです。",
+      "noteEn": "The model, the Jitsugokyō (“Teaching of True Words”), reads: “A mountain is not precious because it is high … Wealth is a treasure for one lifetime; when you die, it perishes with you. Wisdom is a treasure for ten thousand ages; when your life ends, it goes with you.” Swapping “wisdom” for the bathhouse license (kabu) is the book’s biggest joke. The license was a shogunate-approved right to do business, and it really was bought, sold, and inherited. Because nearly every character from here on carries a printed reading, the transcription is much more reliable than in the preface."
     }
   ],
   "status": "ai-draft"

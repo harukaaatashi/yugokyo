@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { komaImageUrl, komaPageUrl } from "../../lib/corpus";
 import { isSplittable, type PageSide } from "../../lib/pages";
 import type { ActiveSpot } from "../../lib/useActiveKoma";
+import { useUi } from "../../lib/i18n";
 
 /**
  * 読んでいる丁に追随する原本写真。
@@ -39,6 +40,7 @@ export default function KomaPane({
   showGenbun,
   onToggleGenbun,
 }: Props) {
+  const ui = useUi();
   const { koma } = active;
   // 読者が自分でめくったら、その丁のあいだはその面を優先する
   const [flipped, setFlipped] = useState<PageSide | null>(null);
@@ -71,7 +73,7 @@ export default function KomaPane({
       <button
         type="button"
         onClick={() => onZoom(koma)}
-        aria-label={`${koma}丁の原本画像を拡大する`}
+        aria-label={ui.zoomAria(koma)}
         className={`relative block w-full overflow-hidden bg-paper-warm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2 lg:rounded-2xl lg:border lg:border-line ${
           pageSrc
             ? "aspect-koma-page max-h-pane-lg"
@@ -86,8 +88,8 @@ export default function KomaPane({
               layer !== src
                 ? ""
                 : pageSrc
-                  ? `『湯語教』${koma}丁の${side === "r" ? "右" : "左"}ページ`
-                  : `『湯語教』${koma}丁目の原本画像`
+                  ? ui.pageAlt(koma, side)
+                  : ui.spreadAlt(koma)
             }
             aria-hidden={layer !== src}
             decoding="async"
@@ -101,7 +103,8 @@ export default function KomaPane({
 
       <div className="flex items-center gap-3 px-5 lg:px-1">
         <span className="shrink-0 text-caption text-ink-soft tabular-nums">
-          {koma} 丁{splitView && (side === "r" ? "・右" : "・左")}
+          {ui.komaLabel(koma)}
+          {splitView && ui.sideSuffix(side)}
         </span>
         <span className="h-px flex-1 bg-line" aria-hidden="true" />
         {splitView && (
@@ -112,14 +115,14 @@ export default function KomaPane({
                 type="button"
                 onClick={() => setFlipped(s)}
                 aria-pressed={side === s}
-                aria-label={s === "r" ? "右ページを見る" : "左ページを見る"}
+                aria-label={ui.sideAria(s)}
                 className={`inline-flex min-h-11 items-center px-3 text-caption transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue ${
                   side === s
                     ? "font-maru font-bold text-yu-blue"
                     : "text-ink-soft hover:text-yu-blue"
                 }`}
               >
-                {s === "r" ? "右" : "左"}
+                {ui.sideButton(s)}
               </button>
             ))}
           </span>
@@ -138,7 +141,7 @@ export default function KomaPane({
                 : "text-ink-soft group-hover:text-yu-blue"
             }`}
           >
-            原文
+            {ui.genbunSwitch}
           </span>
           <span
             aria-hidden="true"

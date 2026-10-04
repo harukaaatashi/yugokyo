@@ -8,13 +8,17 @@
       "kind": "text",
       "original": "一　天保十三寅年十二月、御改革（ごかいかく）の御触（おふれ）｛にて｝、諸株式（しょかぶしき）｛は｝これ取（と）り放（はな）しと仰（おほ）せ付（つ）けられ、作出（つくりだ）し｛の飾りも｝お止（や）む。同月十八日、湯銭（ゆせん）大人（おとな）小人（こども）｛とも｝壱人前（ひとりまへ）｛六文｝と｛定めらる｝\n一　市中（しちゅう）｛の｝湯銭｛はその後｝、嘉永｛の｝年中（ねんぢゅう）、大人八文・小人六文｛となる｝",
       "modern": "天保13年（1842）12月、天保の改革の御触で株式はすべて取り上げと仰せつけられ、湯屋の飾り立ても禁止。同月18日には湯銭が大人・小人とも一人前（6文）に公定された。その後、市中の湯銭は嘉永年間に大人8文・小人6文に落ち着いた——。",
-      "note": "改革による強制値下げと、その後のなし崩しの値戻り。湯銭の変遷は江戸の物価史の生きた実例です。金額の読み取りは未確定を含みます。"
+      "english": "In the 12th month of Tenpō 13 (1842), an ordinance of the Tenpō Reforms ordered all licenses (kabu) taken away, and fancy decoration of bathhouses was banned as well. On the 18th of the same month, the bath fee was fixed at a single rate for adults and children alike (6 mon). Later, during the Kaei era, the bath fee in town settled at 8 mon for adults and 6 mon for children—",
+      "note": "改革による強制値下げと、その後のなし崩しの値戻り。湯銭の変遷は江戸の物価史の生きた実例です。金額の読み取りは未確定を含みます。",
+      "noteEn": "A price cut forced by the reforms, followed by prices creeping back up little by little. The changing bath fee is a living example of Edo’s price history. The readings of the amounts include uncertainties."
     },
     {
       "kind": "text",
       "original": "（大行事順番の表、四十番まで続きて終わる）\n｛湯銭の直段・組合の取り決めにかかる記事、判読困難｝……\n弘化三午年四月",
       "modern": "役員当番表は第四十番（天保のはじめごろ）まで続いて終了。年代記の末尾には湯銭や組合の取り決めに関する記事（判読困難）が続き、「弘化3年（1846）4月」の日付で締めくくられます。",
-      "note": "年代記の最終盤。この5年後（嘉永4年・1851）に株仲間再興令が出て組合が復活し、本書が出版される——という時系列です。このページの後半は本書でもっとも崩れが強く、翻刻は断片的です。"
+      "english": "The officers’ rotation chart runs to no. 40 (around the beginning of the Tenpō era) and ends there. At the close of the timeline come items on bath fees and guild agreements (hard to read), and it ends with the date “the 4th month of Kōka 3 (1846).”",
+      "note": "年代記の最終盤。この5年後（嘉永4年・1851）に株仲間再興令が出て組合が復活し、本書が出版される——という時系列です。このページの後半は本書でもっとも崩れが強く、翻刻は断片的です。",
+      "noteEn": "The very end of the timeline. Five years later, in Kaei 4 (1851), the order reviving the trade guilds was issued, the guild came back, and this book was published—that is the sequence of events. The second half of this page has the most broken-down script in the whole book, so the transcription is fragmentary."
     }
   ],
   "status": "ai-draft"

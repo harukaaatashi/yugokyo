@@ -1,4 +1,13 @@
+import { useLang } from "../lib/lang";
+
+const linkClass = "underline hover:text-yu-blue transition-colors";
+
 export default function About() {
+  const { lang } = useLang();
+  return lang === "en" ? <AboutEn /> : <AboutJa />;
+}
+
+function AboutJa() {
   return (
     <div className="max-w-2xl mx-auto px-5">
       <section className="pt-10 pb-8">
@@ -45,6 +54,10 @@ export default function About() {
           <li>
             はじめは現代語訳だけを続けて表示しています。原文（翻刻）も読みたいときは、
             原本写真の下にある「原文」スイッチを入れてください。
+          </li>
+          <li>
+            画面右上の「English」から英語訳に切り替えられます。英訳は現代語訳をもとにした
+            AIによる訳（未校正）です。
           </li>
           <li>
             本文は原本の章立てにそって区切っています。原本の丁（見開き）の
@@ -115,6 +128,126 @@ export default function About() {
           </li>
           <li>
             <span className="font-bold">サイトのコード</span> — MIT License
+          </li>
+        </ul>
+      </section>
+    </div>
+  );
+}
+
+/**
+ * 英語版。日本語版の訳ではなく、日本語を読まない読者に必要なことだけを書く
+ * （振り仮名やコピーの挙動など、日本語の本文に関わる凡例は省く）。
+ */
+function AboutEn() {
+  return (
+    <div className="max-w-2xl mx-auto px-5">
+      <section className="pt-10 pb-8">
+        <h1 className="font-maru font-bold text-3xl text-yu-blue">About this book</h1>
+      </section>
+
+      <section className="pb-10 space-y-4 leading-loose text-lede">
+        <h2 className="font-maru font-bold text-xl text-yu-blue">
+          Yugokyō and Sentō Tebikigusa
+        </h2>
+        <p>
+          The Yugokyō is a handbook on running an Edo bathhouse (yuya, or sentō), published in
+          Kaei 4 (1851). Its full title is “Yugokyō, also called Sentō Tebikigusa (A Bathhouse
+          Primer)”—both names refer to the same book. The author was Kōkaitei Tōrin.
+        </p>
+        <p>
+          The National Diet Library catalogs its copy under the cover title Sentō Tebikigusa,
+          while the Tosho Bunko library lists its copy as Yugokyō. It is known as Japan’s
+          oldest textbook on running a bathhouse.
+        </p>
+      </section>
+
+      <section className="pb-10 space-y-4 leading-loose text-lede border-t border-line pt-8">
+        <h2 className="font-maru font-bold text-xl text-yu-blue">How to read this site</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            The English is translated from our modern Japanese version of the text. It favors
+            readable meaning over word-for-word accuracy.
+          </li>
+          <li>
+            Turn on the “Original” switch under the photo to see the Japanese transcription
+            under each paragraph.{" "}
+            <span className="underline decoration-kuchinashi-deep decoration-dotted decoration-2 underline-offset-4">
+              Dotted underlines
+            </span>{" "}
+            in the transcription mark readings that are still uncertain.
+          </li>
+          <li>
+            Each “spread” is one photo of two facing pages in the original book. The photo
+            follows along as you read.
+          </li>
+          <li>The menu at the top of every page switches between English and Japanese.</li>
+        </ul>
+        <div className="rounded-2xl bg-paper-warm px-5 py-4 text-sm leading-relaxed">
+          <p className="font-maru font-bold text-yu-blue">
+            The transcription and translations are unreviewed AI drafts
+          </p>
+          <p className="mt-2">
+            Reading the cursive script and translating it were done with AI (Claude), and
+            there may be misreadings. The English is a translation of a translation, so errors
+            can add up. For research or citation, always check the original images. If you
+            spot a mistake, please let us know.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-10 space-y-4 leading-loose text-lede border-t border-line pt-8">
+        <h2 className="font-maru font-bold text-xl text-yu-blue">Sources</h2>
+        <ul className="space-y-3 text-sm">
+          <li>
+            Original images:{" "}
+            <a
+              href="https://dl.ndl.go.jp/pid/2539997"
+              target="_blank"
+              rel="noreferrer"
+              className={linkClass}
+            >
+              Sentō Tebikigusa, National Diet Library Digital Collections
+            </a>{" "}
+            (public domain)
+          </li>
+          <li>
+            For comparison:{" "}
+            <a
+              href="https://kokusho.nijl.ac.jp/biblio/100266100/"
+              target="_blank"
+              rel="noreferrer"
+              className={linkClass}
+            >
+              Yugokyō / Sentō Tebikigusa, Kokusho Database (Tosho Bunko copy)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section className="pb-14 space-y-4 leading-loose text-lede border-t border-line pt-8">
+        <h2 className="font-maru font-bold text-xl text-yu-blue">Terms of use</h2>
+        <ul className="space-y-3 text-sm">
+          <li>
+            <span className="font-bold">Original images</span> — Public domain (marked PDM by
+            the National Diet Library). Free to use; please credit “National Diet Library
+            Digital Collections.”
+          </li>
+          <li>
+            <span className="font-bold">Transcription, translations and commentary</span> —{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noreferrer"
+              className={linkClass}
+            >
+              CC BY 4.0
+            </a>
+            . You may copy, adapt and redistribute them with attribution. As noted above, they
+            are unreviewed AI drafts.
+          </li>
+          <li>
+            <span className="font-bold">Site code</span> — MIT License
           </li>
         </ul>
       </section>

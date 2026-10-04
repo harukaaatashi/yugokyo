@@ -6,18 +6,22 @@
   "sections": [
     {
       "kind": "illustration",
-      "note": "薪の運搬に使う道具の図。大八車（だいはちぐるま）、束ねた縄、斧、大槌、畚（もっこ）、銭箱などが描かれる。添え書きには「これらの道具は雨降りや休みの日にこしらえて備えておけ」「井戸綱は平日から絶やさぬよう朝飯前に手入れせよ。怠れば家業の差し支えになる」といった実務の注意が読み取れる（細部は未確定）。"
+      "note": "薪の運搬に使う道具の図。大八車（だいはちぐるま）、束ねた縄、斧、大槌、畚（もっこ）、銭箱などが描かれる。添え書きには「これらの道具は雨降りや休みの日にこしらえて備えておけ」「井戸綱は平日から絶やさぬよう朝飯前に手入れせよ。怠れば家業の差し支えになる」といった実務の注意が読み取れる（細部は未確定）。",
+      "noteEn": "Tools for hauling firewood: a daihachi-guruma (a big two-wheeled handcart), bundled rope, an ax, a large mallet, a mokko (a rope-mesh carrying basket), a cash box, and more. The captions can be made out to give practical advice such as “Make these tools on rainy days and days off, and keep them ready,” and “Never let the well rope wear out—tend it before breakfast even on ordinary days. Neglect it and the business will suffer.” (Details uncertain.)"
     },
     {
       "kind": "heading",
       "original": "洗湯語教",
-      "modern": "湯語教（ゆごきょう）— 銭湯版・実語教"
+      "modern": "湯語教（ゆごきょう）— 銭湯版・実語教",
+      "english": "The Yugokyō — a Jitsugokyō for bathhouses"
     },
     {
       "kind": "text",
       "original": "｛この｝洗湯語教（せんたうごきやう）は、｛湯女（ゆな）｝｛の｝意（こころ）｛にも｝観世音（くわんぜおん）｛の｝｛慈悲にもかなふ｝。規則（きそく）たる｛教へは｝釈氏（しゃくし）｛の｝比喩（ひゆ）方便（はうべん）｛にならひ｝、湯澤山（ゆたくさん）清水（せいすい）｛の｝｛洗｝湯寺（せんたうじ）｛の｝沐浴上人（もくよくしゃうにん）｛の作にして｝、湯屋の｛わらんべに｝如是我聞（にょぜがもん）と授（さづ）けたまふ",
       "modern": "この「洗湯語教」は、観世音の慈悲にもかなう教え。お釈迦さまの比喩方便の説法にならって、「湯沢山（ゆたくさん）・清水（せいすい）・洗湯寺（せんとうじ）の沐浴上人（もくよくしょうにん）」の作としてある。お経の「如是我聞（かくのごとくわれきけり）」よろしく、湯屋の若い者たちに授けられたものだ——",
-      "note": "山号・寺号・作者名まですべて銭湯づくしの冗談（湯沢山＝お湯たくさん、沐浴上人＝お風呂の聖人）。寺子屋の教科書『実語教』と仏典の体裁をまるごとパロディにして、次の丁から韻文の本文がはじまります。読みの未確定箇所が多めです。"
+      "english": "This “Sentō Gokyō” is a teaching in keeping with the compassion of Kannon, the bodhisattva of mercy. Following the Buddha’s way of teaching through parables and expedient means, it is presented as the work of “the Holy Man Mokuyoku (Bathing) of Sentōji (Bathhouse Temple), Seisui (Clear Water), on Mount Yutakusan (Plenty-of-Hot-Water).” And in the manner of a sutra’s opening words, “Thus have I heard,” it was handed down to the young hands of the bathhouse—",
+      "note": "山号・寺号・作者名まですべて銭湯づくしの冗談（湯沢山＝お湯たくさん、沐浴上人＝お風呂の聖人）。寺子屋の教科書『実語教』と仏典の体裁をまるごとパロディにして、次の丁から韻文の本文がはじまります。読みの未確定箇所が多めです。",
+      "noteEn": "Mountain name, temple name, author’s name—every one of them is a bathhouse joke (Yutakusan = “plenty of hot water,” Mokuyoku Shōnin = “the Holy Man of Bathing”). The whole thing parodies both the terakoya textbook Jitsugokyō (“Teaching of True Words”) and the format of a Buddhist sutra, and the verse text itself begins on the next spread. Quite a few readings here are still uncertain."
     }
   ],
   "status": "ai-draft"

@@ -151,6 +151,19 @@ Tailwind config で定義し、hex 直書き禁止。
 切り出しの矩形と「割らない丁」は `src/lib/pages.ts` が持つ。
 表紙(1)・裏表紙(38)は本が左半分だけの別構図、8丁は見開き全面の一枚絵、37丁はほぼ白紙なので割らない。
 
+## 8.7 英語表示
+
+- ヘッダ右端の言語スイッチで **日本語 ⇄ English** を切り替える。ラベルは「いまと反対の言語の名前を、その言語で」
+  （日本語表示では `English`、英語表示では `日本語`）。読めない言語のUIでも見つけられるように
+- 切り替わるのは **訳文・注・章タイトル/要約・UIの文言・Home/About**。原文翻刻と原本写真は言語に関わらず同じ
+- 英訳は corpus の `english`（`modern` の英訳）と `noteEn`（`note` の英訳）、章は `chapters.ts` の `titleEn` / `summaryEn`。
+  `npm run check:corpus` が抜けを検出する。訳がない要素は日本語にフォールバックし、その要素に `lang="ja"` を付ける
+- UI文言は `src/lib/i18n.ts` に集める。読み物の本文はここに置かない
+- 選んだ言語は `localStorage`（`yugokyo:lang`）に残し、`<html lang>` と `<title>` も合わせる
+- 英語の文では `overflow-wrap: anywhere` と `palt` を戻し（単語の途中で割れるため）、`text-yaku` の行間を 1.75 に詰める
+- 「丁」は英語では **spread**（見開き1枚の画像）と呼ぶ
+- 英訳は「AI翻刻 → AI現代語訳 → AI英訳」の重ね訳。About（英語版）でそのことを明示する
+
 ## 9. Agent Prompt Guide
 
 - references: 小杉湯原宿（kosugiyu-harajuku.jp）のスクリーンショット確認済み（2026-08-29）。

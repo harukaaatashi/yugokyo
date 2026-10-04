@@ -6,18 +6,22 @@
   "sections": [
     {
       "kind": "illustration",
-      "note": "銭湯の店先の図。天秤棒で薪の束をかつぎ込む男、その脇を湯道具を抱えた母親と子どもが通る。奥の格子の上には暖簾が見え、上部の短冊には狂歌らしき一句（「子ども連れでも湯銭は安く……」と読めるが未確定）。湯屋が薪と客で回る商売であることをひと目で伝える一枚。"
+      "note": "銭湯の店先の図。天秤棒で薪の束をかつぎ込む男、その脇を湯道具を抱えた母親と子どもが通る。奥の格子の上には暖簾が見え、上部の短冊には狂歌らしき一句（「子ども連れでも湯銭は安く……」と読めるが未確定）。湯屋が薪と客で回る商売であることをひと目で伝える一枚。",
+      "noteEn": "The front of a bathhouse. A man carries bundles of firewood in on a shoulder pole, while a mother and child pass beside him holding their bath things. Above the lattice at the back a noren (shop curtain) is visible, and the slip at the top bears what seems to be a kyōka, a comic verse (it might read “Even with children in tow, the bath fee is cheap…” but this is uncertain). A picture that shows at a glance that a bathhouse runs on firewood and customers."
     },
     {
       "kind": "heading",
       "original": "洗湯之由来",
-      "modern": "銭湯のはじまり"
+      "modern": "銭湯のはじまり",
+      "english": "How bathhouses began"
     },
     {
       "kind": "text",
       "original": "人皇（にんわう）四十五代聖武皇帝（しやうむくわうてい）は仁徳（じんとく）の君（きみ）にて｛わたらせ｝られば、皇后（くわうごう）も専（もっぱ）ら佛法（ぶっぽふ）を信（しん）じ、｛慈悲深く｝｛あはれ｝み多（おほ）く、｛伽藍｝｛精｝舎（しゃうじゃ）を建立（こんりふ）し、僧（そう）を供養（くやう）し、｛施行｝｛給ひ｝、大衆（だいしゅ）｛の｝根機（こんき）浅（あさ）からず、憐（あは）れみて｛之を助け｝た",
       "modern": "第45代の聖武天皇は仁徳ある君主であられたので、皇后（光明皇后）もひたすら仏法を信じ、慈悲の心が深く、寺院を建立し、僧侶を供養し、人々に施しをなさった。民をあわれんで救おうとされ……",
-      "note": "銭湯の起源として語られる光明皇后の「施浴」伝説の導入部。皇后が浴室（からぶろ）を設けて千人の垢を流したという話は、江戸の湯屋が好んで語った「業界の起源神話」でした。"
+      "english": "Emperor Shōmu, the 45th sovereign, was a ruler of benevolent virtue, and so his empress (Empress Kōmyō) also devoted herself wholeheartedly to the Buddhist teaching. Deeply compassionate, she founded temples, made offerings to monks, and gave alms to the people. Out of pity for the common folk, she sought to help them…",
+      "note": "銭湯の起源として語られる光明皇后の「施浴」伝説の導入部。皇后が浴室（からぶろ）を設けて千人の垢を流したという話は、江戸の湯屋が好んで語った「業界の起源神話」でした。",
+      "noteEn": "The opening of the legend of Empress Kōmyō’s seyoku (“charity baths”), told as the origin of the bathhouse. The story that the Empress built a bath hall (karaburo) and washed the grime from a thousand people was the Edo bathhouses’ favorite “founding myth” for their trade."
     }
   ],
   "status": "ai-draft"

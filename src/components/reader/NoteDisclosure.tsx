@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useUi } from "../../lib/i18n";
+import type { Lang } from "../../lib/lang";
 
 /**
  * 注記の折りたたみ。
@@ -6,7 +8,15 @@ import { useState } from "react";
  * Chrome のページ内検索は閉じた <details> を自動で開いてヒットさせる。
  * 88セクション中75件に注記がある読み物では、それが実質的な機能になる。
  */
-export default function NoteDisclosure({ children }: { children: string }) {
+export default function NoteDisclosure({
+  children,
+  lang,
+}: {
+  children: string;
+  /** 注の本文の言語（英訳がない注は日本語のまま出す） */
+  lang: Lang;
+}) {
+  const ui = useUi();
   const [open, setOpen] = useState(false);
   return (
     <details
@@ -15,11 +25,13 @@ export default function NoteDisclosure({ children }: { children: string }) {
     >
       <summary className="inline-flex items-center gap-2 min-h-11 cursor-pointer rounded-full text-caption text-ink-soft hover:text-yu-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2">
         <span className="inline-flex items-center h-6 px-3 rounded-full border border-line font-maru font-bold text-yu-blue">
-          注
+          {ui.note}
         </span>
-        <span>{open ? "をとじる" : "をひらく"}</span>
+        <span>{open ? ui.noteClose : ui.noteOpen}</span>
       </summary>
-      <p className="pl-1 pb-1 text-caption text-ink-soft">{children}</p>
+      <p lang={lang} className="pl-1 pb-1 text-caption text-ink-soft">
+        {children}
+      </p>
     </details>
   );
 }

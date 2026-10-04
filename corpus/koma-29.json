@@ -7,19 +7,24 @@
     {
       "kind": "heading",
       "original": "定　店法度書（みせはっとがき）之事",
-      "modern": "店に掲げる決まり書きのひな形"
+      "modern": "店に掲げる決まり書きのひな形",
+      "english": "Model house rules to post in the shop"
     },
     {
       "kind": "text",
       "original": "一　御公儀様（ごこうぎさま）御法度（ごはっと）の趣（おもむき）、急度（きっと）相守（あひまも）り申すべき事\n一　火の元（ひのもと）大切（たいせつ）｛に致すべき｝事\n一　男女（なんにょ）入込（いりごみ）の湯（ゆ）、停止（ちゃうじ）の事\n一　風烈（ふうれつ）の節（せつ）は｛早仕舞ひ致すべき｝事",
       "modern": "一、お上のご法度はきっと守ること。一、火の元は大切に。一、男女の入込（混浴）は禁止。一、風の強い日は早じまいすること。",
-      "note": "湯語教の対句で歌われた内容が、今度は実際に店へ貼り出す「定書」のひな形として出てきます。冗談の章と実務の章が同じ内容で対になっているのが本書の構成の妙。"
+      "english": "Item: Strictly obey the laws of the authorities. Item: Take great care with fire. Item: Mixed bathing of men and women is prohibited. Item: On windy days, close early.",
+      "note": "湯語教の対句で歌われた内容が、今度は実際に店へ貼り出す「定書」のひな形として出てきます。冗談の章と実務の章が同じ内容で対になっているのが本書の構成の妙。",
+      "noteEn": "What the Yugokyō sang in paired verses now reappears as a model sadamegaki—the actual notice of rules to post in the shop. A playful chapter and a practical chapter covering the same ground, set side by side: a clever touch in how the book is built."
     },
     {
       "kind": "text",
       "original": "一　喧嘩（けんくわ）口論（こうろん）｛かたく無用の｝事\n一　金銀（きんぎん）その外（ほか）｛の落し物は｝引替（ひきかへ）大切に｛致すべき｝事\n一　生酔（なまゑひ）の人｛の入湯は断るべき｝事\n一　悪瘡（あくさう）病躰（びゃうたい）の｛者、｝入湯（にふたう）｛無用の｝事\n一　頬冠（ほほかむ）りにて｛の入湯、｝無用の事",
       "modern": "一、喧嘩口論はかたく無用。一、お金その他の落とし物は大切に（番台で）預かること。一、泥酔した人の入浴は断ること。一、悪い瘡のある病人の入浴は無用。一、頬かむりしたままの入浴は無用——。",
-      "note": "「頬かむり禁止」は顔を隠した板の間稼ぎ（衣類泥棒）対策。現代の銭湯の「入れ墨お断り」掲示のご先祖のような、江戸の店頭ルール一式です。各条の細部は未確定を含みます。"
+      "english": "Item: Quarrels and arguments are strictly forbidden. Item: Money and other lost articles are to be carefully held (at the bantai). Item: Drunken persons are to be refused the bath. Item: The sick with bad sores may not bathe. Item: No bathing with a cloth tied over the head and cheeks—",
+      "note": "「頬かむり禁止」は顔を隠した板の間稼ぎ（衣類泥棒）対策。現代の銭湯の「入れ墨お断り」掲示のご先祖のような、江戸の店頭ルール一式です。各条の細部は未確定を含みます。",
+      "noteEn": "The ban on head-and-cheek scarves was aimed at changing-room thieves who hid their faces and made off with customers’ clothes. A full set of Edo shopfront rules—a distant ancestor of the “No tattoos” signs at bathhouses today. Some details of the individual articles are still uncertain."
     }
   ],
   "status": "ai-draft"

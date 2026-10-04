@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { komaImageUrl, ndlViewerUrl } from "../../lib/corpus";
+import { useUi } from "../../lib/i18n";
 
 /** 原本画像の実寸（全38枚で共通） */
 const FULL_W = 1600;
@@ -17,6 +18,7 @@ export default function KomaZoom({
   koma: number;
   onClose: () => void;
 }) {
+  const ui = useUi();
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
 
@@ -39,19 +41,19 @@ export default function KomaZoom({
     <div
       className="fixed inset-0 z-50 overflow-auto overscroll-contain bg-ink/90"
       role="dialog"
-      aria-label={`『湯語教』${koma}丁目の原本画像の拡大表示`}
+      aria-label={ui.zoomDialog(koma)}
       onClick={onClose}
     >
       <img
         src={komaImageUrl(koma, "full")}
-        alt={`『湯語教』${koma}丁目の原本画像（拡大）`}
+        alt={ui.zoomAlt(koma)}
         width={FULL_W}
         height={FULL_H}
         className="h-auto w-koma max-w-none"
       />
       <div className="sticky bottom-0 bg-ink/90 px-5 py-3 text-caption text-paper">
         <p>
-          下部の定規と請求記号の札は国立国会図書館の撮影によるものです。{" "}
+          {ui.zoomCaption}{" "}
           <a
             href={ndlViewerUrl(koma)}
             target="_blank"
@@ -59,7 +61,7 @@ export default function KomaZoom({
             className="underline underline-offset-4"
             onClick={(e) => e.stopPropagation()}
           >
-            NDLデジタルコレクションで見る
+            {ui.zoomNdl}
           </a>
         </p>
       </div>
@@ -69,7 +71,7 @@ export default function KomaZoom({
         onClick={onClose}
         className="fixed right-4 top-4 min-h-11 rounded-full bg-white px-5 font-maru font-bold text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
       >
-        閉じる
+        {ui.close}
       </button>
     </div>
   );

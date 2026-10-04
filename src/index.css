@@ -31,6 +31,17 @@
     letter-spacing: 0;
   }
 
+  /* 英語の文。body の overflow-wrap:anywhere は単語の途中で割ってしまうので戻し、
+     和文向けの詰め（palt）も切る。行間は和文の1.9だと欧文には間延びするので詰める */
+  :lang(en) {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-feature-settings: normal;
+  }
+  .text-yaku:lang(en) {
+    line-height: 1.75;
+  }
+
   /* <details> の三角マーカーを消す */
   .disclosure > summary {
     list-style: none;

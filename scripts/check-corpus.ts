@@ -17,7 +17,9 @@ interface RawSection {
   kind?: string;
   original?: string;
   modern?: string;
+  english?: string;
   note?: string;
+  noteEn?: string;
 }
 
 const errors: string[] = [];
@@ -69,6 +71,9 @@ for (const f of files) {
       if (/（[ぁ-ゖー]+\)/.test(original)) {
         errors.push(`${f}: sections[${i}] にルビ括弧の半角 ) が混入`);
       }
+      // 英訳の抜け。訳や注を足したら英訳も揃える（UIは日本語にフォールバックするが、英語表示で混ざる）
+      if (s.modern && !s.english) errors.push(`${f}: sections[${i}] に english がない`);
+      if (s.note && !s.noteEn) errors.push(`${f}: sections[${i}] に noteEn がない`);
       // heading の modern は短いラベルにする（説明は note へ）
       if (s.kind === "heading" && String(s.modern ?? "").length > 20) {
         errors.push(
@@ -99,6 +104,7 @@ CHAPTERS.forEach((ch, i) => {
   seenIds.add(ch.id);
   if (!ch.title) errors.push(`${where}: title が空`);
   if (!ch.summary) errors.push(`${where}: summary が空`);
+  if (!ch.titleEn || !ch.summaryEn) errors.push(`${where}: titleEn / summaryEn が空`);
   if (ch.kind === "front" && i !== 0) errors.push(`${where}: front は先頭章のみ`);
   if (ch.kind === "back" && i !== CHAPTERS.length - 1) {
     errors.push(`${where}: back は最終章のみ`);

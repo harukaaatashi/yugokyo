@@ -7,19 +7,24 @@
     {
       "kind": "heading",
       "original": "湯屋十組割附 并 男女風呂員数",
-      "modern": "湯屋十組の割り振りと、男女風呂の軒数"
+      "modern": "湯屋十組の割り振りと、男女風呂の軒数",
+      "english": "The Ten Groups, and counts of men's and women's baths"
     },
     {
       "kind": "text",
       "original": "一番組\n本町組　男女十二株・男八株・女一株　合廿一株\n堺町組　男女八株・男三株　合十一株\n｛通｝町組　男女十七株　合｛十七株｝\n東神田組　男女八株・男二株　合十株\n西神田組　男女七株・男九株・女一株　合十七株\n〆五組七十六株\n\n二番組\n｛通｝組・日本橋組・中橋組・京橋組・八丁堀組・霊岸島組（此内佃島とも）\n〆五組八十三株",
       "modern": "一番組は本町組・堺町組など5組で合計76株、二番組は日本橋・中橋・京橋・八丁堀・霊岸島（佃島を含む）など5組で合計83株。「男女」は男湯・女湯の両方を備えた湯屋、「男」「女」は片方だけの湯屋で、株1つが湯屋1軒に当たります。",
-      "note": "男湯専門・女湯専門の銭湯が存在したことがわかる貴重なデータ。数字はくずし字からのAI読み取りで未検証のため、研究等では必ず原本画像をご確認ください。"
+      "english": "Group One is made up of five local groups, including Honchō and Sakai-chō, with 76 licenses in all; Group Two has five, including Nihonbashi, Nakabashi, Kyōbashi, Hatchōbori, and Reiganjima (Tsukudajima included), with 83 in all. “Men and women” means a bathhouse with both a men’s bath and a women’s bath; “men” or “women” means a bathhouse with only one of the two. One license equals one bathhouse.",
+      "note": "男湯専門・女湯専門の銭湯が存在したことがわかる貴重なデータ。数字はくずし字からのAI読み取りで未検証のため、研究等では必ず原本画像をご確認ください。",
+      "noteEn": "Valuable data showing that men-only and women-only bathhouses existed. The numbers are AI readings of cursive script and have not been verified, so for research or similar use, always check the original image."
     },
     {
       "kind": "text",
       "original": "三番組\n芝口組　男女十株・男十株・女二株　合廿二株\n西久保組　男女五株・男四株　合九株\n麻布組　男女九株・男七株　合十六株\n〆三組四十七株\n\n四番組\n外神田組　男女十株・男一株　合十一株\n下谷組　男女五株・男一株　合六株\n本郷組　男女十一株　合｛十一株｝\n根津組　男女八株・男三株　合十一株\n〆四組三十九株",
       "modern": "三番組は芝口・西久保・麻布の3組で47株（港区方面）、四番組は外神田・下谷・本郷・根津の4組で39株（文京・台東方面）。町名は今の東京の地名にほぼそのまま重なります。",
-      "note": "自分の知っている街に江戸の銭湯が何軒あったか数えられる、眺めて楽しい丁です。以降の丁で五番組から十番組まで続きます。"
+      "english": "Group Three is made up of three local groups—Shibaguchi, Nishikubo, and Azabu—with 47 licenses (today’s Minato Ward area); Group Four has four—Sotokanda, Shitaya, Hongō, and Nezu—with 39 (the Bunkyō and Taitō area). The neighborhood names line up almost exactly with place names in today’s Tokyo.",
+      "note": "自分の知っている街に江戸の銭湯が何軒あったか数えられる、眺めて楽しい丁です。以降の丁で五番組から十番組まで続きます。",
+      "noteEn": "A fun page to browse: you can count how many Edo bathhouses stood in a neighborhood you know. Groups Five through Ten continue on the following spreads."
     }
   ],
   "status": "ai-draft"

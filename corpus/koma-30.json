@@ -8,18 +8,23 @@
       "kind": "text",
       "original": "（前丁より続く男湯の定）……右之通（みぎのとほ）り｛相守るべし｝。以上　月日　但（ただし）男湯（をとこゆ）｛の定なり｝\n\n定\n一　御公儀様（ごこうぎさま）御法度（ごはっと）の趣（おもむき）、かたく守（まも）るべき事\n一　火の元（ひのもと）大切の事\n一　男女入込湯（いりごみゆ）停止（ちゃうじ）の事\n一　うせ物（もの）｛并びに｝あづかり物、一切（いっさい）｛帳場にて預るべき｝事\n右之通｛相守るべし｝。以上　月日　但（ただし）女湯（をんなゆ）｛の定なり｝",
       "modern": "（男湯向けの定書につづいて）もうひとつの「定」——ご法度遵守、火の元、混浴禁止に加えて、「落とし物・預かり物はすべて番台で預かる」など。末尾に「ただし女湯」とあり、男湯用・女湯用の2種類の掲示文例がセットで載っています。",
-      "note": "男湯と女湯で掲示を分ける運用が実際にあったことがわかる面白い箇所。女湯版のほうが預かり物などの生活係の条文が厚いのも実感がこもっています。条文の細部は判読未確定です。"
+      "english": "(Following the notice for the men’s bath) a second “Rules” notice: obey the laws, take care with fire, no mixed bathing—plus “All lost articles and items left for safekeeping are to be held at the bantai,” and so on. It ends with “Note: for the women’s bath,” so the book gives a matched pair of sample notices, one for the men’s bath and one for the women’s.",
+      "note": "男湯と女湯で掲示を分ける運用が実際にあったことがわかる面白い箇所。女湯版のほうが預かり物などの生活係の条文が厚いのも実感がこもっています。条文の細部は判読未確定です。",
+      "noteEn": "A delightful passage showing that men’s and women’s baths really did post separate notices. The women’s version has more articles on everyday matters such as items left for safekeeping, which rings true to life. The details of the articles are not yet confirmed."
     },
     {
       "kind": "heading",
       "original": "湯屋譲（ゆず）り申（まうす）證文之事",
-      "modern": "湯屋の譲渡証文のひな形"
+      "modern": "湯屋の譲渡証文のひな形",
+      "english": "Model deed for transferring a bathhouse"
     },
     {
       "kind": "text",
       "original": "一　私（わたくし）｛儀｝、｛何｝の者、生国（しゃうごく）｛何国何郡｝……（次丁へ続く）",
       "modern": "「一、私こと、生国は◯◯国◯◯郡の——」と、湯屋を人に譲るときの契約書の書き出しがはじまります（次の丁へ続く）。",
-      "note": "ここからは文書テンプレート集。目次にあった「売渡証文」「敷金証文」「奉公人請状」のひな形が順に並びます。"
+      "english": "“Item: I, ____, born in ____ Province, ____ District—” Here begins the opening of a contract for handing a bathhouse over to someone else (continued on the next spread).",
+      "note": "ここからは文書テンプレート集。目次にあった「売渡証文」「敷金証文」「奉公人請状」のひな形が順に並びます。",
+      "noteEn": "From here on the book is a collection of document templates. The model deed of sale, security-deposit deed, and servant’s letter of guarantee listed in the Contents follow one after another."
     }
   ],
   "status": "ai-draft"

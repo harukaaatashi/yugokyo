@@ -4,27 +4,44 @@ import Chapter from "./pages/Chapter";
 import KomaRedirect from "./pages/KomaRedirect";
 import About from "./pages/About";
 import { FIRST_CHAPTER_ID } from "./lib/corpus";
+import { useLang } from "./lib/lang";
+import { UI } from "./lib/i18n";
 
 export default function App() {
   const { pathname } = useLocation();
+  const { lang, setLang } = useLang();
+  const ui = UI[lang];
+  const other = lang === "ja" ? "en" : "ja";
   const inReader =
     pathname.startsWith("/chapter") || pathname.startsWith("/read");
   return (
     <div className="min-h-dvh flex flex-col">
-      <header className="px-5 py-4 flex items-baseline justify-between max-w-2xl w-full mx-auto">
+      <header className="px-5 py-2 flex items-center justify-between gap-4 max-w-2xl w-full mx-auto">
         <Link to="/" className="font-maru font-bold text-yu-blue text-lg leading-none">
-          湯語教
+          {ui.logo}
         </Link>
-        <nav className="flex gap-5 text-sm text-ink-soft">
+        <nav className="flex items-center gap-5 text-sm text-ink-soft">
           <Link
             to={`/chapter/${FIRST_CHAPTER_ID}`}
             className="hover:text-yu-blue transition-colors"
           >
-            読む
+            {ui.navRead}
           </Link>
           <Link to="/about" className="hover:text-yu-blue transition-colors">
-            この本について
+            {ui.navAbout}
           </Link>
+          {/* 言語スイッチ。いまと反対の言語の名前を、その言語で書く（読めない人にも見つけられるように） */}
+          <button
+            type="button"
+            lang={other}
+            onClick={() => setLang(other)}
+            aria-label={ui.switchToLabel}
+            className="group inline-flex min-h-11 items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue"
+          >
+            <span className="inline-flex h-8 items-center rounded-full border border-yu-blue px-3 font-maru font-bold text-yu-blue group-hover:bg-yu-blue-soft transition-colors">
+              {ui.switchTo}
+            </span>
+          </button>
         </nav>
       </header>
       <main className={`flex-1 w-full ${inReader ? "pb-24" : ""}`}>
@@ -39,18 +56,18 @@ export default function App() {
       {!inReader && (
         <footer className="px-5 py-10 max-w-2xl w-full mx-auto text-xs text-ink-soft leading-relaxed">
           <p>
-            原本画像:{" "}
+            {ui.footerImages}{" "}
             <a
               href="https://dl.ndl.go.jp/pid/2539997"
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-yu-blue transition-colors"
             >
-              国立国会図書館デジタルコレクション『洗湯手引草』
+              {ui.ndlTitle}
             </a>
-            （保護期間満了）
+            {ui.publicDomain}
           </p>
-          <p className="mt-1">翻刻・現代語訳はAIによる下訳（未校正）です。</p>
+          <p className="mt-1">{ui.aiDraft}</p>
         </footer>
       )}
     </div>

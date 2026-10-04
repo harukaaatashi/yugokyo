@@ -8,17 +8,22 @@
       "kind": "text",
       "original": "一　天保十二年丑八月十六日、横山町｛にて｝新規（しんき）湯屋渡世（ゆやとせい）致（いた）し度（たき）者（もの）有（あ）り之（これ）｛につき｝、｛其の処｝｛の｝｛家主｝｛より｝｛願ひ出づ｝……右｛の｝通（とほ）り　御奉行所（ごぶぎゃうしょ）｛へ｝申（まう）し｛上ぐ｝\n一　享和三亥年十一月　中町　御触（おふれ）の通｛り｝\n町中（まちぢゅう）｛にて｝新規（しんき）｛の｝湯屋渡世（ゆやとせい）致（いた）し度（たき）者｛これ有る節は｝、奉行所（ぶぎゃうしょ）｛へ｝願（ねが）ひ出（い）で｛御差図を受くべし｝",
       "modern": "天保12年（1841）8月、横山町で新しく湯屋を開業したいという者があり、その地の家主から願い出た——という届出の実例。続いて享和3年（1803）11月の触書「町内で新規に湯屋を開業したい者があれば、奉行所へ願い出て指図を受けよ」。",
-      "note": "湯屋の開業が完全な許可制だったことを示す公文書の写し。組合の株を買い、地主の同意を得て、奉行所に願い出る——これが江戸で銭湯を始める手順でした。"
+      "english": "In the 8th month of Tenpō 12 (1841), someone in Yokoyama-chō wished to open a new bathhouse, and the landlord there submitted a petition—a real example of such a filing. Next comes an ordinance of the 11th month of Kyōwa 3 (1803): “If anyone in town wishes to start a new bathhouse business, they are to petition the magistrate’s office and receive its instructions.”",
+      "note": "湯屋の開業が完全な許可制だったことを示す公文書の写し。組合の株を買い、地主の同意を得て、奉行所に願い出る——これが江戸で銭湯を始める手順でした。",
+      "noteEn": "Copies of official documents showing that opening a bathhouse required full government permission. Buy a license from the guild, get the landowner’s consent, and petition the magistrate’s office—that was how you started a bathhouse in Edo."
     },
     {
       "kind": "text",
       "original": "享和三亥年十一月　町役（まちやく）　（署名）\n\n嘉永四亥年五月",
       "modern": "享和3年11月、町役人の署名。そして本書の刊記「嘉永4年（1851）5月」。",
-      "note": "序文の年月と同じ嘉永4年5月。ここが本書の奥付にあたります。"
+      "english": "The signature of the town officials, 11th month of Kyōwa 3. And then the book’s publication date: “Kaei 4 (1851), 5th month.”",
+      "note": "序文の年月と同じ嘉永4年5月。ここが本書の奥付にあたります。",
+      "noteEn": "The same date as the preface: the 5th month of Kaei 4. This serves as the book’s colophon."
     },
     {
       "kind": "illustration",
-      "note": "左ページは「三宝日（さんぽうにち）」を知るための円盤図。中央に星の並び（三宝＝日・月・星、あるいは吉凶を司る三つの神）を描き、外周を正月から十二月まで十二の区画に分け、各月の吉日を放射状に書き添えてある。周囲の書き込みには「松の内」「種蒔」「柚湯（ゆずゆ）」といった年中行事も見え、湯屋の商売暦としても使えるようになっている。"
+      "note": "左ページは「三宝日（さんぽうにち）」を知るための円盤図。中央に星の並び（三宝＝日・月・星、あるいは吉凶を司る三つの神）を描き、外周を正月から十二月まで十二の区画に分け、各月の吉日を放射状に書き添えてある。周囲の書き込みには「松の内」「種蒔」「柚湯（ゆずゆ）」といった年中行事も見え、湯屋の商売暦としても使えるようになっている。",
+      "noteEn": "The left page holds a circular chart for finding the sanpō-bi (auspicious days). At its center is a row of stars (the “three treasures”—sun, moon, and stars, or perhaps three deities who govern fortune), and the outer ring is divided into twelve sections, from the 1st month to the 12th, with each month’s lucky days written in, radiating outward. Notes around the edge also mention yearly events such as matsu-no-uchi (the New Year pine-decoration days), seed sowing, and yuzu-yu (citron baths), so the chart doubles as a business calendar for the bathhouse."
     }
   ],
   "status": "ai-draft"

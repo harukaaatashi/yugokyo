@@ -7,13 +7,16 @@
     {
       "kind": "heading",
       "original": "洗湯手引草",
-      "modern": "『洗湯手引草』— 表紙の題箋"
+      "modern": "『洗湯手引草』— 表紙の題箋",
+      "english": "Sentō Tebikigusa — the title slip on the cover"
     },
     {
       "kind": "text",
       "original": "（題箋のみ）",
       "modern": "縹色の枠に囲まれた題箋が貼られた、素朴な仮綴じの表紙です。本文でこの本は自らを『湯語教』とも名乗ります。",
-      "note": "国立国会図書館所蔵本。請求記号 858-54。"
+      "english": "A plain, paper-bound cover with a title slip set in a pale-indigo frame. In the text itself, the book also calls itself the Yugokyō.",
+      "note": "国立国会図書館所蔵本。請求記号 858-54。",
+      "noteEn": "Copy held by the National Diet Library. Call number 858-54."
     }
   ],
   "status": "ai-draft"

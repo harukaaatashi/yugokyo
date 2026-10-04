@@ -7,19 +7,24 @@
     {
       "kind": "heading",
       "original": "奉公人請状（ほうこうにんうけじゃう）之事",
-      "modern": "奉公人の請状（身元保証書）のひな形"
+      "modern": "奉公人の請状（身元保証書）のひな形",
+      "english": "Model letter of guarantee for a servant"
     },
     {
       "kind": "text",
       "original": "一　私（わたくし）｛儀｝、誰（たれ）と申（まう）す者（もの）、｛此度｝｛御地｝｛にて｝稼（かせ）ぎ｛の｝奉公人（ほうこうにん）｛に｝｛差し出し申し候｝。給金（きうきん）何両（なんりゃう）と相定（あひさだ）め、三月（さんぐわつ）より三月まで｛の｝｛給金｝御定（おさだめ）の通（とほ）り｛慥に受け取り候｝",
       "modern": "「私こと◯◯という者を、このたび奉公人として差し出します。給金は◯両と取り決め、三月から翌三月までの一年季。定めどおりに給金を受け取りました」——雇用契約の書き出し。",
-      "note": "江戸の奉公は三月（旧暦）を区切りとする一年季が基本。湯屋では三助・釜焚き・番台などの奉公人を雇いました。"
+      "english": "“I hereby put forward a person named ____ as a servant. The wages are fixed at ____ ryō for a one-year term, from the 3rd month to the 3rd month of the following year. I have received the wages as agreed.” The opening of an employment contract.",
+      "note": "江戸の奉公は三月（旧暦）を区切りとする一年季が基本。湯屋では三助・釜焚き・番台などの奉公人を雇いました。",
+      "noteEn": "In Edo, service was normally contracted in one-year terms that turned over in the 3rd month (of the old calendar). Bathhouses hired servants as sansuke, furnace stokers, bantai attendants, and so on."
     },
     {
       "kind": "text",
       "original": "一　御公儀様（ごこうぎさま）｛の｝御法度（ごはつと）｛の儀は｝｛申すに及ばず｝、｛御町内の｝御法（ごはふ）｛相背き申すまじく｝｛候｝\n一　欠落（かけおち）｛など仕り候はば｝、｛尋ね出し｝｛早々｝｛お引き渡し申すべく｝、若（も）し｛尋ね出でざる節は｝、｛請人｝｛にて｝人代（にんだい）｛を立て｝｛差し上げ申すべく候｝\n一　長病（ながやみ）｛など仕り候はば｝、｛請人｝｛引き取り申すべく候｝\n一　宗旨（しゅうし）｛の儀は｝代々（だいだい）何宗（なにしゅう）、何町（なにまち）何寺（なにでら）｛の旦那にて御座候｝",
       "modern": "「お上のご法度はもちろん、町内の決まりにも背きません」「欠落（無断で逃げること）した場合はすぐに探し出してお引き渡しし、見つからなければ保証人が代わりの人を立てます」「長患いのときは保証人が引き取ります」「宗旨は代々◯宗、◯町の◯寺の檀家です」——保証条項がずらり。",
-      "note": "欠落（逃亡）の際の代替要員の手当てまで契約に書き込むのが江戸の奉公。宗旨と檀那寺の記載は、キリシタン禁制のもとで全員に義務づけられた寺請制度によるものです。"
+      "english": "“This person will not break the laws of the authorities, of course, nor go against the rules of the neighborhood.” “Should this person run off (leave without permission), we will find them at once and hand them over; if they cannot be found, the guarantor will provide a replacement.” “In case of a long illness, the guarantor will take them back.” “Their family has belonged for generations to the ____ sect, as parishioners of ____ Temple in ____ Town.”—a long row of guarantee clauses.",
+      "note": "欠落（逃亡）の際の代替要員の手当てまで契約に書き込むのが江戸の奉公。宗旨と檀那寺の記載は、キリシタン禁制のもとで全員に義務づけられた寺請制度によるものです。",
+      "noteEn": "Edo service contracts went so far as to provide a stand-in if a servant absconded (kakeochi). Recording sect and family temple was required by the temple registration system, imposed on everyone under the ban on Christianity."
     }
   ],
   "status": "ai-draft"

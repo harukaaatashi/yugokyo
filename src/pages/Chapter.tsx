@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import {
   chapterById,
+  chapterSummary,
+  chapterTitle,
   ndlViewerUrl,
   saveProgress,
   TOTAL_CHAPTERS,
@@ -9,6 +11,8 @@ import {
 } from "../lib/corpus";
 import { useActiveKoma } from "../lib/useActiveKoma";
 import { useShowGenbun } from "../lib/useShowGenbun";
+import { useLang } from "../lib/lang";
+import { UI, type UiText } from "../lib/i18n";
 import SectionBlock from "../components/reader/SectionBlock";
 import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
@@ -30,15 +34,9 @@ function useIsWide(): boolean {
 }
 
 /** ヘッダ・フッターに出す現在位置（扉と巻末には番号を振らない） */
-function positionLabel(chapter: ChapterData): string {
-  if (chapter.number === null) return chapter.def.kind === "front" ? "扉" : "巻末";
-  return `第${chapter.number}章 / 全${TOTAL_CHAPTERS}章`;
-}
-
-function komaRangeLabel(chapter: ChapterData): string {
-  return chapter.komaFrom === chapter.komaTo
-    ? `${chapter.komaFrom}丁`
-    : `${chapter.komaFrom}〜${chapter.komaTo}丁`;
+function positionLabel(chapter: ChapterData, ui: UiText): string {
+  if (chapter.number === null) return chapter.def.kind === "front" ? ui.front : ui.back;
+  return ui.position(chapter.number, TOTAL_CHAPTERS);
 }
 
 export default function Chapter() {
@@ -52,6 +50,8 @@ export default function Chapter() {
   const [paneHeight, setPaneHeight] = useState(0);
   const [zoomKoma, setZoomKoma] = useState<number | null>(null);
   const wide = useIsWide();
+  const { lang } = useLang();
+  const ui = UI[lang];
   const [showGenbun, setShowGenbun] = useShowGenbun();
   // 原文の出し入れで本文の長さが変わっても、読んでいた段落が同じ高さに残るようにする
   const keepRef = useRef<{ el: HTMLElement; top: number } | null>(null);
@@ -156,9 +156,9 @@ export default function Chapter() {
   if (!chapter) {
     return (
       <div className="max-w-2xl mx-auto px-5 py-16 text-center">
-        <p className="text-ink-soft">その章は見つかりませんでした。</p>
+        <p className="text-ink-soft">{ui.notFound}</p>
         <Link to="/" className="mt-4 inline-block text-yu-blue underline">
-          目次にもどる
+          {ui.backToIndex}
         </Link>
       </div>
     );
@@ -178,7 +178,7 @@ export default function Chapter() {
       {/* DOM 上はパネルが先。狭い画面で上に固定するためにこの順序が要る */}
       <aside
         ref={paneRef}
-        aria-label="原本の写真"
+        aria-label={ui.paneLabel}
         className="sticky top-0 z-30 border-b border-line bg-paper lg:top-6 lg:order-2 lg:w-5/12 lg:shrink-0 lg:self-start lg:border-b-0"
       >
         <KomaPane
@@ -194,14 +194,13 @@ export default function Chapter() {
       <div className="min-w-0 px-5 lg:order-1 lg:w-7/12 lg:px-0">
         <div className="pt-4 pb-2">
           <p className="text-caption text-ink-soft tabular-nums">
-            {positionLabel(chapter)} ・ {komaRangeLabel(chapter)} ・ AI翻刻（未校正）
+            {positionLabel(chapter, ui)} ・ {ui.komaRange(chapter.komaFrom, chapter.komaTo)} ・{" "}
+            {ui.aiBadge}
           </p>
           <h1 className="mt-1 font-maru text-2xl font-bold text-yu-blue text-balance">
-            {chapter.def.title}
+            {chapterTitle(chapter.def, lang)}
           </h1>
-          {chapter.def.summary && (
-            <p className="mt-2 text-caption text-ink-soft">{chapter.def.summary}</p>
-          )}
+          <p className="mt-2 text-caption text-ink-soft">{chapterSummary(chapter.def, lang)}</p>
         </div>
 
         {/* 訳だけのときは段落の間を詰め、ひと続きの文章として読めるようにする */}
@@ -216,6 +215,7 @@ export default function Chapter() {
                 koma={item.koma}
                 index={item.index}
                 showGenbun={showGenbun}
+                lang={lang}
                 onOpenKoma={setZoomKoma}
               />
             )
@@ -223,18 +223,18 @@ export default function Chapter() {
         </div>
 
         <div className="mt-10 space-y-2 text-caption text-ink-soft">
-          {continuesToNext && <p>この丁の続きは次の章にあります。</p>}
+          {continuesToNext && <p>{ui.continuesTo}</p>}
           <p>
-            原本:{" "}
+            {ui.sourceLabel}{" "}
             <a
               href={ndlViewerUrl(chapter.komaFrom)}
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-yu-blue transition-colors"
             >
-              国立国会図書館デジタルコレクション『洗湯手引草』
+              {ui.ndlTitle}
             </a>
-            （保護期間満了）／翻刻・現代語訳はAIによる下訳（未校正）です。
+            {ui.sourceTail}
           </p>
         </div>
       </div>
@@ -250,27 +250,27 @@ export default function Chapter() {
               to={`/chapter/${prev.def.id}`}
               className="inline-flex min-h-11 items-center rounded-full border border-yu-blue px-5 font-maru text-sm font-bold text-yu-blue hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue"
             >
-              ← 前の章
+              {ui.prev}
             </Link>
           ) : (
             <span />
           )}
           <span className="text-caption text-ink-soft tabular-nums">
-            {positionLabel(chapter)}
+            {positionLabel(chapter, ui)}
           </span>
           {next ? (
             <Link
               to={`/chapter/${next.def.id}`}
               className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
             >
-              次の章 →
+              {ui.next}
             </Link>
           ) : (
             <Link
               to="/about"
               className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors"
             >
-              読了 →
+              {ui.finish}
             </Link>
           )}
         </div>

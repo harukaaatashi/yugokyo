@@ -8,13 +8,17 @@
       "kind": "text",
       "original": "五番組\n浅草｛茅｝町｛の｝組　男女五株・男七株・女一株　合十三株\n奥組（｛観音門前｝、此内｛〓右衛門〓｝共）　男女二十株・男一株　合廿一株\n〆二組三十四株\n\n六番組\n深川南組　男女十七株・男一株　合十八株\n同北組　男女八株\n本所南組　男女二十｛四｝株\n同北組　男女十六株\n〆四組六十六株",
       "modern": "五番組は浅草方面の2組で34株（浅草寺の門前を含む「奥組」だけで21株！）。六番組は深川と本所をそれぞれ南北に分けた4組で66株。隅田川の東側だけでこれだけの銭湯があったことになります。",
-      "note": "株数はくずし字からのAI読み取りで未検証です。深川・本所の多さは、埋立地で井戸水に恵まれず内風呂が作りにくかった土地柄とも響き合います。"
+      "english": "Group Five is two local groups in the Asakusa area with 34 licenses (the “Oku group,” which takes in the area in front of Sensōji temple, has 21 on its own!). Group Six is four groups—Fukagawa and Honjo, each split into south and north—with 66 licenses. That means this many bathhouses stood on the east side of the Sumida River alone.",
+      "note": "株数はくずし字からのAI読み取りで未検証です。深川・本所の多さは、埋立地で井戸水に恵まれず内風呂が作りにくかった土地柄とも響き合います。",
+      "noteEn": "The license counts are AI readings of cursive script and have not been verified. The large numbers in Fukagawa and Honjo fit the character of the area: reclaimed land with poor well water, where it was hard to have a bath at home."
     },
     {
       "kind": "text",
       "original": "七番組\n飯田町組　男女二株・男一株　合三株\n糀町組　男女三株・男六株　合九株\n四谷組　男女十六株・男四株・女一株　合廿一株\n赤坂組　男女八株\n青山組　男女七株\n市谷組　男女｛十七｝株\n〆七組七十株\n\n八番組\n｛小｝杉組　男女｛四｝株・男二株　合六株\n三田組　男女五株・男三株・女一株　合九株\n西組　男女九株・男三株　合十二株\n南組（｛品川｝南組共）　男女十一株・男一株・女五株　合十七株\n〆四組四十四株",
       "modern": "七番組は飯田町・麹町・四谷・赤坂・青山・市谷など山の手西部の7組で70株。八番組は三田から品川方面の4組で44株。組名・株数の一部は判読に自信がありません。",
-      "note": "武家地の多い山の手は町人地の下町に比べて1組あたりの株数が少なめ——江戸の人口分布がそのまま銭湯の分布に出ています。"
+      "english": "Group Seven is seven local groups in the western Yamanote uplands—Iidamachi, Kōjimachi, Yotsuya, Akasaka, Aoyama, Ichigaya, and others—with 70 licenses. Group Eight is four groups from Mita toward Shinagawa, with 44. Some group names and license counts are not confidently read.",
+      "note": "武家地の多い山の手は町人地の下町に比べて1組あたりの株数が少なめ——江戸の人口分布がそのまま銭湯の分布に出ています。",
+      "noteEn": "The Yamanote, full of samurai estates, has fewer licenses per group than the townspeople’s Shitamachi lowlands—Edo’s population distribution shows up directly in where its bathhouses were."
     }
   ],
   "status": "ai-draft"

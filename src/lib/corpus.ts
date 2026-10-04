@@ -1,5 +1,6 @@
 import { CHAPTERS, type ChapterDef, type Cursor } from "./chapters";
 import { isSplittable, type PageSide } from "./pages";
+import type { Lang } from "./lang";
 
 export type SectionKind = "heading" | "text" | "illustration";
 
@@ -9,8 +10,30 @@ export interface Section {
   original?: string;
   /** 現代語訳 */
   modern?: string;
+  /** 英訳（現代語訳を英語にしたもの） */
+  english?: string;
   /** 注記（現代人向けの補足） */
   note?: string;
+  /** 注記の英訳 */
+  noteEn?: string;
+}
+
+/**
+ * 表示言語に合わせた訳と注。英訳がまだない段落は日本語にフォールバックし、
+ * その要素に lang="ja" を付けられるよう、実際の言語も返す。
+ */
+export function localized(
+  section: Section,
+  lang: Lang
+): { text?: string; textLang: Lang; note?: string; noteLang: Lang } {
+  const enText = lang === "en" && section.english;
+  const enNote = lang === "en" && section.noteEn;
+  return {
+    text: enText || section.modern,
+    textLang: enText ? "en" : "ja",
+    note: enNote || section.note,
+    noteLang: enNote ? "en" : "ja",
+  };
 }
 
 export interface Koma {
@@ -208,6 +231,15 @@ export const TOTAL_CHAPTERS = chapters.filter(
 ).length;
 
 export const FIRST_CHAPTER_ID = chapters[0].def.id;
+
+/** 章タイトルと要約（英訳がなければ日本語） */
+export function chapterTitle(def: ChapterDef, lang: Lang): string {
+  return (lang === "en" && def.titleEn) || def.title;
+}
+
+export function chapterSummary(def: ChapterDef, lang: Lang): string {
+  return (lang === "en" && def.summaryEn) || def.summary;
+}
 
 /** 目次のサムネに使う丁。指定がなければ章内の挿絵、なければ先頭の丁 */
 export function chapterCoverKoma(chapter: Chapter): number {
