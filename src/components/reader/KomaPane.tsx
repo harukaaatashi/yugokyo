@@ -13,6 +13,9 @@ import type { ActiveSpot } from "../../lib/useActiveKoma";
  *
  * どの段落が右ページか左ページかは corpus に書かれていないので位置から推定している。
  * 外したときのために、読者が自分でめくれるようにしておく。
+ *
+ * 写真の下の帯には「原文」スイッチも置く。パネルは常に見えているので、
+ * 読んでいる途中でも原文の表示を切り替えられる。
  */
 
 interface Props {
@@ -21,9 +24,18 @@ interface Props {
   /** 広い画面か。1ページ表示にするかどうかの判断に使う */
   wide: boolean;
   onZoom: (koma: number) => void;
+  showGenbun: boolean;
+  onToggleGenbun: (next: boolean) => void;
 }
 
-export default function KomaPane({ komas, active, wide, onZoom }: Props) {
+export default function KomaPane({
+  komas,
+  active,
+  wide,
+  onZoom,
+  showGenbun,
+  onToggleGenbun,
+}: Props) {
   const { koma } = active;
   // 読者が自分でめくったら、その丁のあいだはその面を優先する
   const [flipped, setFlipped] = useState<PageSide | null>(null);
@@ -109,6 +121,35 @@ export default function KomaPane({ komas, active, wide, onZoom }: Props) {
             ))}
           </span>
         )}
+        <button
+          type="button"
+          role="switch"
+          aria-checked={showGenbun}
+          onClick={() => onToggleGenbun(!showGenbun)}
+          className="group shrink-0 inline-flex min-h-11 items-center gap-2 rounded-full text-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue"
+        >
+          <span
+            className={`transition-colors ${
+              showGenbun
+                ? "font-maru font-bold text-yu-blue"
+                : "text-ink-soft group-hover:text-yu-blue"
+            }`}
+          >
+            原文
+          </span>
+          <span
+            aria-hidden="true"
+            className={`relative h-5 w-9 rounded-full border transition-colors ${
+              showGenbun ? "border-yu-blue bg-yu-blue" : "border-ink-soft bg-paper"
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 h-3.5 w-3.5 rounded-full motion-safe:transition-transform ${
+                showGenbun ? "translate-x-4 bg-white" : "bg-ink-soft"
+              }`}
+            />
+          </span>
+        </button>
         <a
           href={ndlViewerUrl(koma)}
           target="_blank"

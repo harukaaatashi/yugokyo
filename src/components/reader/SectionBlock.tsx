@@ -10,6 +10,9 @@ import NoteDisclosure from "./NoteDisclosure";
  *   位置=後 / 面=なし＋左罫 / 書体=明朝 / サイズと色=小さく淡く
  * 面（塗り）で層を分けると「箱に入っているほうが主」に見えてしまうため、
  * 淡青の箱は使わない（DESIGN §2）。
+ *
+ * 原文は既定では出さない。訳だけが地の文として続くほうが読み物として途切れないため。
+ * 読者が「原文」スイッチを入れたときだけ、各段落の下に引用として戻す（DESIGN §6）。
  */
 
 interface Props {
@@ -17,6 +20,8 @@ interface Props {
   koma: number;
   /** その丁の中での位置。右ページか左ページかの推定に使う */
   index: number;
+  /** 原文翻刻を出すか（既定は訳だけ） */
+  showGenbun: boolean;
   onOpenKoma: (koma: number) => void;
 }
 
@@ -32,7 +37,7 @@ function Lines({ text }: { text: string }) {
   );
 }
 
-function SectionBlock({ section, koma, index, onOpenKoma }: Props) {
+function SectionBlock({ section, koma, index, showGenbun, onOpenKoma }: Props) {
   const side = pageSideOf(koma, index);
   if (section.kind === "illustration") {
     // 絵そのものは追随パネルに出ているので、ここはその絵の説明として置く
@@ -59,7 +64,7 @@ function SectionBlock({ section, koma, index, onOpenKoma }: Props) {
         <span className="block font-maru font-bold text-xl text-yu-blue text-balance">
           {section.modern ?? section.original}
         </span>
-        {section.original && section.modern && (
+        {showGenbun && section.original && section.modern && (
           <span className="mt-1 block font-genbun text-genbun text-ink-muted honkoku">
             <Honkoku text={section.original} />
           </span>
@@ -75,7 +80,8 @@ function SectionBlock({ section, koma, index, onOpenKoma }: Props) {
           <Lines text={section.modern} />
         </p>
       )}
-      {section.original && (
+      {/* 訳がない段落は原文しか中身がないので、スイッチに関わらず出す */}
+      {section.original && (showGenbun || !section.modern) && (
         <blockquote
           cite={ndlViewerUrl(koma)}
           className="mt-4 border-l-2 border-line pl-4 font-genbun text-genbun text-ink-muted honkoku"

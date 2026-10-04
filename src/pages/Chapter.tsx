@@ -8,6 +8,7 @@ import {
   type Chapter as ChapterData,
 } from "../lib/corpus";
 import { useActiveKoma } from "../lib/useActiveKoma";
+import { useShowGenbun } from "../lib/useShowGenbun";
 import SectionBlock from "../components/reader/SectionBlock";
 import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
@@ -51,6 +52,30 @@ export default function Chapter() {
   const [paneHeight, setPaneHeight] = useState(0);
   const [zoomKoma, setZoomKoma] = useState<number | null>(null);
   const wide = useIsWide();
+  const [showGenbun, setShowGenbun] = useShowGenbun();
+  // 原文の出し入れで本文の長さが変わっても、読んでいた段落が同じ高さに残るようにする
+  const keepRef = useRef<{ el: HTMLElement; top: number } | null>(null);
+
+  const toggleGenbun = (next: boolean) => {
+    const root = rootRef.current;
+    if (root) {
+      const paneBottom = wide ? 0 : (paneRef.current?.getBoundingClientRect().bottom ?? 0);
+      // パネルの真下で読んでいる段落（パネルに隠れていない最初のもの）を目印にする
+      const el = Array.from(
+        root.querySelectorAll<HTMLElement>("article[data-koma], h2[data-koma], figure[data-koma]")
+      ).find((node) => node.getBoundingClientRect().bottom > paneBottom + 8);
+      keepRef.current = el ? { el, top: el.getBoundingClientRect().top } : null;
+    }
+    setShowGenbun(next);
+  };
+
+  useLayoutEffect(() => {
+    const keep = keepRef.current;
+    keepRef.current = null;
+    if (!keep || !keep.el.isConnected) return;
+    const delta = keep.el.getBoundingClientRect().top - keep.top;
+    if (delta !== 0) window.scrollBy(0, delta);
+  }, [showGenbun]);
 
   const komas = useMemo(
     () =>
@@ -156,7 +181,14 @@ export default function Chapter() {
         aria-label="原本の写真"
         className="sticky top-0 z-30 border-b border-line bg-paper lg:top-6 lg:order-2 lg:w-5/12 lg:shrink-0 lg:self-start lg:border-b-0"
       >
-        <KomaPane komas={komas} active={active} wide={wide} onZoom={setZoomKoma} />
+        <KomaPane
+          komas={komas}
+          active={active}
+          wide={wide}
+          onZoom={setZoomKoma}
+          showGenbun={showGenbun}
+          onToggleGenbun={toggleGenbun}
+        />
       </aside>
 
       <div className="min-w-0 px-5 lg:order-1 lg:w-7/12 lg:px-0">
@@ -172,7 +204,8 @@ export default function Chapter() {
           )}
         </div>
 
-        <div className="mt-4 space-y-10">
+        {/* 訳だけのときは段落の間を詰め、ひと続きの文章として読めるようにする */}
+        <div className={`mt-4 ${showGenbun ? "space-y-10" : "space-y-6"}`}>
           {chapter.items.map((item) =>
             item.type === "koma" ? (
               <KomaRule key={item.key} item={item} />
@@ -182,6 +215,7 @@ export default function Chapter() {
                 section={item.section}
                 koma={item.koma}
                 index={item.index}
+                showGenbun={showGenbun}
                 onOpenKoma={setZoomKoma}
               />
             )
