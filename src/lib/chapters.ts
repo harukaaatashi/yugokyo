@@ -11,6 +11,7 @@
  * このファイルは scripts/check-corpus.ts からも import される。
  * **Vite の API（import.meta.glob 等）を書かないこと。**
  */
+import type { PageSide } from "./pages";
 
 /** corpus 全体を koma → section の順に並べたときの位置 */
 export type Cursor = { koma: number; section: number };
@@ -33,6 +34,8 @@ export interface ChapterDef {
   start: Cursor;
   /** 目次のサムネに使う丁。未指定なら章内の挿絵、なければ komaFrom */
   cover?: number;
+  /** 展示レイアウト（試作）の章扉に出す1ページ。未指定なら章の最初の丁の右ページ */
+  exhibitCover?: { koma: number; side: PageSide };
 }
 
 export const CHAPTERS: readonly ChapterDef[] = [
@@ -89,6 +92,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
     // 14丁の右半分は「はしがき」の末尾。sections[1] の見出し「湯語教」から本文
     id: "gokyo",
     cover: 14,
+    // 14丁の左ページの右端に題字「湯語教」がある
+    exhibitCover: { koma: 14, side: "l" },
     kind: "chapter",
     title: "湯語教 本文",
     summary:

@@ -10,8 +10,11 @@ import { useUi } from "../../lib/i18n";
  */
 export default function KomaRule({
   item,
+  showLabel = false,
 }: {
   item: Extract<FlowItem, { type: "koma" }>;
+  /** 丁番号を罫線の頭に出すか。写真パネルがない展示レイアウト（試作）でだけ出す */
+  showLabel?: boolean;
 }) {
   const ui = useUi();
   const n = item.koma.koma;
@@ -22,7 +25,14 @@ export default function KomaRule({
       data-side="r"
       className="scroll-below-pane"
     >
-      <span className="block h-px bg-line" aria-hidden="true" />
+      {showLabel ? (
+        <span className="flex items-center gap-3">
+          <span className="shrink-0 text-caption text-ink-soft tabular-nums">{ui.komaLabel(n)}</span>
+          <span className="h-px flex-1 bg-line" aria-hidden="true" />
+        </span>
+      ) : (
+        <span className="block h-px bg-line" aria-hidden="true" />
+      )}
       {item.continues.from && (
         <p className="mt-3 text-caption text-ink-soft">
           {ui.continuesFrom}

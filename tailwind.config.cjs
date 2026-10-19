@@ -16,6 +16,8 @@ module.exports = {
         kuchinashi: "#E8A63D",
         // 未確定箇所の下線。paper上 3.47:1 で非テキストUIの3:1を満たす
         "kuchinashi-deep": "#B2761A",
+        // 朱。本文に残した江戸の語の下線（試作）。paper上 5.5:1
+        shu: "#B03A2E",
         line: "#DDD8CC",
       },
       fontSize: {
@@ -31,6 +33,10 @@ module.exports = {
         koma: "1600 / 1160",
         // 切り出した片ページ（700×1090）
         "koma-page": "700 / 1090",
+      },
+      height: {
+        // 展示レイアウトの章扉。狭い画面で原本のページを表紙として見せる高さ
+        cover: "62vh",
       },
       maxHeight: {
         // 狭い画面で上部に固定する写真パネルの上限。本文の読む面を確保する

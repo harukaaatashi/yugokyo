@@ -50,6 +50,33 @@
     display: none;
   }
 
+  /* 見開き写真から本だけを切り出す（撮影時の灰色の背景と下端の定規を落とす）。
+     本の範囲は x=128〜1510, y=52〜1142（原寸1600×1383）。DESIGN §8.5 の実測値に余白を足したもの。
+     表紙(1)・裏表紙(38)は構図が違うので使わない */
+  .koma-book {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1382 / 1090;
+  }
+  .koma-book > img {
+    position: absolute;
+    left: -9.26%;
+    top: -4.77%;
+    width: 115.77%;
+    max-width: none;
+    height: auto;
+  }
+
+  .tategaki {
+    writing-mode: vertical-rl;
+  }
+
+  /* 本文に残した江戸の語のルビ */
+  .term rt {
+    @apply text-rubi text-ink-soft font-body font-normal select-none;
+    letter-spacing: 0;
+  }
+
   /* 固定された原本写真の下にアンカーが潜らないようにする。
      高さは Chapter 側が --koma-pane-h に入れる */
   .scroll-below-pane {

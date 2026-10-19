@@ -1,5 +1,14 @@
 import { useLang, type Lang } from "./lang";
 
+const KANJI_DIGITS = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+
+/** 丁数の漢数字（1〜99）。原本の柱の書き方に合わせる */
+function kanjiNumber(n: number): string {
+  if (n < 10) return KANJI_DIGITS[n];
+  const tens = Math.floor(n / 10);
+  return `${tens === 1 ? "" : KANJI_DIGITS[tens]}十${KANJI_DIGITS[n % 10]}`;
+}
+
 /**
  * UIの文言。読み物の本文（訳・注・章タイトル）は corpus と chapters.ts が持ち、
  * ここにはボタン・ラベル・位置表示のような短い文言だけを置く。
@@ -59,6 +68,16 @@ const ja = {
   zoomCaption: "下部の定規と請求記号の札は国立国会図書館の撮影によるものです。",
   zoomNdl: "NDLデジタルコレクションで見る",
   close: "閉じる",
+
+  /* 展示レイアウト（試作） */
+  interludeLabel: (koma: number) => `${kanjiNumber(koma)}丁`,
+  interludeAria: (koma: number) => `${koma}丁の原本`,
+  interludeCaption: "国立国会図書館蔵『洗湯手引草』",
+  enlarge: "拡大して見る",
+  coverCaption: (koma: number, side: "r" | "l") =>
+    `写真：${koma}丁・${side === "r" ? "右" : "左"}ページ`,
+  termFrom: (koma: number) => `原本 ${koma}丁`,
+  termCropAlt: (word: string) => `原本に書かれた「${word}」`,
 };
 
 export type UiText = typeof ja;
@@ -117,6 +136,14 @@ const en: UiText = {
     "The ruler and call-number tag at the bottom were added when the National Diet Library photographed the book.",
   zoomNdl: "View at NDL Digital Collections",
   close: "Close",
+
+  interludeLabel: (koma) => `Spread ${koma}`,
+  interludeAria: (koma) => `The original, spread ${koma}`,
+  interludeCaption: "National Diet Library, Sentō Tebikigusa",
+  enlarge: "View larger",
+  coverCaption: (koma, side) => `Photo: spread ${koma}, ${side === "r" ? "right" : "left"} page`,
+  termFrom: (koma) => `Original, spread ${koma}`,
+  termCropAlt: (word) => `“${word}” as written in the original`,
 };
 
 export const UI: Record<Lang, UiText> = { ja, en };

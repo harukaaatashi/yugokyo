@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, type ReactNode } from "react";
 import {
   localized,
   ndlViewerUrl,
@@ -8,8 +8,10 @@ import {
 } from "../../lib/corpus";
 import { UI } from "../../lib/i18n";
 import type { Lang } from "../../lib/lang";
+import type { Term } from "../../lib/terms";
 import Honkoku from "./Honkoku";
 import NoteDisclosure from "./NoteDisclosure";
+import { TermWord } from "./TermSheet";
 
 /**
  * 段落の描画。**現代語訳が主役**で、原文はその下に引用として控える。
@@ -33,21 +35,70 @@ interface Props {
   /** 表示言語。memo を効かせるため context ではなく props で受ける */
   lang: Lang;
   onOpenKoma: (koma: number) => void;
+  /** 訳文に残す江戸の語（展示レイアウトの試作）。日本語の訳にだけ置く */
+  terms?: readonly Term[];
+  onOpenTerm?: (term: Term) => void;
 }
 
-function Lines({ text }: { text: string }) {
+/** 行の中の語を TermWord に置き換える。語ごとに、段落で最初に出てきた1か所だけ */
+function withTerms(
+  line: string,
+  terms: readonly Term[],
+  used: Set<Term>,
+  onOpenTerm: (term: Term) => void
+): ReactNode[] {
+  const out: ReactNode[] = [];
+  let rest = line;
+  while (rest) {
+    let hit: { term: Term; at: number } | null = null;
+    for (const term of terms) {
+      if (used.has(term)) continue;
+      const at = rest.indexOf(term.word);
+      if (at >= 0 && (!hit || at < hit.at)) hit = { term, at };
+    }
+    if (!hit) {
+      out.push(rest);
+      break;
+    }
+    if (hit.at > 0) out.push(rest.slice(0, hit.at));
+    used.add(hit.term);
+    out.push(<TermWord key={hit.term.word} term={hit.term} onOpen={onOpenTerm} />);
+    rest = rest.slice(hit.at + hit.term.word.length);
+  }
+  return out;
+}
+
+function Lines({
+  text,
+  terms,
+  onOpenTerm,
+}: {
+  text: string;
+  terms?: readonly Term[];
+  onOpenTerm?: (term: Term) => void;
+}) {
+  const used = new Set<Term>();
   return (
     <>
       {text.split("\n").map((line, i) => (
         <span key={i} className="block">
-          {line}
+          {terms?.length && onOpenTerm ? withTerms(line, terms, used, onOpenTerm) : line}
         </span>
       ))}
     </>
   );
 }
 
-function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Props) {
+function SectionBlock({
+  section,
+  koma,
+  index,
+  showGenbun,
+  lang,
+  onOpenKoma,
+  terms,
+  onOpenTerm,
+}: Props) {
   const side = pageSideOf(koma, index);
   // しおりの着地点。読書位置はこの id で記録する
   const id = sectionAnchorId(koma, index);
@@ -94,7 +145,11 @@ function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Pr
     <article id={id} data-koma={koma} data-side={side} className="scroll-below-pane">
       {text && (
         <p lang={textLang} className="text-yaku text-ink">
-          <Lines text={text} />
+          <Lines
+            text={text}
+            terms={textLang === "ja" ? terms : undefined}
+            onOpenTerm={onOpenTerm}
+          />
         </p>
       )}
       {/* 訳がない段落は原文しか中身がないので、スイッチに関わらず出す */}
