@@ -8,6 +8,7 @@ import {
   HERO_KOMA,
   komaImageUrl,
   loadProgress,
+  progressPath,
   TOTAL_CHAPTERS,
   TOTAL_KOMA,
 } from "../lib/corpus";
@@ -19,9 +20,7 @@ export default function Home() {
   const ui = UI[lang];
   const en = lang === "en";
   const progress = loadProgress();
-  const resumeTo = progress
-    ? `/chapter/${progress.chapterId}#koma-${progress.koma}`
-    : `/chapter/${FIRST_CHAPTER_ID}`;
+  const resumeTo = progress ? progressPath(progress) : `/chapter/${FIRST_CHAPTER_ID}`;
 
   const front = chapters.find((c) => c.def.kind === "front");
   const back = chapters.find((c) => c.def.kind === "back");
@@ -189,6 +188,9 @@ export default function Home() {
               {ui.komaRange(front.komaFrom, front.komaTo)}
               {en ? ")" : "）"}
             </span>
+            {progress?.chapterId === front.def.id && (
+              <span className="font-maru font-bold text-yu-blue">{ui.bookmarkHere}</span>
+            )}
           </Link>
         )}
 
@@ -211,6 +213,11 @@ export default function Home() {
                 <span className="min-w-0 flex-1">
                   <span className="block text-caption text-ink-soft tabular-nums">
                     {ui.chapterNo(c.number ?? 0)} ・ {ui.komaRange(c.komaFrom, c.komaTo)}
+                    {progress?.chapterId === c.def.id && (
+                      <span className="ml-2 font-maru font-bold text-yu-blue">
+                        {ui.bookmarkHere}
+                      </span>
+                    )}
                   </span>
                   <span className="mt-1 block font-maru font-bold group-hover:text-yu-blue transition-colors">
                     {chapterTitle(c.def, lang)}
@@ -236,6 +243,9 @@ export default function Home() {
               {ui.komaRange(back.komaFrom, back.komaTo)}
               {en ? ")" : "）"}
             </span>
+            {progress?.chapterId === back.def.id && (
+              <span className="font-maru font-bold text-yu-blue">{ui.bookmarkHere}</span>
+            )}
           </Link>
         )}
       </section>

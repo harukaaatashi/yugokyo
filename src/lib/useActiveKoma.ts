@@ -15,6 +15,8 @@ export interface ActiveSpot {
   koma: number;
   /** 見開きの右ページか左ページか（本文の位置から推定したもの） */
   side: PageSide;
+  /** 帯にかかっている要素の id（段落か丁マーカー）。しおりの記録に使う。未検出なら "" */
+  anchor: string;
 }
 
 export function useActiveKoma(
@@ -32,7 +34,7 @@ export function useActiveKoma(
 
   useEffect(() => {
     setActive(fallback);
-  }, [fallback.koma, fallback.side, resetKey]);
+  }, [fallback.koma, fallback.side, fallback.anchor, resetKey]);
 
   useEffect(() => {
     let frame = 0;
@@ -85,9 +87,12 @@ export function useActiveKoma(
         const el = best as HTMLElement | null;
         const koma = Number(el?.dataset.koma);
         const side = (el?.dataset.side === "l" ? "l" : "r") as PageSide;
+        const anchor = el?.id ?? "";
         if (Number.isInteger(koma)) {
           setActive((current) =>
-            current.koma === koma && current.side === side ? current : { koma, side }
+            current.koma === koma && current.side === side && current.anchor === anchor
+              ? current
+              : { koma, side, anchor }
           );
         }
       },
