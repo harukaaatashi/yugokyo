@@ -2,15 +2,15 @@
   "koma": 30,
   "label": "男湯・女湯それぞれの定書",
   "image": "/koma/koma-30.jpg",
-  "summary": "掲示ルールは男湯用と女湯用の2種類が用意されていた。女湯版には預かり物や落とし物の扱いなど、きめ細かい条文が並ぶ。末尾から「湯屋譲り申す証文の事」（店の譲渡契約書のひな形）がはじまる。上段の役員当番表は第六十四期（天保13年3月〜）で終わり、「大行事半年持ち」と添えられる。",
+  "summary": "男湯用・女湯用の2種類の掲示文例。どちらも「預かり物は一切お引き受けしません」「右の通りご承知のうえでご入湯ください」と結ぶ、客向けの断り書き。末尾から「湯屋譲り申す証文の事」（店の譲渡契約書のひな形）がはじまる。上段の役員当番表は第六十四期（天保13年3月〜）で終わり、「大行事半年持ち」と添えられる。",
   "sections": [
     {
       "kind": "text",
-      "original": "（前丁より続く男湯の定）……右之通（みぎのとほ）り｛相守るべし｝。以上　月日　但（ただし）男湯（をとこゆ）｛の定なり｝\n\n定\n一　御公儀様（ごこうぎさま）御法度（ごはっと）の趣（おもむき）、かたく守（まも）るべき事\n一　火の元（ひのもと）大切の事\n一　男女入込湯（いりごみゆ）停止（ちゃうじ）の事\n一　うせ物（もの）｛并びに｝あづかり物、一切（いっさい）｛帳場にて預るべき｝事\n右之通｛相守るべし｝。以上　月日　但（ただし）女湯（をんなゆ）｛の定なり｝",
-      "modern": "（男湯向けの定書につづいて）もうひとつの「定」——ご法度遵守、火の元、混浴禁止に加えて、「落とし物・預かり物はすべて番台で預かる」など。末尾に「ただし女湯」とあり、男湯用・女湯用の2種類の掲示文例がセットで載っています。",
-      "english": "(Following the notice for the men’s bath) a second “Rules” notice: obey the laws, take care with fire, no mixed bathing—plus “All lost articles and items left for safekeeping are to be held at the bantai,” and so on. It ends with “Note: for the women’s bath,” so the book gives a matched pair of sample notices, one for the men’s bath and one for the women’s.",
-      "note": "男湯と女湯で掲示を分ける運用が実際にあったことがわかる面白い箇所。女湯版のほうが預かり物などの生活係の条文が厚いのも実感がこもっています。条文の細部は判読未確定です。",
-      "noteEn": "A delightful passage showing that men’s and women’s baths really did post separate notices. The women’s version has more articles on everyday matters such as items left for safekeeping, which rings true to life. The details of the articles are not yet confirmed."
+      "original": "一　｛うせ物（もの）…衣類（いるい）…御免（ごめん）…（判読困難）｝御（ご）用心（ようじん）｛にて｝下（くだ）さるべき事\n一　預（あづか）り物（もの）一切（いっさい）｛不仕（つかまつらず）｝候事\n右之通（みぎのとほ）り承知（しょうち）之上（のうへ）、御（ご）入湯（にふたう）｛下（くだ）さるべく候｝、以上\n月日　但（ただし）男湯（をとこゆ）之分（のぶん）\n\n定\n一　御公儀様（ごこうぎさま）御法度（ごはっと）之儀（のぎ）、かたく相守（あひまも）り｛下（くだ）さるべき｝事\n一　火（ひ）の元（もと）大切（たいせつ）に｛御念（ごねん）入（いれ）｝下（くだ）さるべき事\n一　男女入込湯（いりごみゆ）御（ご）停止（ちゃうじ）｛之｝事\n一　風（かぜ）｛烈（はげ）しき節（せつ）は早（はや）く｝お仕舞（しまひ）申（まを）し候（さふらふ）事\n一　年寄（としより）并（ならびに）御（ご）病後（びゃうご）之（の）御方（おかた）さまは、｛…（判読困難）｝御（ご）用心（ようじん）下（くだ）さるべき事\n一　衣類（いるい）品々（しなじな）｛いくらにても｝御（ご）用心（ようじん）下（くだ）さるべき事\n一　うせ物（もの）并（ならびに）あづかり物（もの）一切（いっさい）致（いた）し不申（まをさず）候\n右之通（みぎのとほ）り承知（しょうち）之上（のうへ）、御（ご）入湯（にふたう）｛下（くだ）さるべく候｝、以上\n月日　但（ただし）女湯（をんなゆ）之分（のぶん）",
+      "modern": "（前の丁から続く男湯の定の末尾）一、失せ物（衣類など）にはご用心を。一、預かり物は一切お引き受けしません。右の通りご承知のうえでご入湯ください。以上。月日　ただし男湯の分。\n続いてもうひとつの「定」。一、お上のご法度はかたくお守りください。一、火の元は大切に、念を入れてください。一、男女入込湯（混浴）はご禁制です。一、風の強い日は早じまいいたします。一、お年寄りや病み上がりの方は（……）ご用心ください。一、衣類や持ち物は、どんな品でもご自分でご用心ください。一、失せ物・預かり物については一切責任を負いません。右の通りご承知のうえでご入湯ください。以上。月日　ただし女湯の分。",
+      "english": "(The end of the men’s-bath notice continued from the previous spread.) Item: Beware of losing things such as clothing. Item: We accept no items for safekeeping whatsoever. Bathe with the understanding that the above applies. That is all. [Month, day.] Note: for the men’s bath.\nThen a second “Rules” notice. Item: Strictly obey the laws of the authorities. Item: Take great care with fire. Item: Mixed bathing of men and women is prohibited. Item: On windy days we close early. Item: The elderly and those just recovering from illness should (…) take care. Item: Please look after your own clothing and belongings, whatever they may be. Item: We take no responsibility at all for lost articles or items left with us. Bathe with the understanding that the above applies. That is all. [Month, day.] Note: for the women’s bath.",
+      "note": "男湯用・女湯用の2種類の掲示文例がセットで載っています。以前の版は「落とし物・預かり物は番台で預かる」と読んでいましたが、実際は「預り物一切不仕（いっさい預からない）」「うせ物并あづかり物一切致し不申候」で、意味が逆でした。両方の結びも「相守るべし」ではなく「右之通り承知之上、御入湯下さるべく候」——客に向けた「ご承知のうえでお入りください」という免責の断り書きです。女湯版はお年寄り・病み上がりへの気づかいなど、条文が細やか。男湯版の冒頭の条と、年寄りの条の後半は判読困難です。",
+      "noteEn": "The book gives a matched pair of sample notices, one for the men’s bath and one for the women’s. An earlier version read “lost articles and items left for safekeeping are held at the bantai,” but the text actually says the opposite: “we accept no items for safekeeping whatsoever” and “we take no responsibility at all for lost articles or items left with us.” Both notices close not with “obey the above” but with “bathe with the understanding that the above applies”—a disclaimer addressed to customers. The women’s version is more considerate, with an article for the elderly and those recovering from illness. The first article of the men’s version and the second half of the article on the elderly are hard to read."
     },
     {
       "kind": "heading",
@@ -20,11 +20,11 @@
     },
     {
       "kind": "text",
-      "original": "一　私（わたくし）｛儀｝、｛何｝の者、生国（しゃうごく）｛何国何郡｝……（次丁へ続く）",
-      "modern": "「一、私こと、生国は◯◯国◯◯郡の——」と、湯屋を人に譲るときの契約書の書き出しがはじまります（次の丁へ続く）。",
-      "english": "“Item: I, ____, born in ____ Province, ____ District—” Here begins the opening of a contract for handing a bathhouse over to someone else (continued on the next spread).",
-      "note": "ここからは文書テンプレート集。目次にあった「売渡証文」「敷金証文」「奉公人請状」のひな形が順に並びます。",
-      "noteEn": "From here on the book is a collection of document templates. The model deed of sale, security-deposit deed, and servant’s letter of guarantee listed in the Contents follow one after another."
+      "original": "一　此（この）誰（たれ）と申（まうす）者（もの）、｛…｝生国（しゃうごく）｛…（判読困難）｝……（次丁へ続く）",
+      "modern": "「一、この某（なにがし）と申す者は、生国は——」と、湯屋を人に譲るときの契約書の書き出しがはじまります（次の丁へ続く）。",
+      "english": "“Item: This person, ____ by name, born in ____—” Here begins the opening of a contract for handing a bathhouse over to someone else (continued on the next spread).",
+      "note": "ここからは文書テンプレート集。目次にあった「売渡証文」「敷金証文」「奉公人請状」のひな形が順に並びます。書き出しは「此誰と申者」で、生国の部分の字は判読困難です。",
+      "noteEn": "From here on the book is a collection of document templates. The model deed of sale, security-deposit deed, and servant’s letter of guarantee listed in the Contents follow one after another. The deed opens “This person, ____ by name”; the characters for the place of birth are hard to read."
     }
   ],
   "status": "ai-draft"
