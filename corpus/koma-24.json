@@ -14,9 +14,9 @@
     },
     {
       "kind": "text",
-      "original": "七番組\n飯田町組　男女二株・男一株　合三株\n糀町組　男女三株・男六株　合九株\n四谷組　男女十六株・男四株・女一株　合廿一株\n赤坂組　男女八株\n青山組　男女七株\n市谷組　男女｛十七｝株\n〆七組七十株\n\n八番組\n｛小｝杉組　男女｛四｝株・男二株　合六株\n三田組　男女五株・男三株・女一株　合九株\n西組　男女九株・男三株　合十二株\n南組（｛品川｝南組共）　男女十一株・男一株・女五株　合十七株\n〆四組四十四株",
-      "modern": "七番組は飯田町・麹町・四谷・赤坂・青山・市谷など山の手西部の7組で70株。八番組は三田から品川方面の4組で44株。組名・株数の一部は判読に自信がありません。",
-      "english": "Group Seven is seven local groups in the western Yamanote uplands—Iidamachi, Kōjimachi, Yotsuya, Akasaka, Aoyama, Ichigaya, and others—with 70 licenses. Group Eight is four groups from Mita toward Shinagawa, with 44. Some group names and license counts are not confidently read.",
+      "original": "七番組\n飯田町組　男女二株・男一株　合三株\n糀町組　男女三株・男六株　合九株\n四谷組　男女十六株・男四株・女一株　合廿一株\n赤坂組　男女八株\n青山組　男女七株\n麻布組　男女五株\n市谷組　男女七株・男十株　合十七株\n〆七組七十株\n\n八番組\n｛小｝杉組　男女｛四｝株・男二株　合六株\n三田組　男女五株・男三株・女一株　合九株\n西組　男女九株・男三株　合十二株\n南組（｛品川｝南組共）　男女十一株・男一株・女五株　合十七株\n〆四組四十四株",
+      "modern": "七番組は飯田町・麹町・四谷・赤坂・青山・麻布・市谷と山の手西部の7組で70株。八番組は三田から品川方面の4組で44株。組名の一部は判読に自信がありませんが、株数は各組の内訳と「〆」の小計が一致します。",
+      "english": "Group Seven is seven local groups in the western Yamanote uplands—Iidamachi, Kōjimachi, Yotsuya, Akasaka, Aoyama, Azabu, and Ichigaya—with 70 licenses. Group Eight is four groups from Mita toward Shinagawa, with 44. Some group names are not confidently read, but each group’s license counts add up to the printed subtotal.",
       "note": "武家地の多い山の手は町人地の下町に比べて1組あたりの株数が少なめ——江戸の人口分布がそのまま銭湯の分布に出ています。",
       "noteEn": "The Yamanote, full of samurai estates, has fewer licenses per group than the townspeople’s Shitamachi lowlands—Edo’s population distribution shows up directly in where its bathhouses were."
     }
