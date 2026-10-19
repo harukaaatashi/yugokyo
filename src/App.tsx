@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Chapter from "./pages/Chapter";
 import KomaRedirect from "./pages/KomaRedirect";
 import About from "./pages/About";
-import { FIRST_CHAPTER_ID } from "./lib/corpus";
+import { FIRST_CHAPTER_ID, loadProgress, progressPath } from "./lib/corpus";
 import { useLang } from "./lib/lang";
 import { UI } from "./lib/i18n";
 
@@ -12,6 +12,9 @@ export default function App() {
   const { lang, setLang } = useLang();
   const ui = UI[lang];
   const other = lang === "ja" ? "en" : "ja";
+  // 「読む」はしおりがあればその続きへ。ページを移るたびに読み直す
+  const progress = loadProgress();
+  const readTo = progress ? progressPath(progress) : `/chapter/${FIRST_CHAPTER_ID}`;
   const inReader =
     pathname.startsWith("/chapter") || pathname.startsWith("/read");
   return (
@@ -22,7 +25,7 @@ export default function App() {
         </Link>
         <nav className="flex items-center gap-5 text-sm text-ink-soft">
           <Link
-            to={`/chapter/${FIRST_CHAPTER_ID}`}
+            to={readTo}
             className="hover:text-yu-blue transition-colors"
           >
             {ui.navRead}

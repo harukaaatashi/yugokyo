@@ -1,5 +1,11 @@
 import { memo } from "react";
-import { localized, ndlViewerUrl, pageSideOf, type Section } from "../../lib/corpus";
+import {
+  localized,
+  ndlViewerUrl,
+  pageSideOf,
+  sectionAnchorId,
+  type Section,
+} from "../../lib/corpus";
 import { UI } from "../../lib/i18n";
 import type { Lang } from "../../lib/lang";
 import Honkoku from "./Honkoku";
@@ -43,12 +49,14 @@ function Lines({ text }: { text: string }) {
 
 function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Props) {
   const side = pageSideOf(koma, index);
+  // しおりの着地点。読書位置はこの id で記録する
+  const id = sectionAnchorId(koma, index);
   const ui = UI[lang];
   const { text, textLang, note, noteLang } = localized(section, lang);
   if (section.kind === "illustration") {
     // 絵そのものは追随パネルに出ているので、ここはその絵の説明として置く
     return (
-      <figure data-koma={koma} data-side={side} className="scroll-below-pane border-y border-line py-5">
+      <figure id={id} data-koma={koma} data-side={side} className="scroll-below-pane border-y border-line py-5">
         <figcaption className="text-caption text-ink">
           <span className="font-maru font-bold text-yu-blue mr-2">{ui.illustration}</span>
           <span lang={noteLang}>{note}</span>
@@ -66,7 +74,7 @@ function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Pr
 
   if (section.kind === "heading") {
     return (
-      <h2 data-koma={koma} data-side={side} className="scroll-below-pane border-t border-line pt-8">
+      <h2 id={id} data-koma={koma} data-side={side} className="scroll-below-pane border-t border-line pt-8">
         <span
           lang={text ? textLang : "ja"}
           className="block font-maru font-bold text-xl text-yu-blue text-balance"
@@ -83,7 +91,7 @@ function SectionBlock({ section, koma, index, showGenbun, lang, onOpenKoma }: Pr
   }
 
   return (
-    <article data-koma={koma} data-side={side} className="scroll-below-pane">
+    <article id={id} data-koma={koma} data-side={side} className="scroll-below-pane">
       {text && (
         <p lang={textLang} className="text-yaku text-ink">
           <Lines text={text} />

@@ -4,6 +4,8 @@ import {
   chapterById,
   chapterSummary,
   chapterTitle,
+  komaFromAnchor,
+  loadProgress,
   ndlViewerUrl,
   saveProgress,
   TOTAL_CHAPTERS,
@@ -19,6 +21,19 @@ import KomaPane from "../components/reader/KomaPane";
 import KomaZoom from "../components/reader/KomaZoom";
 
 const WIDE = "(min-width: 1024px)";
+
+/** このページを開いて最初の着地か。開き直し・再読み込みのときだけ、しおりへ戻すために使う */
+let firstLanding = true;
+
+function isReload(): boolean {
+  const nav = performance.getEntriesByType?.("navigation")[0] as
+    | PerformanceNavigationTiming
+    | undefined;
+  return nav?.type === "reload";
+}
+
+/** 着地からこれ以上動いたら「読者が自分で読み進めた」とみなす */
+const ARM_DISTANCE = 64;
 
 function useIsWide(): boolean {
   const [wide, setWide] = useState(
@@ -55,6 +70,12 @@ export default function Chapter() {
   const [showGenbun, setShowGenbun] = useShowGenbun();
   // 原文の出し入れで本文の長さが変わっても、読んでいた段落が同じ高さに残るようにする
   const keepRef = useRef<{ el: HTMLElement; top: number } | null>(null);
+  // しおりは読者が自分でスクロールしてから動かす。
+  // 章を開いた瞬間に記録すると、目次からのぞいただけ・再読み込みしただけで章の頭に巻き戻るため
+  const landedYRef = useRef(0);
+  // 読み進めたと判定された章の id。章を移った直後に前の章の位置を書かないよう、章ごとに持つ
+  const armedRef = useRef<string | null>(null);
+  const [armed, setArmed] = useState<string | null>(null);
 
   const toggleGenbun = (next: boolean) => {
     const root = rootRef.current;
@@ -74,7 +95,11 @@ export default function Chapter() {
     keepRef.current = null;
     if (!keep || !keep.el.isConnected) return;
     const delta = keep.el.getBoundingClientRect().top - keep.top;
-    if (delta !== 0) window.scrollBy(0, delta);
+    if (delta !== 0) {
+      window.scrollBy(0, delta);
+      // 位置を保つための移動は「読み進めた」に数えない
+      if (!armedRef.current) landedYRef.current += delta;
+    }
   }, [showGenbun]);
 
   const komas = useMemo(
@@ -86,11 +111,11 @@ export default function Chapter() {
   );
 
   // ハッシュで指定された丁があれば、パネルの初期表示もそこに合わせる
-  const anchoredKoma = Number(hash.replace(/^#koma-/, ""));
+  const anchoredKoma = komaFromAnchor(hash) ?? 0;
   const initialKoma =
     chapter && komas.includes(anchoredKoma) ? anchoredKoma : (chapter?.komaFrom ?? 0);
   const initialSpot = useMemo(
-    () => ({ koma: initialKoma, side: "r" as const }),
+    () => ({ koma: initialKoma, side: "r" as const, anchor: "" }),
     [initialKoma]
   );
 
@@ -123,15 +148,22 @@ export default function Chapter() {
     if (!wide && paneHeight === 0) return;
     landedRef.current = key;
     setZoomKoma(null);
+    armedRef.current = null;
+    setArmed(null);
 
     // HashRouter では #/chapter/gokyo#koma-20 のアンカーをブラウザが解釈しないので自前で動かす
-    const anchorId = hash.startsWith("#") ? hash.slice(1) : "";
+    let anchorId = hash.startsWith("#") ? hash.slice(1) : "";
+    // 開き直し・再読み込みでは、URL に残った古いアンカーや章の頭ではなく、しおりへ戻す
+    if (firstLanding && (!anchorId || isReload())) {
+      const progress = loadProgress();
+      if (progress?.chapterId === chapter.def.id && progress.anchor) anchorId = progress.anchor;
+    }
+    firstLanding = false;
     const target = anchorId ? document.getElementById(anchorId) : null;
-    let expected = 0;
     const land = () => {
       if (target) target.scrollIntoView({ block: "start" });
       else window.scrollTo(0, 0);
-      expected = window.scrollY;
+      landedYRef.current = window.scrollY;
     };
     land();
 
@@ -139,19 +171,39 @@ export default function Chapter() {
     // 読者がまだ自分でスクロールしていないときだけ着地し直す
     let cancelled = false;
     document.fonts?.ready.then(() => {
-      if (cancelled) return;
-      if (Math.abs(window.scrollY - expected) < 4) land();
+      if (cancelled || armedRef.current) return;
+      if (Math.abs(window.scrollY - landedYRef.current) < 4) land();
     });
     return () => {
       cancelled = true;
     };
   }, [chapter, hash, wide, paneHeight]);
 
+  // 着地点から読者が自分で動いたら、その章でしおりの記録を始める
+  const chapterId = chapter?.def.id ?? null;
   useEffect(() => {
-    if (chapter && active.koma) {
-      saveProgress({ chapterId: chapter.def.id, koma: active.koma });
+    if (!chapterId) return;
+    const onScroll = () => {
+      if (armedRef.current === chapterId || landedRef.current === "") return;
+      if (Math.abs(window.scrollY - landedYRef.current) > ARM_DISTANCE) {
+        armedRef.current = chapterId;
+        setArmed(chapterId);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [chapterId]);
+
+  useEffect(() => {
+    if (
+      chapter &&
+      armed === chapter.def.id &&
+      komas.includes(active.koma) &&
+      active.anchor
+    ) {
+      saveProgress({ chapterId: chapter.def.id, koma: active.koma, anchor: active.anchor });
     }
-  }, [chapter, active.koma]);
+  }, [chapter, komas, armed, active.koma, active.anchor]);
 
   if (!chapter) {
     return (

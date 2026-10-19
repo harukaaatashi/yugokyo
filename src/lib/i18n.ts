@@ -34,6 +34,8 @@ const ja = {
   prev: "← 前の章",
   next: "次の章 →",
   finish: "読了 →",
+  /** 目次で、しおりのある章に添える印 */
+  bookmarkHere: "ここまで読んだ",
 
   paneLabel: "原本の写真",
   komaLabel: (koma: number) => `${koma} 丁`,
@@ -90,6 +92,7 @@ const en: UiText = {
   prev: "← Previous",
   next: "Next →",
   finish: "Finish →",
+  bookmarkHere: "You left off here",
 
   paneLabel: "Photo of the original",
   komaLabel: (koma) => `Spread ${koma}`,

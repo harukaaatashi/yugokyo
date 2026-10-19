@@ -129,6 +129,17 @@ export function komaAnchorId(koma: number): string {
   return `koma-${koma}`;
 }
 
+/** 段落のアンカー。しおりはこの単位で戻る（丁単位だと長い丁で数画面手前に着地するため） */
+export function sectionAnchorId(koma: number, index: number): string {
+  return `koma-${koma}-${index}`;
+}
+
+/** `#koma-12` / `#koma-12-3` から丁番号を取り出す */
+export function komaFromAnchor(anchor: string): number | null {
+  const m = /^#?koma-(\d+)(?:-\d+)?$/.exec(anchor);
+  return m ? Number(m[1]) : null;
+}
+
 /** 表示用の縮小画像。原寸は拡大表示だけで使う（scripts/make-derivatives.ts） */
 export type KomaImageSize = "full" | "w960" | "w320";
 
@@ -272,12 +283,14 @@ export function ndlViewerUrl(koma: number): string {
  * 旧キーは読むだけで消さない（切り戻しても読者の進捗が失われないように）。
  */
 
-const LAST_READ_KEY = "yugokyo:lastRead"; // v2: {chapterId, koma}
+const LAST_READ_KEY = "yugokyo:lastRead"; // v2: {chapterId, koma, anchor?}
 const LAST_KOMA_KEY = "yugokyo:lastKoma"; // v1: 丁番号のみ
 
 export interface Progress {
   chapterId: string;
   koma: number;
+  /** 読んでいた段落（または丁マーカー）のアンカー。v2 初期の記録にはない */
+  anchor?: string;
 }
 
 export function saveProgress(p: Progress) {
@@ -286,6 +299,15 @@ export function saveProgress(p: Progress) {
   } catch {
     /* private mode等では保存しない */
   }
+}
+
+/** 章の中に実在するアンカーか（corpus の組み替えで消えた段落を指していないか） */
+function hasAnchor(chapter: Chapter, anchor: string): boolean {
+  return chapter.items.some((it) =>
+    it.type === "koma"
+      ? it.anchorId === anchor
+      : sectionAnchorId(it.koma, it.index) === anchor
+  );
 }
 
 export function loadProgress(): Progress | null {
@@ -297,9 +319,12 @@ export function loadProgress(): Progress | null {
         typeof v?.chapterId === "string" ? chapterById.get(v.chapterId) : undefined;
       if (chapter) {
         const koma = Number(v.koma);
+        const anchor =
+          typeof v.anchor === "string" && hasAnchor(chapter, v.anchor) ? v.anchor : undefined;
         return {
           chapterId: chapter.def.id,
           koma: komaByNumber.has(koma) ? koma : chapter.komaFrom,
+          ...(anchor ? { anchor } : {}),
         };
       }
     }
@@ -314,4 +339,9 @@ export function loadProgress(): Progress | null {
   } catch {
     return null;
   }
+}
+
+/** しおりの位置へのリンク先。段落が分かればそこへ、なければ丁の頭へ */
+export function progressPath(p: Progress): string {
+  return `/chapter/${p.chapterId}#${p.anchor ?? komaAnchorId(p.koma)}`;
 }
