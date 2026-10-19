@@ -23,8 +23,16 @@
       "original": "一　何町何丁目、家主（いへぬし）誰（たれ）支配（しはい）の地面（ぢめん）の内（うち）、（男女両風呂・男一ト風呂）、間口（まぐち）何間（なんげん）何尺（なんじゃく）・奥行（おくゆき）何間何尺｛の湯屋家作｝、代金何百何拾両｛にて｝売り渡し、右金子（きんす）慥（たしか）に受け取り候こと実正也。向後（きゃうこう）｛故障・違乱｝一切（いっさい）｛申すまじく｝、万一（まんいち）｛の節は｝加判（かはん）の者｛が｝〓〓……",
       "modern": "「◯町◯丁目、家主◯◯支配の地面のうち、（男女両風呂か男湯のみか）、間口◯間◯尺・奥行◯間◯尺の湯屋の建物を、代金◯百◯拾両で売り渡し、代金はたしかに受け取りました。今後苦情は一切申しません。万一のときは連帯保証人が——」という建物売買契約。",
       "english": "“Within the land at Block ____ of ____ Town, managed by landlord ____: the bathhouse building (men’s and women’s baths, or men’s bath only), with a frontage of ____ ken ____ shaku and a depth of ____ ken ____ shaku, is hereby sold for the sum of ____ ryō, and I truly confirm that I have received this money in full. Hereafter no complaint of any kind shall be raised. Should anything arise, the co-signing guarantor shall—” A contract for the sale of a building.",
-      "note": "間口・奥行の寸法欄まである本格的な不動産契約書。江戸の湯屋がどれほど高額な資産だったか（数百両＝いまの数千万円級）が伝わります。上段の薪早見表は百五十〜百八十五文まで続きます。",
-      "noteEn": "A full-fledged real-estate contract, right down to blanks for frontage and depth. It shows what a costly asset an Edo bathhouse was—several hundred ryō, on the order of tens of millions of yen today. In the upper band of the page, the firewood ready-reckoner continues from 150 up to 185 mon."
+      "note": "間口・奥行の寸法欄まである本格的な不動産契約書。江戸の湯屋がどれほど高額な資産だったか（数百両＝いまの数千万円級）が伝わります。上段の薪早見表（百文〜百八十五文）は、別の節に起こしました。",
+      "noteEn": "A full-fledged real-estate contract, right down to blanks for frontage and depth. It shows what a costly asset an Edo bathhouse was—several hundred ryō, on the order of tens of millions of yen today. The firewood ready-reckoner in the upper band (100 to 185 mon) is transcribed as a separate section."
+    },
+    {
+      "kind": "text",
+      "original": "（上段：薪買出し早割附のつづき）\n一　六ト　百\n一　五ト七ノ壱毛　百五\n一　五ト四ノ五毛　百十\n一　五ト弐ノ弐毛　百十五\n一　五ト　百二十\n一　四ト八ノ　百二十五\n一　四ト六ノ弐毛　百三十\n一　四ト四ノ四毛　百三十五\n一　四ト弐ノ九毛　百四十\n一　四ト壱ノ四毛　百四十五\n一　四ト　百五十\n一　三ト八ノ四毛　百五十五\n一　三ト七ノ五毛　百六十\n一　三ト六ノ四毛　百六十五\n一　三ト五ノ三毛　百七十\n一　三ト四ノ三毛　百七十五\n一　三ト三ノ三毛　百八十\n一　三ト弐ノ四毛　百八十五",
+      "modern": "前の丁の薪の早見表のつづき。薪1〆の値段が百文なら60文で0.6〆、百五十文なら0.4〆、百八十五文なら0.324〆——と、相場が上がるほど同じ銭で買える量が減っていくさまが一目でわかります。",
+      "english": "The firewood ready-reckoner continued from the previous spread. At 100 mon a kan, 60 mon buys 0.6 kan; at 150 mon, 0.4 kan; at 185 mon, 0.324 kan—you can see at a glance how the same money buys less and less as the price rises.",
+      "note": "「60÷相場」の検算で、百五十五文の行だけが合いません。印刷は「三ト八ノ四毛」ですが、計算では「三ト八ノ七毛」（0.387）。「七」を「四」と彫り誤った、原本側の誤刻とみられます。翻刻は印刷どおりにしています。",
+      "noteEn": "Checked as “60 ÷ price,” only the 155-mon row fails to match: the print has 3-to 8-no 4-mō, but the calculation gives 3-to 8-no 7-mō (0.387). This looks like an engraver’s slip in the original, cutting “four” for “seven.” The transcription follows the print as it stands."
     }
   ],
   "status": "ai-draft"
