@@ -2,23 +2,23 @@
   "koma": 13,
   "label": "湯語教の序（つづき）",
   "image": "/koma/koma-13.jpg",
-  "summary": "湯語教本文の前置きがつづく。「湯語教を朝夕となえて守れば商売の願いも叶う」と効能を説き、「これはあくまで戯れ書きなのでご容赦を」と笑いで結ぶ。",
+  "summary": "湯語教本文の前置きがつづく。「この書をそらで覚えるほど読めば商売の思いもかない、誠の道にかなう」と効能を説き、左ページでは薪割り・背中流し・覗き穴・褌盥など湯屋の手間や困りごとが、「賢人（けんどん）」の洒落をまじえて並ぶ（崩しが強く、判読困難な箇所が多い）。",
   "sections": [
     {
       "kind": "text",
-      "original": "｛日々の｝恵（めぐ）みを浴（あ）びし湯屋（ゆや）｛のおかげ｝、薪（たきぎ）の｛惜しみなげに｝｛焚きしも｝、平生（へいぜい）｛の｝身（み）もち｛よろしく｝、新湯屋（あらゆや）の一代（いちだい）能（よ）く｛栄え｝、湯語教（ゆごきやう）｛を｝敬（うやま）ひ｛守らば｝、自（おのが）商売（しやうばい）の意（い）も叶（かな）ひ、｛謙（へりくだ）りの道｝｛を得ん｝",
-      "modern": "日々の恵みを浴びる湯屋の商売。薪を惜しまず焚き、ふだんの身持ちをよくしておけば、新しい湯屋も一代で栄える。この湯語教を敬って朝夕守れば、商売の願いも叶い、謙虚の道も身につくだろう——と、まず「効能書き」から入ります。",
-      "english": "The bathhouse trade bathes in blessings every day. Burn your firewood without stinting and keep your everyday conduct sound, and even a new bathhouse will prosper within a single generation. Revere this Yugokyō and keep it morning and evening, and your hopes for your business will come true, and you will learn the way of humility as well—so, like a medicine label, the book opens with a list of benefits.",
-      "note": "草書がとりわけ崩れた箇所で、細部の字句は未確定が多め。大意として読んでください。",
-      "noteEn": "The cursive is especially broken here, and many details of the wording are uncertain. Read it for the general sense."
+      "original": "｛〓〓〓｝の恵（めぐ）みを浴（あ）び｛し｝湯屋（ゆや）と｛なせり｝。\n薪（たきぎ）の｛…（判読困難）｝、\n平生（へいぜい）｛は｝身（み）もち｛よふ欲（ほ）しや｝、風呂上（ふろあが）り｛…（判読困難）｝、\n新湯屋（あらゆや）の一代（いちだい）能（よ）く｛…（判読困難）｝。\n湯語教（ゆごきやう）｛なるもの｝此書（このしよ）を暗（そらん）｛ぜざれ｝ば、\n自（おのが）商売（しやうばい）の意（こころ）に叶（かな）ひ、誠（まこと）の道（みち）｛に〓｝",
+      "modern": "〔湯の〕恵みを浴びる湯屋という商売。薪の……（判読困難）……。ふだんの身持ちはよくありたいもの。風呂上がり……（判読困難）……。新しい湯屋も一代でよく……（判読困難）。この湯語教という書を〔そらで覚えるほど読めば〕、自分の商売の思いにもかない、誠の道に〔かなう〕——と、まず「効能書き」から入ります。",
+      "english": "The bathhouse trade bathes in the blessings [of hot water]. Firewood … (hard to read) …. One should keep one’s everyday conduct sound. After the bath … (hard to read) …. Even a new bathhouse can do well within a single generation … (hard to read). [Learn] this book called the Yugokyō [by heart], and it will suit your hopes for your business and [keep you on] the path of sincerity—so, like a medicine label, the book opens with a list of benefits.",
+      "note": "草書がとりわけ崩れた箇所です。列ごとに拡大し、ルビを手がかりに読み直しました。「風呂上（ふろあが）り」「此書（このしよ）を暗（そらん）…」「意（こころ）に叶ひ」「誠（まこと）の道」はルビから読めた語です。以前の版の「謙（へりくだ）りの道」はルビ「まこと」に合わないため「誠の道」に、「湯語教を敬ひ」は「湯語教なるもの此書を暗（そらん）…」に改めました。ただし「暗」の下の送り（ぜざれば）は字形が不確かで、文意も定まりません。2列目（薪の句）の大半と4列目後半は、今の画像では判読できません。",
+      "noteEn": "The cursive is especially broken here. Each column was enlarged and reread using the printed readings (furigana) as the main clue. “After the bath,” “[recite] this book by heart,” “suit your hopes,” and “the path of sincerity” were made out from their readings. An earlier version’s “the path of humility” does not fit the reading makoto, so it is now “the path of sincerity,” and “revere the Yugokyō” has been reread as “this book called the Yugokyō, by heart….” The ending after “by heart” is still unclear, so the sense of that clause is uncertain. Most of the second column (the firewood line) and the latter half of the fourth cannot be read from the current image."
     },
     {
       "kind": "text",
-      "original": "奴婢（ぬひ）｛を｝使（つか）ふ主人（あるじ）｛も｝、｛この書を｝読（よ）む｛湯屋の者も｝、賢人（けんじん）｛の｝｛心得と｝｛せよ｝。｛中略・判読困難｝……｛これは｝あくまで戯書（たはむれがき）｛なれば｝、｛何とぞ御容赦を｝願（ねが）ふ",
-      "modern": "使用人を使う主人も、これを読む湯屋の若い者も、賢人の心得と思って読んでほしい。（読み取れない箇所が続く）……とはいえ、これはあくまで戯れに書いたもの。どうかご容赦を——。",
-      "english": "Masters who employ servants, and the young bathhouse hands who read this, should take it to heart as the wisdom of the wise. (A stretch that cannot be made out follows.) … That said, this was written purely in jest. Kindly forgive it—",
-      "note": "お経と教科書のパロディで大真面目な商売訓を語る、という照れ隠しの断り書き。江戸の戯作の常套句です。このページは判読不能箇所が多く、翻刻は部分的です。",
-      "noteEn": "A sheepish disclaimer for delivering earnest business advice dressed up as a sutra and a schoolbook—a stock phrase of Edo comic fiction (gesaku). Much of this page is illegible, and the transcription is only partial."
+      "original": "｛尽（つく）る〓し｝｛老若（らうにやく）｝｛〓｝、薪（まき）を割（わ）り脊中（せなか）｛〓…（判読困難）｝手間（てま）｛〓も｝湯屋（ゆや）の｛者（もの）｝。\n奴婢（ぬび）を使（つか）ふ主人（あるじ）は、此書（このしよ）を｛〓｝読（よ）ましむ。\n｛…（判読困難）｝して賢人（けんどん）｛…（判読困難）｝、\n覗（のぞき）｛が｝穴（あな）｛と…（判読困難）｝褌盥（ふんどしだらい）｛〓｝、\n底（そこ）｛…（判読困難）｝戯書（たはむれがき）｛を…（判読困難）｝",
+      "modern": "……薪を割り、背中を〔流し〕……と、手間のかかる湯屋の仕事が並ぶ。\n使用人を使う主人は、この書を〔若い者に〕読ませよ。\n……「賢人」と書いて「けんどん（慳貪＝けち・欲ばり）」と読ませる……（判読困難）……\n覗き穴……褌盥（ふんどしを洗うたらい）……\n……戯れ書き……（判読困難）。",
+      "english": "… chopping firewood, [scrubbing] backs … a list of the laborious chores of a bathhouse.\nMasters who employ servants should have [their young hands] read this book.\n… “wise man” written with characters that are read kendon (“stingy, grasping”) … (hard to read) …\na peephole … a loincloth tub …\n… a playful scribble … (hard to read).",
+      "note": "以前の版で「中略・判読困難」としていた部分を、列ごとに拡大して読み直しました。ルビから「薪（まき）を割り」「脊中（せなか）」「手間（てま）」「奴婢（ぬび）を使ふ主人（あるじ）」（奴婢には左ルビ「めしつかひ」）「此書（このしよ）」「覗（のぞき）」「穴（あな）」「褌盥（ふんどしだらい）」「戯書（たはむれがき）」が読めます。「賢人」に「けんどん（慳貪）」とルビを振るのは、賢い人と欲ばりを掛けた洒落とみられます。覗き穴や褌盥は、19丁の「底浅き褌盥は不浄」と同じく湯屋の困りごとの話題です。以前の版の「賢人の心得とせよ」「あくまで戯書なれば何とぞ御容赦を」は画像の字と合わないため取り下げました。句と句のつながりは多くが未確定で、現代語訳は拾えた語をつないだ大意にとどまります。",
+      "noteEn": "The stretch an earlier version marked “omitted, hard to read” was reread column by column under magnification. From the printed readings one can make out “chopping firewood,” “back,” “labor,” “masters who employ servants” (with a second reading, meshitsukai, on the left), “this book,” “peep,” “hole,” “loincloth tub,” and “playful scribble.” Glossing “wise man” (kenjin) with the reading kendon (“stingy, grasping”) looks like a pun. The peephole and the loincloth tub are bathhouse nuisances, like the “shallow loincloth tub is unclean” on spread 19. An earlier version’s “take it to heart as the wisdom of the wise” and “this was written purely in jest, kindly forgive it” do not match the characters in the image and have been withdrawn. How the phrases connect is largely uncertain, so the modern rendering only strings together the words that could be read."
     }
   ],
   "status": "ai-draft"
