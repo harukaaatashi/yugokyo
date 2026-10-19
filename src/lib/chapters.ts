@@ -104,10 +104,10 @@ export const CHAPTERS: readonly ChapterDef[] = [
     kind: "chapter",
     title: "湯屋番組大意略と十組割附",
     summary:
-      "文化5年（1808）に町奉行所が公認した湯屋仲間の組合組織と、十の組に分かれた江戸の湯屋の株数一覧。合計はおよそ600株。組合を回す当番表まで載ります。",
+      "文化5年（1808）に町奉行所が公認した湯屋仲間の組合組織と、十の組に分かれた江戸の湯屋の株数一覧。合計は520株。組合を回す当番表まで載ります。",
     titleEn: "The guild and its Ten Groups",
     summaryEn:
-      "The bathhouse guild officially recognized by the city magistrate in Bunka 5 (1808), and a list of Edo’s bathhouse licenses, about 600 in all, divided into ten groups. Includes the duty roster used to run the guild.",
+      "The bathhouse guild officially recognized by the city magistrate in Bunka 5 (1808), and a list of Edo’s bathhouse licenses, 520 in all, divided into ten groups. Includes the duty roster used to run the guild.",
     start: { koma: 22, section: 1 },
   },
   {
