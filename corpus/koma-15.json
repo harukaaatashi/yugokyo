@@ -38,6 +38,14 @@
             "h": 164
           }
         }
+      ],
+      "regions": [
+        {
+          "x": 1180,
+          "y": 128,
+          "w": 270,
+          "h": 942
+        }
       ]
     },
     {
@@ -61,6 +69,14 @@
             "h": 100
           }
         }
+      ],
+      "regions": [
+        {
+          "x": 811,
+          "y": 128,
+          "w": 369,
+          "h": 942
+        }
       ]
     },
     {
@@ -69,7 +85,15 @@
       "modern": "釜が厚ければ長もちはするが、湯の沸きが遅い。\n釜が薄ければ（早く沸いて薪が浮くので）、それこそ「財産になる釜」だ。\n一日に薪を一本ずつ節約すれば、\n一年で三百六十本の無駄焚きがなくなる。\n一本をおろそかにしなければ、それで数日がしのげる。\nまして一生、数年先の安心はなおさらだ。\nだから、客の入りだけでは足りない。\n気を配って釜を焚け。\n使用人は、いわば自分の手足のようなもの。\n朝に夕に、客への愛想を尽くさせよ。",
       "english": "A thick kettle lasts a long time but is slow to heat the water.\nA thin kettle (quick to boil, sparing the firewood) is the kettle that makes you money.\nSave one stick of firewood a day,\nand you cut out 360 sticks of wasted burning a year.\nDon’t treat a single stick carelessly, and it will carry you through several days—\nhow much more, then, your peace of mind over years and a lifetime.\nSo customers alone are not enough:\ntend the kettle fire with care.\nYour servants are, so to speak, your own hands and feet.\nMorning and evening, have them give the customers every courtesy.",
       "note": "見開き左ページの10句。以前の版はこのページをまるごと読み落としていました。『実語教』の「財物は永く存せず、才智を財物と為す」を「釜厚ければ永く損ぜず……釜薄ければ是れ財物の釜」に、「故に書を読みて倦むこと勿れ」を「故に客ばかりにては足ること能はず」に替えるなど、句の型を手がかりに読んでいます。薪一本の節約を年に積み上げる計算は、燃料費に追われる湯屋の本音。動詞まわりの訓読には未確定を含みます。",
-      "noteEn": "The ten lines on the left-hand page of this spread, which an earlier version missed entirely. They were read with the Jitsugokyō’s line patterns as a guide—for example, “Riches do not last long; make talent and wisdom your riches” becomes “A thick kettle lasts long … a thin kettle is the kettle that makes you money,” and “Therefore never tire of reading books” becomes “So customers alone are not enough.” Adding up one stick of firewood saved per day over a year is the honest voice of a bathhouse hounded by fuel costs. Some readings around the verbs are uncertain."
+      "noteEn": "The ten lines on the left-hand page of this spread, which an earlier version missed entirely. They were read with the Jitsugokyō’s line patterns as a guide—for example, “Riches do not last long; make talent and wisdom your riches” becomes “A thick kettle lasts long … a thin kettle is the kettle that makes you money,” and “Therefore never tire of reading books” becomes “So customers alone are not enough.” Adding up one stick of firewood saved per day over a year is the honest voice of a bathhouse hounded by fuel costs. Some readings around the verbs are uncertain.",
+      "regions": [
+        {
+          "x": 170,
+          "y": 128,
+          "w": 601,
+          "h": 942
+        }
+      ]
     }
   ],
   "status": "ai-draft"

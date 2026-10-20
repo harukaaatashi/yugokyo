@@ -1,5 +1,5 @@
 import { CHAPTERS, type ChapterDef, type Cursor } from "./chapters";
-import { isSplittable, type PageSide } from "./pages";
+import { isSplittable, type PageSide, type Rect } from "./pages";
 import type { Lang } from "./lang";
 import type { Term } from "./terms";
 
@@ -19,6 +19,11 @@ export interface Section {
   noteEn?: string;
   /** 訳文に残す江戸の語（展示レイアウトで使う） */
   terms?: Term[];
+  /**
+   * この段落が原本のどこに書かれているか（原寸の座標の矩形。列の途中で切り替わるときは複数）。
+   * 幕間の写真に朱の枠で示す。測ってある段落にだけある
+   */
+  regions?: Rect[];
 }
 
 /**

@@ -23,7 +23,7 @@ import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
 import KomaZoom from "../components/reader/KomaZoom";
 import ExhibitCover from "../components/reader/ExhibitCover";
-import KomaInterlude from "../components/reader/KomaInterlude";
+import KomaInterlude, { type InterludeMark } from "../components/reader/KomaInterlude";
 import { TermSheet } from "../components/reader/TermSheet";
 
 const WIDE = "(min-width: 1024px)";
@@ -194,17 +194,34 @@ export default function Chapter() {
   // 展示レイアウトは丁ごとにまとめ、丁を読み終えたところに幕間を挟む。
   // 次の章へ続く丁の幕間は、その丁を読み終える次の章の側に出す（どの丁の幕間も本の中で1回だけ）
   const komaGroups = useMemo(() => {
-    const groups: { koma: number; items: FlowItem[]; interlude: boolean }[] = [];
+    const groups: {
+      koma: number;
+      items: FlowItem[];
+      interlude: boolean;
+      /** 原本の位置を測ってある段落に、丁の中で 1 から振る番号（段落の key → 番号） */
+      markOf: Map<string, number>;
+      marks: InterludeMark[];
+    }[] = [];
     for (const item of chapter?.items ?? []) {
       const koma = item.type === "koma" ? item.koma.koma : item.koma;
-      const last = groups[groups.length - 1];
-      if (last && last.koma === koma) last.items.push(item);
-      else
-        groups.push({
+      let group = groups[groups.length - 1];
+      if (!group || group.koma !== koma) {
+        group = {
           koma,
-          items: [item],
+          items: [],
           interlude: !(item.type === "koma" && item.continues.to),
-        });
+          markOf: new Map(),
+          marks: [],
+        };
+        groups.push(group);
+      }
+      group.items.push(item);
+      const regions = item.type === "section" ? item.section.regions : undefined;
+      if (regions?.length) {
+        const n = group.marks.length + 1;
+        group.markOf.set(item.key, n);
+        group.marks.push({ n, regions });
+      }
     }
     return groups;
   }, [chapter]);
@@ -341,12 +358,15 @@ export default function Chapter() {
                       lang={lang}
                       onOpenKoma={setZoomKoma}
                       onOpenTerm={setOpenTerm}
+                      mark={group.markOf.get(item.key)}
                     />
                   )
                 )}
               </div>
             </div>
-            {group.interlude && <KomaInterlude koma={group.koma} onZoom={setZoomKoma} />}
+            {group.interlude && (
+              <KomaInterlude koma={group.koma} onZoom={setZoomKoma} marks={group.marks} />
+            )}
           </Fragment>
         ))}
         <div className="mx-auto max-w-2xl px-5">{sourceNote}</div>
