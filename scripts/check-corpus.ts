@@ -80,6 +80,20 @@ for (const f of files) {
           `${f}: sections[${i}] heading の modern が長すぎる（20字以内。説明は note へ）`
         );
       }
+      // 段落が原本のどこに書かれているか（幕間の朱の枠）。原寸 1600×1383 の内側の矩形
+      if (s.regions !== undefined) {
+        const rs = s.regions as Record<string, number>[];
+        const ok =
+          Array.isArray(rs) &&
+          rs.length > 0 &&
+          rs.every(
+            (r) =>
+              [r.x, r.y, r.w, r.h].every(Number.isInteger) &&
+              r.x >= 0 && r.y >= 0 && r.w > 0 && r.h > 0 &&
+              r.x + r.w <= 1600 && r.y + r.h <= 1383
+          );
+        if (!ok) errors.push(`${f}: sections[${i}].regions が原本画像の範囲外か空`);
+      }
       // 訳文に残す江戸の語。訳文は書き換えない方針なので、語は訳文にそのまま出てくること
       if (s.terms !== undefined) {
         if (!Array.isArray(s.terms)) {

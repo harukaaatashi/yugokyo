@@ -25,6 +25,14 @@
             "h": 192
           }
         }
+      ],
+      "regions": [
+        {
+          "x": 857,
+          "y": 129,
+          "w": 613,
+          "h": 942
+        }
       ]
     },
     {
@@ -33,7 +41,15 @@
       "modern": "わずかな湯銭で、子どもをぞろぞろ引き連れてくる。\n決まりの八文で、湯を滝のようにあふれさせる。\n熱いと言う者あり、ぬるいと言う者あり。\n木魚の真似をして念仏を唱える。\nしゃがれ声で浄瑠璃をうなる。\nまぜっ返されて、かっとなって腹を立てる。\nしまいには小桶の湯をまき散らす。\nあるいは湯船の中で屁をひる。\n（〓〓を）盗んで隠す。\n「昨日の分」と借りて、物を返さない。",
       "english": "For a few coppers they bring a whole pack of children;\nfor the standard eight mon they let the water overflow like a waterfall.\nSome say it’s too hot, some say it’s too lukewarm.\nOne chants the nenbutsu, imitating a wooden fish drum;\nanother croaks out jōruri ballads in a hoarse voice.\nTeased and heckled, someone flares up in a temper,\nand in the end splashes the water from his little bucket everywhere.\nOr someone breaks wind in the tub.\nSomeone steals (…) and hides it.\nSomeone borrows things “just for yesterday” and never gives them back.",
       "note": "式亭三馬『浮世風呂』の世界そのままの「困った客」図鑑。ここは『実語教』の句を借りず、「…する者あり、…する人あり」と列挙で畳みかけます。以前の版は「八文で湯を溢るること瀧の如し」「まぜ返されて腹を立つ」「風呂の中へ屁」「盗み隠す」の4句を読み落としていました。番台目線で読むと笑いが倍増します。｛｝の箇所は未確定で、9句目の盗む対象は判読できません。",
-      "noteEn": "A field guide to problem customers straight out of the world of Shikitei Sanba’s Ukiyoburo (“The Bathhouse of the Floating World”). Here the text drops the Jitsugokyō’s lines and simply piles up “some do this, some do that.” An earlier version missed four lines: the water overflowing like a waterfall for eight mon, flaring up when heckled, breaking wind in the tub, and stealing and hiding things. Read it from the bantai’s point of view and it’s twice as funny. The parts in braces are uncertain, and what gets stolen in line 9 cannot be read."
+      "noteEn": "A field guide to problem customers straight out of the world of Shikitei Sanba’s Ukiyoburo (“The Bathhouse of the Floating World”). Here the text drops the Jitsugokyō’s lines and simply piles up “some do this, some do that.” An earlier version missed four lines: the water overflowing like a waterfall for eight mon, flaring up when heckled, breaking wind in the tub, and stealing and hiding things. Read it from the bantai’s point of view and it’s twice as funny. The parts in braces are uncertain, and what gets stolen in line 9 cannot be read.",
+      "regions": [
+        {
+          "x": 192,
+          "y": 129,
+          "w": 603,
+          "h": 942
+        }
+      ]
     }
   ],
   "status": "ai-draft"

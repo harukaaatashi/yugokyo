@@ -37,6 +37,8 @@ interface Props {
   onOpenKoma: (koma: number) => void;
   /** 訳文に残した江戸の語を開く。渡されたときだけ語を出す（展示レイアウト） */
   onOpenTerm?: (term: Term) => void;
+  /** 段落の頭に出す番号。幕間の朱の枠の番号と対応する（原本の位置を測ってある段落だけ） */
+  mark?: number;
 }
 
 /** 行の中の語を TermWord に置き換える。語ごとに、段落で最初に出てきた1か所だけ */
@@ -71,16 +73,20 @@ function Lines({
   text,
   terms,
   onOpenTerm,
+  lead,
 }: {
   text: string;
   terms?: readonly Term[];
   onOpenTerm?: (term: Term) => void;
+  /** 最初の行の頭に置くもの（段落の番号）。行は block なので外に置くと1行ぶん浮く */
+  lead?: ReactNode;
 }) {
   const used = new Set<Term>();
   return (
     <>
       {text.split("\n").map((line, i) => (
         <span key={i} className="block">
+          {i === 0 && lead}
           {terms?.length && onOpenTerm ? withTerms(line, terms, used, onOpenTerm) : line}
         </span>
       ))}
@@ -96,6 +102,7 @@ function SectionBlock({
   lang,
   onOpenKoma,
   onOpenTerm,
+  mark,
 }: Props) {
   const side = pageSideOf(koma, index);
   // しおりの着地点。読書位置はこの id で記録する
@@ -147,6 +154,13 @@ function SectionBlock({
             text={text}
             terms={textLang === "ja" ? section.terms : undefined}
             onOpenTerm={onOpenTerm}
+            lead={
+              mark !== undefined && (
+                <span aria-hidden="true" className="mr-1.5 font-genbun text-shu">
+                  {ui.paragraphMark(mark)}
+                </span>
+              )
+            }
           />
         </p>
       )}

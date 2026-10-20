@@ -10,7 +10,15 @@
       "modern": "よその商売のことは知らないが、それでも小遣い銭の勘定は忘れない。一生のあいだ、この書を手放すな。そして火の用心だけは決して忘れるな。そんなわけでこれは末代までの湯屋の道しるべ。まずこの書をよく読んで心に留めよ。読む人はけなして笑うだろうし、聞く人は笑いが止まらないだろうが——それで結構。『湯語教』おわり。",
       "english": "I can’t speak for other trades, but even so, never lose track of your pocket money. Never let this book leave your side as long as you live. And never forget to guard against fire. And so this is a guidepost for bathhouses for generations to come. First read this book well and keep it in mind. Those who read it will scoff and laugh, and those who hear it will be unable to stop laughing—and that’s fine. The end of the Yugokyō.",
       "note": "『実語教』の結び「猶農業を忘れず、必ず学文を廃すること莫かれ。故に末代の学者、先づ此の書を案ずべし……身終るまで忘失すること勿れ」をなぞっています。「農業」を「小遣銭」、「学文」を「火の用心」に替えるのが湯屋らしいところ。2・3句目は以前の版で読み落としていた句で、「足ることを」「書を離るること」の部分は読みが未確定です。教科書のパロディを「どうせ笑われるだろうが役には立つぞ」と締める、照れと自負の入り混じった結び。ここで韻文パートが終わり、以降は実務資料編に入ります。",
-      "noteEn": "It traces the Jitsugokyō’s ending—“Still do not forget farming; never abandon learning. Therefore, students of later ages, first study this book … and do not forget it as long as you live”—swapping “farming” for “pocket money” and “learning” for “guarding against fire,” very much a bathhouse’s priorities. Lines 2 and 3 were missed in an earlier version, and parts of them are still uncertain. A closing that mixes bashfulness and pride, wrapping up the textbook parody with “you’ll laugh at it, but it will come in handy.” The verse part ends here; from now on the book turns to practical reference material."
+      "noteEn": "It traces the Jitsugokyō’s ending—“Still do not forget farming; never abandon learning. Therefore, students of later ages, first study this book … and do not forget it as long as you live”—swapping “farming” for “pocket money” and “learning” for “guarding against fire,” very much a bathhouse’s priorities. Lines 2 and 3 were missed in an earlier version, and parts of them are still uncertain. A closing that mixes bashfulness and pride, wrapping up the textbook parody with “you’ll laugh at it, but it will come in handy.” The verse part ends here; from now on the book turns to practical reference material.",
+      "regions": [
+        {
+          "x": 868,
+          "y": 134,
+          "w": 587,
+          "h": 939
+        }
+      ]
     },
     {
       "kind": "heading",
@@ -38,6 +46,14 @@
             "w": 100,
             "h": 225
           }
+        }
+      ],
+      "regions": [
+        {
+          "x": 195,
+          "y": 134,
+          "w": 517,
+          "h": 939
         }
       ]
     }

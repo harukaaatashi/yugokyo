@@ -25,6 +25,14 @@
             "h": 80
           }
         }
+      ],
+      "regions": [
+        {
+          "x": 843,
+          "y": 130,
+          "w": 634,
+          "h": 943
+        }
       ]
     },
     {
@@ -33,7 +41,15 @@
       "modern": "自分が他人の得意客を奪えば、\n他人もまた自分の得意客を奪う。\nこれで争っていては、商売は成り立たない。\n悪事の報いは、虫が自分から火に飛び込むようなもの。\n泰平の世の国の恩は、天地のように大きい。\nそのお恵みのおかげで、安心して商売ができる。\n株主の恩は、日や月のようにありがたい。\n（手を……すれば）熱い湯気の……のようだ（一部判読困難）。\n水の恩は、海より深い。\n上水（水道）の水は、夏は涸れがちで、冬は氷のように冷たい。",
       "english": "If I take another man’s regular customers,\nhe in turn will take mine.\nFight over it, and neither business will survive.\nThe reward of wrongdoing is like a moth flying into the flame.\nOur debt to the realm in this age of peace is as great as heaven and earth;\nthanks to its bounty we can make our living in peace.\nOur debt to the license holder is like the sun and moon.\n(Hands …) like … of hot steam (partly illegible).\nOur debt to water is deeper than the sea.\nWater from the aqueduct runs low in summer and is cold as ice in winter.",
       "note": "『実語教』の「我他人を敬へば、他人また我を敬ふ」「悪を好む者は禍を招く、譬へば響きの音に応ずるが如し」「父母は天地の如く、師君は日月の如し、親族は譬へば葦の如し、夫妻は猶ほ瓦の如し」を、得意先の奪い合い・国恩・株主・水にすり替えた大胆なパロディ。「水の恩は海より深し」だけは、同じく寺子屋の教科書『童子教』の「母の徳は海よりも深し」から。以前の版は「徳沢の恵み」「上水」の句と、もう1句を読み落としていました。その1句は、ルビから「…熱き湯気の…の如し」とまでは読めますが、前半と比喩の対象の字は判読できていません。商売敵との客の奪い合いを戒める最初の対句は、湯屋組合（仲間）の相互協定の精神そのものです。",
-      "noteEn": "A bold parody that swaps the Jitsugokyō (“Teaching of True Words”)—“If I respect others, others will respect me,” “One who loves evil invites disaster, as an echo answers a sound,” and “Father and mother are like heaven and earth, teacher and lord like the sun and moon, kin like reeds, husband and wife like roof tiles”—for poaching customers, the realm, the license holder, and water. Only “our debt to water is deeper than the sea” comes from another terakoya textbook, the Dōjikyō (“Teaching for Children”): “A mother’s virtue is deeper than the sea.” An earlier version missed the lines on the realm’s bounty and the aqueduct, plus one more line; from its printed readings that line can be made out as far as “… like … of hot steam,” but its first half and the object of the simile remain illegible. The opening couplet, warning against poaching a rival’s customers, is the very spirit of the mutual agreements within the bathhouse guild."
+      "noteEn": "A bold parody that swaps the Jitsugokyō (“Teaching of True Words”)—“If I respect others, others will respect me,” “One who loves evil invites disaster, as an echo answers a sound,” and “Father and mother are like heaven and earth, teacher and lord like the sun and moon, kin like reeds, husband and wife like roof tiles”—for poaching customers, the realm, the license holder, and water. Only “our debt to water is deeper than the sea” comes from another terakoya textbook, the Dōjikyō (“Teaching for Children”): “A mother’s virtue is deeper than the sea.” An earlier version missed the lines on the realm’s bounty and the aqueduct, plus one more line; from its printed readings that line can be made out as far as “… like … of hot steam,” but its first half and the object of the simile remain illegible. The opening couplet, warning against poaching a rival’s customers, is the very spirit of the mutual agreements within the bathhouse guild.",
+      "regions": [
+        {
+          "x": 189,
+          "y": 130,
+          "w": 600,
+          "h": 943
+        }
+      ]
     }
   ],
   "status": "ai-draft"
