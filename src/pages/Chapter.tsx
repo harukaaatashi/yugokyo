@@ -8,6 +8,7 @@ import {
   loadProgress,
   ndlViewerUrl,
   saveProgress,
+  localized,
   sectionAnchorId,
   TOTAL_CHAPTERS,
   type Chapter as ChapterData,
@@ -202,6 +203,20 @@ export default function Chapter() {
     };
   }, [chapter, hash, wide, paneHeight, exhibit]);
 
+  // 文の途中で段落が分かれている所（原本の丁の境目などで、前の段落が読点や助詞で終わる）。
+  // 訳だけを読むときは間をあけずにつなげ、ひと続きの文として読めるようにする
+  const joinsPrev = useMemo(() => {
+    const keys = new Set<string>();
+    let prev: string | undefined;
+    for (const item of chapter?.items ?? []) {
+      if (item.type !== "section") continue;
+      const { text } = localized(item.section, lang);
+      if (item.section.kind === "text" && text && prev && /[、,をにがはもで]$/.test(prev)) keys.add(item.key);
+      prev = item.section.kind === "text" ? text?.trimEnd() : undefined;
+    }
+    return keys;
+  }, [chapter, lang]);
+
   // 段落が原本のどこに書かれているか（段落の id → 原寸の矩形）。下の帯の朱の枠に使う
   const regionsOf = useMemo(() => {
     const map = new Map<string, readonly Rect[]>();
@@ -258,7 +273,8 @@ export default function Chapter() {
 
   const sourceNote = (
     <div className="mt-10 space-y-2 text-caption text-ink-soft">
-      {continuesToNext && <p>{ui.continuesTo}</p>}
+      {/* 展示レイアウトは丁を見せないので、丁が次の章へ続くことも言わない */}
+      {continuesToNext && !exhibit && <p>{ui.continuesTo}</p>}
       <p>
         {ui.sourceLabel}{" "}
         <a
@@ -361,6 +377,7 @@ export default function Chapter() {
                 onOpenKoma={setZoomKoma}
                 onOpenTerm={setOpenTerm}
                 quietNotes
+                joinPrev={!showGenbun && joinsPrev.has(item.key)}
               />
             )
           )}
