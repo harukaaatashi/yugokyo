@@ -6,11 +6,11 @@
   "sections": [
     {
       "kind": "text",
-      "original": "一　天保十二年丑八月十六日、横山町｛にて｝新規（しんき）湯屋渡世（ゆやとせい）致（いた）し度（たき）者（もの）有（あ）り之（これ）｛につき｝、｛其の処｝｛の｝｛家主｝｛より｝｛願ひ出づ｝……右｛の｝通（とほ）り　御奉行所（ごぶぎゃうしょ）｛へ｝申（まう）し｛上ぐ｝\n一　享和三亥年十一月　中町　御触（おふれ）の通｛り｝\n町中（まちぢゅう）｛にて｝新規（しんき）｛の｝湯屋渡世（ゆやとせい）致（いた）し度（たき）者｛これ有る節は｝、奉行所（ぶぎゃうしょ）｛へ｝願（ねが）ひ出（い）で｛御差図を受くべし｝",
-      "modern": "天保12年（1841）8月、横山町で新しく湯屋を開業したいという者があり、その地の家主から願い出た——という届出の実例。続いて享和3年（1803）11月の触書「町内で新規に湯屋を開業したい者があれば、奉行所へ願い出て指図を受けよ」。",
-      "english": "In the 8th month of Tenpō 12 (1841), someone in Yokoyama-chō wished to open a new bathhouse, and the landlord there submitted a petition—a real example of such a filing. Next comes an ordinance of the 11th month of Kyōwa 3 (1803): “If anyone in town wishes to start a new bathhouse business, they are to petition the magistrate’s office and receive its instructions.”",
-      "note": "湯屋の開業が完全な許可制だったことを示す公文書の写し。組合の株を買い、地主の同意を得て、奉行所に願い出る——これが江戸で銭湯を始める手順でした。",
-      "noteEn": "Copies of official documents showing that opening a bathhouse required full government permission. Buy a license from the guild, get the landowner’s consent, and petition the magistrate’s office—that was how you started a bathhouse in Edo.",
+      "original": "一　天保十二年丑八月十六日、横山町三丁目新規湯屋相建致し候者有之候処、｛為見分出役人方ニ而両人出役、隣町名主立会、右之段聞糺し｝、右｛の｝通（とほ）り　御奉行所（ごぶぎゃうしょ）｛へ｝申（まう）し｛上ぐ｝\n一　享和三亥年十一月　中町　御触（おふれ）の通｛り｝\n町中ニ而新規湯屋渡世致し候もの、是迄（これまで）奉行所（ぶぎゃうしょ）江願出候上申付候処、以来（いらい）ハ願出ニ不及、有来り候湯屋共渡世差障之有無熟談ニおよび、差支無之候ハゞ其町名主方江｛願出、名主ゟ年番名主江申達し｝、先達（せんだつ）而相触候通、男女入込湯致し候｛もの有之候ハゞ、同渡世之もの共申合せ、早々訴出候上｝、急度（きっと）可申付候\n右之通（みぎのとほり）　御奉行所｛より被仰渡候間｝、町中（まちぢゅう）湯屋渡世（ゆやとせい）之もの共ハ不及申、家持借家裏々迄不洩様可相触候",
+      "modern": "天保12年（1841）8月16日、横山町三丁目で新しく湯屋を建てて開業しようとする者があったので、見分のため役人が2人出向き、隣町の名主も立ち会って事情を聞きただし、そのとおり奉行所へ申し上げた——という実例。\n続いて享和3年（1803）11月の触書（町触）。「これまで町中で新規に湯屋を開く者は奉行所へ願い出て許可を受けていたが、今後は願い出なくてよい。既存の湯屋と営業に差し障りがないかを話し合い、支障がなければその町の名主へ届け出よ。また、かねて触れたとおり男女混浴をする者があれば、同業者で申し合わせてすぐに訴え出よ。きっと処罰する。このとおり奉行所から仰せ渡されたので、湯屋渡世の者はもちろん、家持・借家・裏長屋の者まで漏れなく知らせよ」。",
+      "english": "On the 16th of the 8th month of Tenpō 12 (1841), someone at Yokoyama-chō 3-chōme set out to build and open a new bathhouse, so two officials went to inspect, the headman of the neighboring ward attended, the circumstances were looked into, and the matter was reported to the magistrate’s office—a real example of the procedure.\nNext comes a town ordinance of the 11th month of Kyōwa 3 (1803): “Until now, anyone opening a new bathhouse in town had to petition the magistrate’s office for permission; from now on no petition is needed. Talk it over with the existing bathhouses to see whether the new business would interfere with theirs, and if there is no objection, notify the ward headman. And, as already announced, if anyone runs mixed bathing for men and women, those in the trade are to agree among themselves and report it at once; it will be strictly punished. Since the magistrate’s office has so ordered, let this be made known to everyone—not only bathhouse keepers, but householders, tenants, and back-alley dwellers alike.”",
+      "note": "原寸画像で、以前「……」で省いていた部分と、要約で済ませていた触書の本文を起こしました。享和3年の触書は、開業を奉行所の許可制から「既存の湯屋と話し合い、名主へ届け出る」方式に緩めた内容で、混浴の禁止も念押ししています。｛｝の箇所は推測で補った読みを含みます。天保12年の例は株仲間解散令（同年12月）の直前で、組合の統制が弱まるなか新規開業が相次いだ時期にあたります。",
+      "noteEn": "From the full-resolution image, this fills in the part an earlier version left as “……” and the ordinance text it had only summarized. The Kyōwa 3 ordinance loosened the rules for opening a bathhouse—from a permit from the magistrate to talking it over with the existing bathhouses and notifying the ward headman—while reaffirming the ban on mixed bathing. Readings in ｛｝ include best guesses. The Tenpō 12 example came just before the order dissolving the trade guilds (12th month of that year), a time when guild control was weakening and new bathhouses were opening one after another.",
       "terms": [
         {
           "word": "触書",
@@ -22,9 +22,9 @@
     },
     {
       "kind": "text",
-      "original": "享和三亥年十一月　町役（まちやく）　（署名）\n\n嘉永四亥年五月",
-      "modern": "享和3年11月、町役人の署名。そして本書の刊記「嘉永4年（1851）5月」。",
-      "english": "The signature of the town officials, 11th month of Kyōwa 3. And then the book’s publication date: “Kaei 4 (1851), 5th month.”",
+      "original": "享和三亥年十一月　町｛年寄役所｝\n\n嘉永四亥年五月",
+      "modern": "享和3年11月、町年寄役所（町触を出した役所）の名。そして本書の刊記「嘉永4年（1851）5月」。",
+      "english": "The name of the town elders’ office (machi-doshiyori yakusho, which issued the ordinance), 11th month of Kyōwa 3. And then the book’s publication date: “Kaei 4 (1851), 5th month.”",
       "note": "序文の年月と同じ嘉永4年5月。ここが本書の奥付にあたります。",
       "noteEn": "The same date as the preface: the 5th month of Kaei 4. This serves as the book’s colophon."
     },

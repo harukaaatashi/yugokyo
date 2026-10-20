@@ -6,11 +6,11 @@
   "sections": [
     {
       "kind": "text",
-      "original": "五番組\n浅草｛茅｝町｛の｝組　男女五株・男七株・女一株　合十三株\n奥組（｛観音門前｝、此内｛〓右衛門〓｝共）　男女二十株・男一株　合廿一株\n〆二組三十四株\n\n六番組\n深川南組　男女十七株・男一株　合十八株\n同北組　男女八株\n本所南組　男女二十｛四｝株\n同北組　男女十六株\n〆四組六十六株",
-      "modern": "五番組は浅草方面の2組で34株（浅草寺の門前を含む「奥組」だけで21株！）。六番組は深川と本所をそれぞれ南北に分けた4組で66株。隅田川の東側だけでこれだけの銭湯があったことになります。",
-      "english": "Group Five is two local groups in the Asakusa area with 34 licenses (the “Oku group,” which takes in the area in front of Sensōji temple, has 21 on its own!). Group Six is four groups—Fukagawa and Honjo, each split into south and north—with 66 licenses. That means this many bathhouses stood on the east side of the Sumida River alone.",
-      "note": "株数はくずし字からのAI読み取りで未検証です。深川・本所の多さは、埋立地で井戸水に恵まれず内風呂が作りにくかった土地柄とも響き合います。",
-      "noteEn": "The license counts are AI readings of cursive script and have not been verified. The large numbers in Fukagawa and Honjo fit the character of the area: reclaimed land with poor well water, where it was hard to have a bath at home."
+      "original": "五番組\n浅草｛茅｝町｛の｝組　男女五株・男七株・女一株　合十三株\n奥組（｛観音裏｝、此内ニ｛吉原五丁｝）　男女二十株・男一株　合廿一株\n〆二組三十四株\n\n六番組\n深川南組　男女十七株・男一株　合十八株\n同北組　男女八株\n本所南組　男女二十｛四｝株\n同北組　男女十六株\n〆四組六十六株",
+      "modern": "五番組は浅草方面の2組で34株（浅草寺の裏手から吉原遊郭の五丁町までを含む「奥組」だけで21株！）。六番組は深川と本所をそれぞれ南北に分けた4組で66株。隅田川の東側だけでこれだけの銭湯があったことになります。",
+      "english": "Group Five is two local groups in the Asakusa area with 34 licenses (the “Oku group,” which takes in the area behind Sensōji temple and even the five blocks of the Yoshiwara pleasure quarter, has 21 on its own!). Group Six is four groups—Fukagawa and Honjo, each split into south and north—with 66 licenses. That means this many bathhouses stood on the east side of the Sumida River alone.",
+      "note": "奥組の割注は、拡大画像で左行「此内ニ吉原五丁」と読め、浅草の奥にあった吉原遊郭（五丁町）の湯屋もこの組に入っていたとみられます。右行の「観音裏」と「吉原五丁」は推測で補った読み（｛｝の箇所）です。深川・本所の多さは、埋立地で井戸水に恵まれず内風呂が作りにくかった土地柄とも響き合います。",
+      "noteEn": "Under magnification, the small note beside the Oku group reads “including the five blocks of Yoshiwara,” suggesting the bathhouses of the Yoshiwara pleasure quarter (its “five blocks”) belonged to this group. “Behind the Kannon temple” and “five blocks of Yoshiwara” are best-guess readings (shown in ｛｝). The large numbers in Fukagawa and Honjo fit the character of the area: reclaimed land with poor well water, where it was hard to have a bath at home."
     },
     {
       "kind": "text",

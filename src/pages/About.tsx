@@ -44,7 +44,8 @@ function AboutJa() {
             <span className="underline decoration-kuchinashi-deep decoration-dotted decoration-2 underline-offset-4">
               点線の下線
             </span>
-            は読みが未確定の箇所、〓 は判読できなかった字です。
+            は読みが未確定の箇所です。崩れて読み切れない字も、字形・振り仮名・文脈から
+            推した読みを入れて点線で示しています（推測を含みます）。
           </li>
           <li>
             原文の振り仮名は原本のものです。本文をコピーするときは、
@@ -175,7 +176,9 @@ function AboutEn() {
             <span className="underline decoration-kuchinashi-deep decoration-dotted decoration-2 underline-offset-4">
               Dotted underlines
             </span>{" "}
-            in the transcription mark readings that are still uncertain.
+            in the transcription mark readings that are still uncertain, including characters
+            too worn to read for certain, which are filled in with a best guess from their shape,
+            printed readings, and context.
           </li>
           <li>
             Each “spread” is one photo of two facing pages in the original book. The photo
