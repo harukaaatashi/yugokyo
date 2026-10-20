@@ -10,7 +10,15 @@
       "modern": "戸締まりをきちんとすれば盗人は防げる。暇な時間帯も見張りを絶やすな。盗まれてから悔やんでもあとの祭り。混み合っているときこそ番台の目を怠るな。身なりのよい客が悪心を抱いていることもある——針のように鋭く気を配れ。",
       "english": "Lock up properly and thieves are kept out. Even in the quiet hours, never leave the watch unmanned. Once you’ve been robbed, regret comes too late. When the bath is crowded, that is exactly when the bantai must stay alert. A well-dressed customer may be harboring wicked intent—keep your attention needle-sharp.",
       "note": "江戸の銭湯の大敵「板の間稼ぎ」（脱衣所の衣類泥棒）への警句集。『実語教』の「老いて後に悔ゆと雖も尚ほ益なし」の型を盗難に転用しています。訓読の細部は未確定を含みます。",
-      "noteEn": "A set of warnings against the great enemy of Edo bathhouses, the itanoma-kasegi (thieves who stole clothes from the changing room). It turns the Jitsugokyō (“Teaching of True Words”) line “Regret it when you are old, and it is still of no use” toward theft. Some details of the reading are uncertain."
+      "noteEn": "A set of warnings against the great enemy of Edo bathhouses, the itanoma-kasegi (thieves who stole clothes from the changing room). It turns the Jitsugokyō (“Teaching of True Words”) line “Regret it when you are old, and it is still of no use” toward theft. Some details of the reading are uncertain.",
+      "terms": [
+        {
+          "word": "番台",
+          "yomi": "ばんだい",
+          "mean": "入口で湯銭を受け取り、脱衣場を見張る一段高い台。",
+          "source": "込み合ふ湯中の番怠る勿れ"
+        }
+      ]
     },
     {
       "kind": "text",

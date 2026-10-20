@@ -10,7 +10,35 @@
       "modern": "湯屋は磨かなければピカピカにならない。ピカピカでなければ客は寄りつかない。流し場の石畳も磨かなければ糠汁で汚れる。きれいな湯屋はいつも繁昌する。",
       "english": "If a bathhouse isn’t polished, it won’t shine. If it doesn’t shine, customers won’t come. If the stone floor of the washing area isn’t scrubbed, it grows grimy with rice-bran water. A clean bathhouse always prospers.",
       "note": "寺子屋の教科書『実語教』の冒頭「山高きが故に貴からず、樹有るを以て貴しと為す」の型をそっくり借りた、本書の看板フレーズ。「清潔こそ最大の集客」という主張は、現代の銭湯・サウナ経営にそのまま通じます。",
-      "noteEn": "The book’s signature line, borrowing wholesale the pattern that opens the terakoya textbook Jitsugokyō (“Teaching of True Words”): “A mountain is not precious because it is high; it is precious because it has trees.” Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today."
+      "noteEn": "The book’s signature line, borrowing wholesale the pattern that opens the terakoya textbook Jitsugokyō (“Teaching of True Words”): “A mountain is not precious because it is high; it is precious because it has trees.” Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today.",
+      "terms": [
+        {
+          "word": "湯屋",
+          "yomi": "ゆや",
+          "mean": "江戸での銭湯の呼び名。上方では「風呂屋」と呼んだ。",
+          "source": "湯屋磨かざれば光澤なし",
+          "crop": {
+            "koma": 15,
+            "x": 1293,
+            "y": 132,
+            "w": 122,
+            "h": 160
+          }
+        },
+        {
+          "word": "糠汁",
+          "yomi": "ぬかじる",
+          "mean": "米ぬかを布袋に入れて体を洗った、その汁。流し場を汚すもとになった。",
+          "source": "石垣磨かざれば糠汁に穢る",
+          "crop": {
+            "koma": 15,
+            "x": 1167,
+            "y": 378,
+            "w": 116,
+            "h": 164
+          }
+        }
+      ]
     },
     {
       "kind": "text",
@@ -18,7 +46,22 @@
       "modern": "湯船の湯は減っても、井戸の水は尽きない（水はただ、惜しむな）。日々のあがり（現金収入）は、日々の薪代に食われて引き合わないもの。薪が高くつけば商売は成り立たないから、（薪の要らない）夏のうちから焚き方を工夫しておけ。",
       "english": "The hot water in the tub may run low, but the water in the well never runs out (water costs nothing—don’t begrudge it). Each day’s cash takings get eaten up by each day’s firewood bill and never quite balance. If firewood costs too much, the business can’t survive, so use the summer (when firewood isn’t needed) to work out better ways of firing.",
       "note": "収入より燃料費、という湯屋経営の急所。後の丁で薪の買い出し表や坪別の値段表が延々と続くのも、この危機感ゆえです。訓読の細部（特に最後の句）は未確定を含みます。",
-      "noteEn": "Fuel costs outrunning income—the sore spot of the bathhouse business. This sense of crisis is why later spreads go on and on with lists of firewood purchases and price tables by tsubo (a unit of measure). Some details of how the lines are read (especially the last one) are uncertain."
+      "noteEn": "Fuel costs outrunning income—the sore spot of the bathhouse business. This sense of crisis is why later spreads go on and on with lists of firewood purchases and price tables by tsubo (a unit of measure). Some details of how the lines are read (especially the last one) are uncertain.",
+      "terms": [
+        {
+          "word": "薪",
+          "yomi": "まき",
+          "mean": "湯を沸かす燃料。薪代は湯屋のいちばん重い出費で、後の丁には薪の相場表が続く。",
+          "source": "一日の薪代に引き合はず",
+          "crop": {
+            "koma": 15,
+            "x": 940,
+            "y": 882,
+            "w": 115,
+            "h": 100
+          }
+        }
+      ]
     }
   ],
   "status": "ai-draft"

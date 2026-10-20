@@ -1,6 +1,7 @@
 import { CHAPTERS, type ChapterDef, type Cursor } from "./chapters";
 import { isSplittable, type PageSide } from "./pages";
 import type { Lang } from "./lang";
+import type { Term } from "./terms";
 
 export type SectionKind = "heading" | "text" | "illustration";
 
@@ -16,6 +17,8 @@ export interface Section {
   note?: string;
   /** 注記の英訳 */
   noteEn?: string;
+  /** 訳文に残す江戸の語（展示レイアウトで使う） */
+  terms?: Term[];
 }
 
 /**

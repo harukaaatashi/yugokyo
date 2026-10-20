@@ -16,7 +16,7 @@ module.exports = {
         kuchinashi: "#E8A63D",
         // 未確定箇所の下線。paper上 3.47:1 で非テキストUIの3:1を満たす
         "kuchinashi-deep": "#B2761A",
-        // 朱。本文に残した江戸の語の下線（試作）。paper上 5.5:1
+        // 朱。訳文に残した江戸の語の点線下線にだけ使う。paper上 5.5:1
         shu: "#B03A2E",
         line: "#DDD8CC",
       },
@@ -39,7 +39,7 @@ module.exports = {
         cover: "62vh",
       },
       maxHeight: {
-        // 狭い画面で上部に固定する写真パネルの上限。本文の読む面を確保する
+        // 以前のレイアウトで、狭い画面の上部に固定する写真パネルの上限
         pane: "34vh",
         // 広い画面で1ページを出すときの上限。sticky の中で画面に収める
         "pane-lg": "78vh",

@@ -10,7 +10,15 @@
       "modern": "「◯町◯丁目の家屋敷、（男女両風呂か男湯のみかを明記）湯屋の建物と商売道具一式を、たしかに売り渡します。代金は金◯拾両。地代は毎月◯◯」——と続く売買契約のひな形。お上の法度と町の決まりを守ること、売り主の宗旨（宗派と檀那寺、寺手形）まで記す欄があります。",
       "english": "“The house and lot at Block ____ of ____ Town, together with the bathhouse building (state whether it has both men’s and women’s baths or a men’s bath only) and the full set of business equipment, I truly hereby sell. Price: ____ ryō in gold. Ground rent: ____ per month.” So runs this model contract of sale. It includes clauses to obey the laws of the authorities and the rules of the town, and even a space for the seller’s religious affiliation (sect, family temple, and temple certificate).",
       "note": "「男女両風呂か、男湯だけか」を契約書に明記させるあたり、23丁目の株数調べと同じ区分が生きています。宗旨・寺手形はキリシタン禁制下の身元証明で、江戸の売買契約の必須項目でした。判読不能の箇所を多く含みます。",
-      "noteEn": "Requiring the contract to state “both baths, or men’s only” uses the same categories as the license counts on spread 23. Religious affiliation and the temple certificate were proof of identity under the ban on Christianity, and a required item in Edo sales contracts. Many passages are illegible."
+      "noteEn": "Requiring the contract to state “both baths, or men’s only” uses the same categories as the license counts on spread 23. Religious affiliation and the temple certificate were proof of identity under the ban on Christianity, and a required item in Edo sales contracts. Many passages are illegible.",
+      "terms": [
+        {
+          "word": "檀那寺",
+          "yomi": "だんなでら",
+          "mean": "その家が代々檀家として属する寺。身元の証明にも使われた。",
+          "source": "何寺の旦那にて、寺手形相違なく"
+        }
+      ]
     },
     {
       "kind": "text",

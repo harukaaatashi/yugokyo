@@ -16,8 +16,8 @@ import { useActiveKoma } from "../lib/useActiveKoma";
 import { useShowGenbun } from "../lib/useShowGenbun";
 import { useLang } from "../lib/lang";
 import { UI, type UiText } from "../lib/i18n";
-import { EXHIBIT_CHAPTERS, viewerMode } from "../lib/viewerMode";
-import { termsFor, type Term } from "../lib/terms";
+import { viewerMode } from "../lib/viewerMode";
+import type { Term } from "../lib/terms";
 import SectionBlock from "../components/reader/SectionBlock";
 import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
@@ -64,8 +64,8 @@ export default function Chapter() {
   const { id } = useParams();
   const { hash } = useLocation();
   const chapter = id ? chapterById.get(id) : undefined;
-  // 展示レイアウト（試作）。本文の横に写真パネルを置かず、章扉と幕間で原本を見せる
-  const exhibit = viewerMode === "exhibit" && !!chapter && EXHIBIT_CHAPTERS.has(chapter.def.id);
+  // 展示レイアウト（既定）。本文の横に写真パネルを置かず、章扉と幕間で原本を見せる
+  const exhibit = viewerMode === "exhibit";
 
   const rootRef = useRef<HTMLDivElement>(null);
   const paneRef = useRef<HTMLElement>(null);
@@ -191,14 +191,20 @@ export default function Chapter() {
     };
   }, [chapter, hash, wide, paneHeight, exhibit]);
 
-  // 展示レイアウトは丁ごとにまとめ、丁を読み終えたところに幕間を挟む
+  // 展示レイアウトは丁ごとにまとめ、丁を読み終えたところに幕間を挟む。
+  // 次の章へ続く丁の幕間は、その丁を読み終える次の章の側に出す（どの丁の幕間も本の中で1回だけ）
   const komaGroups = useMemo(() => {
-    const groups: { koma: number; items: FlowItem[] }[] = [];
+    const groups: { koma: number; items: FlowItem[]; interlude: boolean }[] = [];
     for (const item of chapter?.items ?? []) {
       const koma = item.type === "koma" ? item.koma.koma : item.koma;
       const last = groups[groups.length - 1];
       if (last && last.koma === koma) last.items.push(item);
-      else groups.push({ koma, items: [item] });
+      else
+        groups.push({
+          koma,
+          items: [item],
+          interlude: !(item.type === "koma" && item.continues.to),
+        });
     }
     return groups;
   }, [chapter]);
@@ -334,14 +340,13 @@ export default function Chapter() {
                       showGenbun={showGenbun}
                       lang={lang}
                       onOpenKoma={setZoomKoma}
-                      terms={termsFor(item.koma, item.index)}
                       onOpenTerm={setOpenTerm}
                     />
                   )
                 )}
               </div>
             </div>
-            <KomaInterlude koma={group.koma} onZoom={setZoomKoma} />
+            {group.interlude && <KomaInterlude koma={group.koma} onZoom={setZoomKoma} />}
           </Fragment>
         ))}
         <div className="mx-auto max-w-2xl px-5">{sourceNote}</div>

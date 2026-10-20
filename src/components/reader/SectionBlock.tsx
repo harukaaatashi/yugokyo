@@ -35,8 +35,7 @@ interface Props {
   /** 表示言語。memo を効かせるため context ではなく props で受ける */
   lang: Lang;
   onOpenKoma: (koma: number) => void;
-  /** 訳文に残す江戸の語（展示レイアウトの試作）。日本語の訳にだけ置く */
-  terms?: readonly Term[];
+  /** 訳文に残した江戸の語を開く。渡されたときだけ語を出す（展示レイアウト） */
   onOpenTerm?: (term: Term) => void;
 }
 
@@ -96,7 +95,6 @@ function SectionBlock({
   showGenbun,
   lang,
   onOpenKoma,
-  terms,
   onOpenTerm,
 }: Props) {
   const side = pageSideOf(koma, index);
@@ -105,7 +103,7 @@ function SectionBlock({
   const ui = UI[lang];
   const { text, textLang, note, noteLang } = localized(section, lang);
   if (section.kind === "illustration") {
-    // 絵そのものは追随パネルに出ているので、ここはその絵の説明として置く
+    // 絵そのものは幕間（以前のレイアウトでは追随パネル）に出るので、ここはその絵の説明として置く
     return (
       <figure id={id} data-koma={koma} data-side={side} className="scroll-below-pane border-y border-line py-5">
         <figcaption className="text-caption text-ink">
@@ -147,7 +145,7 @@ function SectionBlock({
         <p lang={textLang} className="text-yaku text-ink">
           <Lines
             text={text}
-            terms={textLang === "ja" ? terms : undefined}
+            terms={textLang === "ja" ? section.terms : undefined}
             onOpenTerm={onOpenTerm}
           />
         </p>
@@ -167,5 +165,5 @@ function SectionBlock({
   );
 }
 
-// 追随パネルの丁が変わるたびに本文88セクションを再描画しないようにする
+// 読んでいる丁が変わるたびに本文88セクションを再描画しないようにする
 export default memo(SectionBlock);

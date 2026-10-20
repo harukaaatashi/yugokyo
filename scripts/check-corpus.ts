@@ -80,6 +80,31 @@ for (const f of files) {
           `${f}: sections[${i}] heading の modern が長すぎる（20字以内。説明は note へ）`
         );
       }
+      // 訳文に残す江戸の語。訳文は書き換えない方針なので、語は訳文にそのまま出てくること
+      if (s.terms !== undefined) {
+        if (!Array.isArray(s.terms)) {
+          errors.push(`${f}: sections[${i}].terms が配列でない`);
+        } else {
+          for (const t of s.terms as Record<string, unknown>[]) {
+            const where = `${f}: sections[${i}].terms「${t.word}」`;
+            for (const key of ["word", "yomi", "mean", "source"]) {
+              if (typeof t[key] !== "string" || !t[key]) errors.push(`${where} に ${key} がない`);
+            }
+            if (typeof t.word === "string" && !String(s.modern ?? "").includes(t.word)) {
+              errors.push(`${where} が訳文に出てこない`);
+            }
+            const c = t.crop as Record<string, number> | undefined;
+            if (c !== undefined) {
+              // 原寸 1600×1383 の内側に収まる矩形
+              const ok =
+                [c.koma, c.x, c.y, c.w, c.h].every(Number.isInteger) &&
+                c.koma >= 1 && c.koma <= 38 && c.x >= 0 && c.y >= 0 &&
+                c.w > 0 && c.h > 0 && c.x + c.w <= 1600 && c.y + c.h <= 1383;
+              if (!ok) errors.push(`${where} の crop が原本画像の範囲外`);
+            }
+          }
+        }
+      }
     });
   }
 }
@@ -108,6 +133,9 @@ CHAPTERS.forEach((ch, i) => {
   if (ch.kind === "front" && i !== 0) errors.push(`${where}: front は先頭章のみ`);
   if (ch.kind === "back" && i !== CHAPTERS.length - 1) {
     errors.push(`${where}: back は最終章のみ`);
+  }
+  if (!ch.exhibitCover || ch.exhibitCover.koma < 1 || ch.exhibitCover.koma > 38) {
+    errors.push(`${where}: exhibitCover（章扉のページ）が不正`);
   }
 
   const rank = rankOf.get(`${ch.start.koma}:${ch.start.section}`);

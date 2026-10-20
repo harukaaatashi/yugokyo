@@ -7,11 +7,14 @@ import {
 } from "../../lib/corpus";
 import { UI } from "../../lib/i18n";
 import type { Lang } from "../../lib/lang";
+import { HALF_BOOK_RECT } from "../../lib/pages";
+import BookCrop from "./BookCrop";
 import GenbunSwitch from "./GenbunSwitch";
 
 /**
- * 展示レイアウト（試作）の章扉。原本の1ページを章の表紙として大きく見せる。
+ * 章扉。原本の1ページを章の表紙として大きく見せる。
  * 狭い画面では画面幅いっぱいに、広い画面では見出しの右に置く。
+ * 表紙・裏表紙は本の写っている範囲を切り出す。そのほかの割らない丁は見開きを指定された側に寄せて切り取る。
  */
 export default function ExhibitCover({
   chapter,
@@ -28,18 +31,30 @@ export default function ExhibitCover({
   onToggleGenbun: (next: boolean) => void;
 }) {
   const ui = UI[lang];
-  const cover = chapter.def.exhibitCover ?? { koma: chapter.komaFrom, side: "r" as const };
-  const src = komaPageUrl(cover.koma, cover.side) ?? komaImageUrl(cover.koma, "w960");
+  const cover = chapter.def.exhibitCover;
+  const pageSrc = komaPageUrl(cover.koma, cover.side);
+  const src = pageSrc ?? komaImageUrl(cover.koma, "w960");
+  const align = cover.side === "r" ? "object-right-top" : "object-left-top";
+  const halfBook = HALF_BOOK_RECT[cover.koma];
   return (
     <header className="lg:mx-auto lg:flex lg:max-w-5xl lg:flex-row-reverse lg:items-center lg:gap-12 lg:px-5 lg:pt-8">
       <figure className="lg:w-5/12 lg:shrink-0">
-        <img
-          src={src}
-          alt={ui.pageAlt(cover.koma, cover.side)}
-          className="block h-cover w-full bg-paper-warm object-cover object-right-top lg:h-auto lg:max-h-pane-lg lg:rounded-2xl lg:border lg:border-line lg:object-contain"
-        />
+        {halfBook ? (
+          <BookCrop
+            src={src}
+            rect={halfBook}
+            alt={ui.spreadAlt(cover.koma)}
+            className="bg-paper-warm lg:rounded-2xl lg:border lg:border-line"
+          />
+        ) : (
+          <img
+            src={src}
+            alt={pageSrc ? ui.pageAlt(cover.koma, cover.side) : ui.spreadAlt(cover.koma)}
+            className={`block h-cover w-full bg-paper-warm object-cover ${align} lg:h-auto lg:max-h-pane-lg lg:rounded-2xl lg:border lg:border-line lg:object-contain`}
+          />
+        )}
         <figcaption className="px-5 pt-2 text-caption text-ink-soft lg:px-1">
-          {ui.coverCaption(cover.koma, cover.side)}
+          {pageSrc ? ui.coverCaption(cover.koma, cover.side) : ui.coverCaptionSpread(cover.koma)}
         </figcaption>
       </figure>
       <div className="mx-auto max-w-2xl px-5 pt-6 lg:mx-0 lg:flex-1 lg:px-0 lg:pt-0">

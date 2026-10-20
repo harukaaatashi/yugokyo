@@ -69,13 +69,14 @@ const ja = {
   zoomNdl: "NDLデジタルコレクションで見る",
   close: "閉じる",
 
-  /* 展示レイアウト（試作） */
+  /* 展示レイアウト（章扉・幕間・江戸の語） */
   interludeLabel: (koma: number) => `${kanjiNumber(koma)}丁`,
   interludeAria: (koma: number) => `${koma}丁の原本`,
   interludeCaption: "国立国会図書館蔵『洗湯手引草』",
   enlarge: "拡大して見る",
   coverCaption: (koma: number, side: "r" | "l") =>
     `写真：${koma}丁・${side === "r" ? "右" : "左"}ページ`,
+  coverCaptionSpread: (koma: number) => `写真：${koma}丁`,
   termFrom: (koma: number) => `原本 ${koma}丁`,
   termCropAlt: (word: string) => `原本に書かれた「${word}」`,
 };
@@ -142,6 +143,7 @@ const en: UiText = {
   interludeCaption: "National Diet Library, Sentō Tebikigusa",
   enlarge: "View larger",
   coverCaption: (koma, side) => `Photo: spread ${koma}, ${side === "r" ? "right" : "left"} page`,
+  coverCaptionSpread: (koma) => `Photo: spread ${koma}`,
   termFrom: (koma) => `Original, spread ${koma}`,
   termCropAlt: (word) => `“${word}” as written in the original`,
 };

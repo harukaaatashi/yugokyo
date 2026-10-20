@@ -34,13 +34,18 @@ export interface ChapterDef {
   start: Cursor;
   /** 目次のサムネに使う丁。未指定なら章内の挿絵、なければ komaFrom */
   cover?: number;
-  /** 展示レイアウト（試作）の章扉に出す1ページ。未指定なら章の最初の丁の右ページ */
-  exhibitCover?: { koma: number; side: PageSide };
+  /**
+   * 章扉に出す原本の1ページ。章の頭の位置からは決められない（見出しが前の丁の左ページに
+   * 来ることもある）ので、ページを見て選んでいる。割らない丁では見開きのどちら側に寄せるか
+   */
+  exhibitCover: { koma: number; side: PageSide };
 }
 
 export const CHAPTERS: readonly ChapterDef[] = [
   {
     id: "hyoshi",
+    // 章扉: 表紙。本は見開きの左半分に写っている
+    exhibitCover: { koma: 1, side: "l" },
     cover: 1,
     kind: "front",
     title: "表紙と目録",
@@ -54,6 +59,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   {
     // 2丁の右半分は目録。sections[2] の見出し「序」から本編がはじまる
     id: "jo",
+    // 章扉: 序の書き出しと蔵書印
+    exhibitCover: { koma: 2, side: "l" },
     cover: 3,
     kind: "chapter",
     title: "序 — 銭湯に五常の道あり",
@@ -66,6 +73,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "yurai",
+    // 章扉: 湯屋の店先の挿絵
+    exhibitCover: { koma: 7, side: "r" },
     cover: 8,
     kind: "chapter",
     title: "洗湯之由来 — 光明皇后の施浴",
@@ -78,6 +87,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "gokyo-jo",
+    // 章扉: 薪運びの道具の挿絵
+    exhibitCover: { koma: 12, side: "r" },
     cover: 12,
     kind: "chapter",
     title: "湯語教のはしがき",
@@ -91,9 +102,9 @@ export const CHAPTERS: readonly ChapterDef[] = [
   {
     // 14丁の右半分は「はしがき」の末尾。sections[1] の見出し「湯語教」から本文
     id: "gokyo",
-    cover: 14,
-    // 14丁の左ページの右端に題字「湯語教」がある
+    // 章扉: 右端に題字「湯語教」
     exhibitCover: { koma: 14, side: "l" },
+    cover: 14,
     kind: "chapter",
     title: "湯語教 本文",
     summary:
@@ -105,6 +116,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "bangumi",
+    // 章扉: 見出し「湯屋仲間番組大意略」
+    exhibitCover: { koma: 22, side: "l" },
     cover: 23,
     kind: "chapter",
     title: "湯屋番組大意略と十組割附",
@@ -117,6 +130,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "banzai",
+    // 章扉: 見出し「湯屋万歳暦」
+    exhibitCover: { koma: 25, side: "l" },
     cover: 26,
     kind: "chapter",
     title: "湯屋万歳暦 — 銭湯の年表",
@@ -129,6 +144,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "sadame",
+    // 章扉: 掲示文の「定」
+    exhibitCover: { koma: 29, side: "r" },
     cover: 29,
     kind: "chapter",
     title: "定・店法度書",
@@ -141,6 +158,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "shomon",
+    // 章扉: 譲渡証文の書き出し
+    exhibitCover: { koma: 30, side: "l" },
     cover: 31,
     kind: "chapter",
     title: "証文ひな形集",
@@ -153,6 +172,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "ukejo",
+    // 章扉: 請状の書き出し
+    exhibitCover: { koma: 33, side: "r" },
     cover: 33,
     kind: "chapter",
     title: "奉公人請状",
@@ -165,6 +186,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "maki",
+    // 章扉: 薪の相場の覚え
+    exhibitCover: { koma: 35, side: "r" },
     cover: 35,
     kind: "chapter",
     title: "諸薪・古木の相場",
@@ -177,6 +200,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "owari",
+    // 章扉: 嘉永四年の暦の円図
+    exhibitCover: { koma: 36, side: "l" },
     cover: 36,
     kind: "chapter",
     title: "町触・刊記と三宝日",
@@ -189,6 +214,8 @@ export const CHAPTERS: readonly ChapterDef[] = [
   },
   {
     id: "urabyoshi",
+    // 章扉: 裏表紙。本は見開きの右半分に写っている
+    exhibitCover: { koma: 38, side: "r" },
     cover: 38,
     kind: "back",
     title: "裏表紙",

@@ -30,7 +30,21 @@
       "modern": "そもそも湯屋という商売のいろはを、忙しい人のために手っ取り早く説いたのが本書だ。その心はこうである——身分の高い人も低い人も、湯を浴びるとなれば裸になる。これは天地自然の道理であって、刀を二本差したお武家さまも、十徳を羽織ったお医者さんも、下男の権助どんも……（次の丁へ続く）",
       "english": "This book sets out the ABCs of the bathhouse trade as a quick shortcut for busy people. Its heart is this: high or low, anyone who wants to bathe must get naked. That is the natural law of heaven and earth—the honorable samurai with his two swords, the doctor in his jittoku coat, good old Gonsuke the manservant… (continued on the next spread)",
       "note": "十徳（じっとく）は医者や学者が着た羽織風の上着。権助は下男・奉公人の代名詞。「裸になれば身分の上下なし」は江戸の銭湯文化を語るときの定番の理屈で、式亭三馬『浮世風呂』の序にも同じ趣向があります。",
-      "noteEn": "A jittoku is a short, jacket-like overgarment worn by doctors and scholars. “Gonsuke” was a stock name for any manservant or lowly employee. “Naked, there is no rank” was the standard line whenever Edo bathhouse culture came up; the preface to Shikitei Sanba’s Ukiyoburo (“The Bathhouse of the Floating World”) plays on the same idea."
+      "noteEn": "A jittoku is a short, jacket-like overgarment worn by doctors and scholars. “Gonsuke” was a stock name for any manservant or lowly employee. “Naked, there is no rank” was the standard line whenever Edo bathhouse culture came up; the preface to Shikitei Sanba’s Ukiyoburo (“The Bathhouse of the Floating World”) plays on the same idea.",
+      "terms": [
+        {
+          "word": "十徳",
+          "yomi": "じっとく",
+          "mean": "医者や隠居、茶人などが着物の上に羽織った上着。",
+          "source": "十徳着たる医者どんも"
+        },
+        {
+          "word": "権助",
+          "yomi": "ごんすけ",
+          "mean": "下男（住み込みの男の奉公人）を呼ぶときの、ありふれた名前。",
+          "source": "権助どんも"
+        }
+      ]
     }
   ],
   "status": "ai-draft"

@@ -2,7 +2,7 @@ import { useUi } from "../../lib/i18n";
 
 /**
  * 原文翻刻を本文に出すかのスイッチ。
- * 写真パネルの帯（いままでのレイアウト）と、章扉の見出しの下（展示レイアウト）で使う。
+ * 章扉の見出しの下（展示レイアウト）と、写真パネルの帯（以前のレイアウト）で使う。
  */
 export default function GenbunSwitch({
   checked,

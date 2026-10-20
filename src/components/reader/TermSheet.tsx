@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { komaImageUrl } from "../../lib/corpus";
 import { useUi } from "../../lib/i18n";
-import type { Term } from "../../lib/terms";
+import type { Term, TermCrop } from "../../lib/terms";
 
 /** 原本画像の実寸（全38枚で共通） */
 const FULL_W = 1600;
@@ -28,9 +28,9 @@ export function TermWord({ term, onOpen }: { term: Term; onOpen: (term: Term) =>
 }
 
 /** 原本でその語が書かれている部分。原寸画像を CSS で切り抜く */
-function TermCropImage({ term }: { term: Term }) {
+function TermCropImage({ term, crop }: { term: Term; crop: TermCrop }) {
   const ui = useUi();
-  const { koma, x, y, w, h } = term.crop;
+  const { koma, x, y, w, h } = crop;
   const scale = CROP_W / w;
   return (
     <div
@@ -71,10 +71,12 @@ export function TermSheet({ term, onClose }: { term: Term; onClose: () => void }
       aria-labelledby="term-sheet-word"
       className="fixed inset-x-3 bottom-24 z-40 mx-auto flex max-w-md gap-4 rounded-2xl border border-line bg-white p-4"
     >
-      <figure className="flex shrink-0 flex-col items-center gap-1.5">
-        <TermCropImage term={term} />
-        <figcaption className="text-caption text-ink-soft">{ui.termFrom(term.crop.koma)}</figcaption>
-      </figure>
+      {term.crop && (
+        <figure className="flex shrink-0 flex-col items-center gap-1.5">
+          <TermCropImage term={term} crop={term.crop} />
+          <figcaption className="text-caption text-ink-soft">{ui.termFrom(term.crop.koma)}</figcaption>
+        </figure>
+      )}
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
           <p id="term-sheet-word" lang="ja" className="pt-1 font-genbun text-2xl leading-snug text-ink">

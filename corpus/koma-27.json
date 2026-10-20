@@ -10,7 +10,15 @@
       "modern": "文化8年（1811）ごろから、拾い集めたごみを焚き付けに使うことが多くの湯屋で始まった。文政3年（1820）には物価につれて湯銭の値上げが認められた。文政5年（1822）ごろには石榴口にビードロ（ガラス）をはめこんだしゃれた湯屋が現れた。文政12年（1829）3月の江戸大火では、下町の組を中心に湯屋136軒が焼失した——。",
       "english": "Around Bunka 8 (1811), many bathhouses began using scraps of rubbish picked up off the streets as kindling. In Bunsei 3 (1820), a rise in the bath fee was permitted in line with prices. Around Bunsei 5 (1822), stylish bathhouses appeared with bīdoro (glass) set into the zakuro-guchi (the low arched entry to the bath chamber). In the great Edo fire of the 3rd month of Bunsei 12 (1829), 136 bathhouses burned, mostly in the groups of the Shitamachi lowlands—",
       "note": "文政12年の大火は「己丑の大火」として知られる実際の大災害。ガラス入り石榴口は文政期の銭湯の豪華競争を伝える楽しい記事です。各条の細部は未確定を含みます。",
-      "noteEn": "The Bunsei 12 fire was a real disaster, known as the Great Fire of the Tsuchinoto-Ushi Year. The glass-fitted zakuro-guchi is a fun item that shows the race for luxury among bathhouses in the Bunsei era. Details of each entry include uncertain readings."
+      "noteEn": "The Bunsei 12 fire was a real disaster, known as the Great Fire of the Tsuchinoto-Ushi Year. The glass-fitted zakuro-guchi is a fun item that shows the race for luxury among bathhouses in the Bunsei era. Details of each entry include uncertain readings.",
+      "terms": [
+        {
+          "word": "石榴口",
+          "yomi": "ざくろぐち",
+          "mean": "湯船の手前に下げた低い仕切り。湯気を逃がさないためのもので、客はかがんでくぐった。",
+          "source": "風呂の石榴口に硝子を入れし湯屋出来る"
+        }
+      ]
     },
     {
       "kind": "text",

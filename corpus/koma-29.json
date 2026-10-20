@@ -16,7 +16,15 @@
       "modern": "一、お上のご法度はきっと守ること。一、火の元は大切に。一、男女の入込（混浴）は禁止。一、風の強い日は早じまいすること。",
       "english": "Item: Strictly obey the laws of the authorities. Item: Take great care with fire. Item: Mixed bathing of men and women is prohibited. Item: On windy days, close early.",
       "note": "湯語教の対句で歌われた内容が、今度は実際に店へ貼り出す「定書」のひな形として出てきます。冗談の章と実務の章が同じ内容で対になっているのが本書の構成の妙。",
-      "noteEn": "What the Yugokyō sang in paired verses now reappears as a model sadamegaki—the actual notice of rules to post in the shop. A playful chapter and a practical chapter covering the same ground, set side by side: a clever touch in how the book is built."
+      "noteEn": "What the Yugokyō sang in paired verses now reappears as a model sadamegaki—the actual notice of rules to post in the shop. A playful chapter and a practical chapter covering the same ground, set side by side: a clever touch in how the book is built.",
+      "terms": [
+        {
+          "word": "ご法度",
+          "yomi": "ごはっと",
+          "mean": "お上（幕府）が定めた禁止事項。",
+          "source": "御公儀様御法度の趣、急度相守り申すべき事"
+        }
+      ]
     },
     {
       "kind": "text",

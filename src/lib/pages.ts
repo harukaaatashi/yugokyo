@@ -21,7 +21,7 @@ export const PAGE_CROP: Record<PageSide, { x: number; y: number; w: number; h: n
 
 /**
  * 割らない丁。
- * 1=表紙・38=裏表紙は本が左半分だけの別構図、8=光明皇后の施浴は見開き全面の一枚絵、
+ * 1=表紙は本が左半分、38=裏表紙は本が右半分にだけ写る別構図、8=光明皇后の施浴は見開き全面の一枚絵、
  * 37=三宝日の裏写りはほぼ白紙。いずれも割ると意味が壊れる
  */
 export const SPREAD_ONLY_KOMA: readonly number[] = [1, 8, 37, 38];
@@ -29,3 +29,20 @@ export const SPREAD_ONLY_KOMA: readonly number[] = [1, 8, 37, 38];
 export function isSplittable(koma: number): boolean {
   return !SPREAD_ONLY_KOMA.includes(koma);
 }
+
+export interface Rect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+/**
+ * 本が見開きの片側にだけ写っている丁（表紙・裏表紙）で、本が写っている範囲（原寸の座標）。
+ * 見開きから本だけを切り出す `.koma-book` の範囲に収まらないので、この矩形で切る。
+ * 紙の色で本の縁を拾い、少し余白を足した値
+ */
+export const HALF_BOOK_RECT: Readonly<Record<number, Rect>> = {
+  1: { x: 70, y: 55, w: 760, h: 1080 },
+  38: { x: 790, y: 55, w: 760, h: 1080 },
+};
