@@ -42,6 +42,8 @@ interface Props {
    * 要の語は押せば札が出るので、段落ごとの「注をひらく」は読む流れを止めるだけになる（DESIGN §9）
    */
   quietNotes?: boolean;
+  /** 前の段落の文がこの段落へ続いている。段落の間をあけずにつなげる（訳だけを読むとき） */
+  joinPrev?: boolean;
 }
 
 /** 行の中の語を TermWord に置き換える。語ごとに、段落で最初に出てきた1か所だけ */
@@ -102,6 +104,7 @@ function SectionBlock({
   onOpenKoma,
   onOpenTerm,
   quietNotes = false,
+  joinPrev = false,
 }: Props) {
   const side = pageSideOf(koma, index);
   // しおりの着地点。読書位置はこの id で記録する
@@ -146,7 +149,12 @@ function SectionBlock({
   }
 
   return (
-    <article id={id} data-koma={koma} data-side={side} className="scroll-below-pane">
+    <article
+      id={id}
+      data-koma={koma}
+      data-side={side}
+      className={`scroll-below-pane ${joinPrev ? "!mt-0" : ""}`}
+    >
       {text && (
         <p lang={textLang} className="text-yaku text-ink">
           <Lines
