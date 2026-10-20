@@ -67,10 +67,6 @@
     height: auto;
   }
 
-  .tategaki {
-    writing-mode: vertical-rl;
-  }
-
   /* 本文に残した江戸の語のルビ */
   .term rt {
     @apply text-rubi text-ink-soft font-body font-normal select-none;
