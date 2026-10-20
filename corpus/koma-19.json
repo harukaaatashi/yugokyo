@@ -10,7 +10,15 @@
       "modern": "柔和で誠実に、ただひたすら堪忍。\n「日々に新たに、また新たに」で（改良を）仕込め。\n鉄砲風呂（湯を沸かす鉄の筒）の鞘のまわりは八歩板（厚板）にせよ。\n前栓を付けて、湯船の中の泥を掃き出せるようにしておけ。\n風呂には三寸の前栓をあてがい、\n（五つの鐘……諸芸。字は一部読めるが、意味は未詳）\n湯船の上がり段は、近ごろから（造りが変わった）。\n脱衣の板の間が奥深いと、見通しが悪くて危ない。\n底の浅い褌（ふんどし）洗い用のたらいは、不浄だといって、\nつい近ごろまではあったが、今はない。",
       "english": "Be gentle and sincere—and above all, patient.\n“Renew yourself day by day, and again renew”: keep making improvements.\nAround the sheath of the teppō-buro (an iron stove tube that heats the water), use eight-bu boards.\nFit a front plug so the mud inside the tub can be swept out.\nGive the bath a three-sun front plug,\n(the fifth-hour bell … the various arts; some characters legible, meaning unclear)\nThe step down into the tub has, of late, (been built differently).\nIf the board-floored changing area runs deep, you can’t see to the back—bad.\nThe shallow tub for washing loincloths was called unclean,\nand though it was around until recently, it is gone now.",
       "note": "見開き右ページの10句。以前の版は5句だけでした。「日々に新たに亦新たに」は『大学』にある殷の湯王（！）の盤の銘「苟に日に新たに、日日に新たに、又日に新たなり」で、湯屋の教科書が「湯」の王様の言葉を引く確信犯の洒落です。「鉄砲の鞘」「前栓」「褌盥」など設備用語が具体的に読めるようになりました（「鉄砲風呂の際」は「鉄砲鞘の際」の誤読、「箱栓」は「前栓」の誤読）。3列目下段は「五ツの鐘」「諸芸」の字までは拾えましたが、間の2字と訓読は未詳です。",
-      "noteEn": "The ten lines on the right-hand page; an earlier version had only five. “Renew yourself day by day, and again renew” is the inscription on the washbasin of King Tang of Shang in the Confucian classic The Great Learning—a bathhouse textbook quoting a king whose name means “hot water,” surely on purpose. Equipment terms such as the “sheath” of the teppō-buro, the “front plug,” and the “loincloth tub” can now be read concretely (“beside the teppō-buro” was a misreading of “beside the teppō sheath,” and “box plug” of “front plug”). In the bottom line of the third column, “the fifth-hour bell” and “the various arts” can be made out, but the two characters between them and the reading remain unclear."
+      "noteEn": "The ten lines on the right-hand page; an earlier version had only five. “Renew yourself day by day, and again renew” is the inscription on the washbasin of King Tang of Shang in the Confucian classic The Great Learning—a bathhouse textbook quoting a king whose name means “hot water,” surely on purpose. Equipment terms such as the “sheath” of the teppō-buro, the “front plug,” and the “loincloth tub” can now be read concretely (“beside the teppō-buro” was a misreading of “beside the teppō sheath,” and “box plug” of “front plug”). In the bottom line of the third column, “the fifth-hour bell” and “the various arts” can be made out, but the two characters between them and the reading remain unclear.",
+      "regions": [
+        {
+          "x": 855,
+          "y": 139,
+          "w": 620,
+          "h": 932
+        }
+      ]
     },
     {
       "kind": "text",
@@ -18,7 +26,15 @@
       "modern": "湯屋の流し場と板の間の下水は、\n（「不行」「不浄」「下〓」の字は読めるが、訓読は未詳）\n火袋（竈の焚き口）は土蔵造りの塗屋に建て上げよ。\n西北をふさいで、煙は東南へ出せ（江戸の冬の北西風への備え）。\n煙よけの囲いは、かえって火の用心に悪い。\n休業日ごとに、火袋の煤を払え。\n（釜の薪について……判読困難）\n控えめな使用人は、客に逆らわない。\nごみ拾い（焚き付け集め）の人も、ひとつの芸。\n（使用人は）給金五両の奉公人——",
       "english": "The drains under the washing area and the changing floor—\n(the characters for “misconduct,” “uncleanness,” and “lower …” are legible, but the reading is unclear)\nBuild the firebox as a plastered, fireproof structure.\nClose off the northwest and send the smoke out to the southeast (against Edo’s northwesterly winter winds).\nAn enclosure to keep off the smoke is actually bad for fire safety.\nOn every day off, sweep the soot from the firebox.\n(something about firewood for the kettle; hard to read)\nA discreet servant does not cross the customers.\nEven the people who gather rubbish (for kindling) have a skill of their own.\nA servant on wages of five ryō—",
       "note": "見開き左ページの10句。以前の版は「竈のまはり」「風呂の煤」としていましたが、実際は「火袋（焚き口）」で、「煙の囲ひは火の用心」も「煙除けの囲ひは火の用心に悪し」と逆の意味でした。「埃拾ふ人」は、年代記（27丁）にある文化8年からの「埃拾ひ」（ごみを集めて焚き付けにする）と対応します。最後の「給金五両の召仕」は次の丁の「給金増して七両」へ続く使用人問題の導入です。「遠慮なる召仕は客に逆らはず」はルビ（えんりよ…めしつかひハきやくに…）から読み直しました。判読困難・訓読未詳の句が2つ残っています。",
-      "noteEn": "The ten lines on the left-hand page. An earlier version read “around the stove” and “soot in the bath,” but the text actually says hibukuro (the firebox), and “the smoke enclosure is a fire precaution” actually says the opposite: “an enclosure to keep off smoke is bad for fire safety.” The “people who gather rubbish” match the timeline (spread 27), which says rubbish-gathering for kindling began in Bunka 8. The closing “a servant on wages of five ryō” leads into the next spread’s “wages rose to seven ryō” and the servant problem. “A discreet servant does not cross the customers” was reread from its printed readings. Two lines remain illegible or unclear."
+      "noteEn": "The ten lines on the left-hand page. An earlier version read “around the stove” and “soot in the bath,” but the text actually says hibukuro (the firebox), and “the smoke enclosure is a fire precaution” actually says the opposite: “an enclosure to keep off smoke is bad for fire safety.” The “people who gather rubbish” match the timeline (spread 27), which says rubbish-gathering for kindling began in Bunka 8. The closing “a servant on wages of five ryō” leads into the next spread’s “wages rose to seven ryō” and the servant problem. “A discreet servant does not cross the customers” was reread from its printed readings. Two lines remain illegible or unclear.",
+      "regions": [
+        {
+          "x": 200,
+          "y": 139,
+          "w": 594,
+          "h": 932
+        }
+      ]
     }
   ],
   "status": "ai-draft"

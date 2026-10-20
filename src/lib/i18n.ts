@@ -79,6 +79,11 @@ const ja = {
   coverCaptionSpread: (koma: number) => `写真：${koma}丁`,
   termFrom: (koma: number) => `原本 ${koma}丁`,
   termCropAlt: (word: string) => `原本に書かれた「${word}」`,
+  /** 段落の頭の番号と、幕間の朱の枠の番号 */
+  paragraphMark: (n: number) => kanjiNumber(n),
+  interludeMarks: (marks: number[]) =>
+    `朱の枠が、いま読んだ${marks.map(kanjiNumber).join("・")}の段落`,
+  regionAria: (n: number) => `${kanjiNumber(n)}の段落が書かれている所`,
 };
 
 export type UiText = typeof ja;
@@ -146,6 +151,10 @@ const en: UiText = {
   coverCaptionSpread: (koma) => `Photo: spread ${koma}`,
   termFrom: (koma) => `Original, spread ${koma}`,
   termCropAlt: (word) => `“${word}” as written in the original`,
+  paragraphMark: (n) => String(n),
+  interludeMarks: (marks) =>
+    `The red frames show paragraphs ${marks.join(", ")} you just read`,
+  regionAria: (n) => `Where paragraph ${n} is written`,
 };
 
 export const UI: Record<Lang, UiText> = { ja, en };
