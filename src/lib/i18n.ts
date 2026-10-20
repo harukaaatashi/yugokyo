@@ -69,23 +69,23 @@ const ja = {
   zoomNdl: "NDLデジタルコレクションで見る",
   close: "閉じる",
 
-  /* 展示レイアウト（章扉・幕間・江戸の語） */
-  interludeTitle: (koma: number) => `いま読んだ${kanjiNumber(koma)}丁`,
-  interludeAria: (koma: number) => `${koma}丁の原本`,
-  interludeGuide: (marks: number[]) =>
-    marks.length
-      ? `右上から縦に読みます。朱の枠が、上の${marks.map(kanjiNumber).join("・")}の段落です。`
-      : "右上から縦に読みます。",
-  interludeCaption: "国立国会図書館蔵『洗湯手引草』",
-  enlarge: "拡大して見る",
+  /* 展示レイアウト（章扉・下の帯・江戸の語） */
+  genponTitle: (koma: number) => `原本 ${kanjiNumber(koma)}丁`,
+  genponAria: (koma: number) => `原本の${koma}丁をひらく`,
+  genponHere: "朱の枠が、いま読んでいるところ",
+  genponKoma: "いま読んでいる丁",
+  genponOpen: "ひらく",
+  genponGuide: "右上から縦に読みます。",
+  genponGuideHere: "右上から縦に読みます。朱の枠が、いま読んでいた段落です。",
+  genponCaption: "国立国会図書館蔵『洗湯手引草』",
+  genponFull: "定規ごと原寸で見る",
+  regionAria: "いま読んでいた段落が書かれている所",
   coverCaption: (koma: number, side: "r" | "l") =>
     `写真：${koma}丁・${side === "r" ? "右" : "左"}ページ`,
   coverCaptionSpread: (koma: number) => `写真：${koma}丁`,
-  termFrom: (koma: number) => `原本 ${koma}丁`,
+  termFrom: (koma: number) => `原本 ${kanjiNumber(koma)}丁`,
   termCropAlt: (word: string) => `原本に書かれた「${word}」`,
-  /** 段落の頭の番号と、幕間の朱の枠の番号 */
-  paragraphMark: (n: number) => kanjiNumber(n),
-  regionAria: (n: number) => `${kanjiNumber(n)}の段落が書かれている所`,
+  termGlyphAria: (word: string) => `${word}（原本の字）`,
 };
 
 export type UiText = typeof ja;
@@ -145,20 +145,22 @@ const en: UiText = {
   zoomNdl: "View at NDL Digital Collections",
   close: "Close",
 
-  interludeTitle: (koma) => `Spread ${koma}, which you just read`,
-  interludeAria: (koma) => `The original, spread ${koma}`,
-  interludeGuide: (marks) =>
-    marks.length
-      ? `Read in vertical columns from the top right. The red frames mark paragraphs ${marks.join(", ")} above.`
-      : "Read in vertical columns from the top right.",
-  interludeCaption: "National Diet Library, Sentō Tebikigusa",
-  enlarge: "View larger",
+  genponTitle: (koma) => `Original, spread ${koma}`,
+  genponAria: (koma) => `Open the original, spread ${koma}`,
+  genponHere: "The red frame marks where you are reading",
+  genponKoma: "The spread you are reading",
+  genponOpen: "Open",
+  genponGuide: "Read in vertical columns from the top right.",
+  genponGuideHere:
+    "Read in vertical columns from the top right. The red frame marks the paragraph you were reading.",
+  genponCaption: "National Diet Library, Sentō Tebikigusa",
+  genponFull: "View full size with the ruler",
+  regionAria: "Where the paragraph you were reading is written",
   coverCaption: (koma, side) => `Photo: spread ${koma}, ${side === "r" ? "right" : "left"} page`,
   coverCaptionSpread: (koma) => `Photo: spread ${koma}`,
   termFrom: (koma) => `Original, spread ${koma}`,
   termCropAlt: (word) => `“${word}” as written in the original`,
-  paragraphMark: (n) => String(n),
-  regionAria: (n) => `Where paragraph ${n} is written`,
+  termGlyphAria: (word) => `${word} (in the original hand)`,
 };
 
 export const UI: Record<Lang, UiText> = { ja, en };

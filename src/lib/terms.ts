@@ -1,9 +1,10 @@
 /**
  * 現代語訳の中に残す江戸の語。corpus の段落が `terms` として持つ。
  *
- * 訳は現代の言葉で読みやすく保ったまま、要の語だけを明朝＋ルビで残し、
- * タップで意味と「原本でのその字」を出す。古いものを読んでいる感覚を、
- * 本文の読みやすさを削らずに足すための仕掛け。
+ * 訳は現代の言葉で読みやすく保ったまま、要の語だけを残し、タップで意味と「原本でのその字」を出す。
+ * 原本の字を切り抜いてある語は、本文の中にその筆の字をはめ、いまの字を朱のルビで添える。
+ * 切り抜きのない語は明朝で書き、読みを朱のルビで添える。どちらも「朱のルビ＝押せる」で揃える。
+ * 古いものを読んでいる感覚を、本文の読みやすさを削らずに足すための仕掛け。
  *
  * 訳文は書き換えない。`word` が訳文にそのまま出てくる語だけを選ぶ
  * （その段落で最初に出てきた1か所だけを語として扱う）。`npm run check:corpus` が確かめる。
@@ -29,4 +30,23 @@ export interface Term {
    * 原本の表記が訳語と違う語（糠袋＝原本は「糠あらひ」など）。不確かな字を「原本の字」として見せないため
    */
   crop?: TermCrop;
+}
+
+/**
+ * 原本の字（背景を抜いた墨の字）。`npm run make:glyphs` が crop から作る。
+ * 語まるごと・縦書きのままの1枚。語の札の左に大きく出す
+ */
+export function glyphUrl(crop: TermCrop): string {
+  return `${import.meta.env.BASE_URL.replace(/\/$/, "")}/glyphs/${crop.koma}-${crop.x}-${crop.y}.png`;
+}
+
+/**
+ * 本文の中に、訳語の代わりに原本の字をはめるときの1字ずつの画像。
+ * 原本の表記が訳語と同じ語（原文の句に訳語がそのまま出てくる語）だけ。
+ * 「湯株」を「湯屋株」としてはめると、原本にない字を原本の字として見せてしまうため
+ */
+export function inlineGlyphUrls(term: Term): string[] | null {
+  const { crop } = term;
+  if (!crop || !term.source.includes(term.word)) return null;
+  return Array.from(term.word, (_, i) => glyphUrl(crop).replace(/\.png$/, `-${i}.png`));
 }

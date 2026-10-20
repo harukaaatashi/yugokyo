@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import {
   chapterById,
@@ -8,6 +8,7 @@ import {
   loadProgress,
   ndlViewerUrl,
   saveProgress,
+  sectionAnchorId,
   TOTAL_CHAPTERS,
   type Chapter as ChapterData,
   type FlowItem,
@@ -23,8 +24,9 @@ import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
 import KomaZoom from "../components/reader/KomaZoom";
 import ExhibitCover from "../components/reader/ExhibitCover";
-import KomaInterlude, { type InterludeMark } from "../components/reader/KomaInterlude";
+import { GenponStrip, GenponView } from "../components/reader/GenponStrip";
 import { TermSheet } from "../components/reader/TermSheet";
+import type { Rect } from "../lib/pages";
 
 const WIDE = "(min-width: 1024px)";
 
@@ -64,7 +66,7 @@ export default function Chapter() {
   const { id } = useParams();
   const { hash } = useLocation();
   const chapter = id ? chapterById.get(id) : undefined;
-  // 展示レイアウト（既定）。本文の横に写真パネルを置かず、章扉と幕間で原本を見せる
+  // 展示レイアウト（既定）。本文の横に写真パネルを置かず、章扉と下の帯で原本を見せる
   const exhibit = viewerMode === "exhibit";
 
   const rootRef = useRef<HTMLDivElement>(null);
@@ -73,6 +75,14 @@ export default function Chapter() {
   const [paneHeight, setPaneHeight] = useState(0);
   const [zoomKoma, setZoomKoma] = useState<number | null>(null);
   const [openTerm, setOpenTerm] = useState<Term | null>(null);
+  const [genponOpen, setGenponOpen] = useState(false);
+  // 開いている札・見開きの effect が、スクロールのたびの再描画で張り直されないよう関数を固定する
+  const closeTerm = useCallback(() => setOpenTerm(null), []);
+  const closeGenpon = useCallback(() => setGenponOpen(false), []);
+  const zoomFromGenpon = useCallback((koma: number) => {
+    setGenponOpen(false);
+    setZoomKoma(koma);
+  }, []);
   const wide = useIsWide();
   const { lang } = useLang();
   const ui = UI[lang];
@@ -132,7 +142,9 @@ export default function Chapter() {
   const active = useActiveKoma(
     rootRef,
     initialSpot,
-    wide || exhibit ? 0 : paneHeight,
+    // 展示レイアウトの狭い画面は、画面の上から2割の所を「読んでいる行」とみなす。
+    // 画面の最上端で判定すると、下の帯の朱の枠が読んでいる段落より1つ前を指してしまう
+    wide ? 0 : exhibit ? Math.round(window.innerHeight * 0.2) : paneHeight,
     chapter?.def.id ?? ""
   );
 
@@ -191,39 +203,27 @@ export default function Chapter() {
     };
   }, [chapter, hash, wide, paneHeight, exhibit]);
 
-  // 展示レイアウトは丁ごとにまとめ、丁を読み終えたところに幕間を挟む。
-  // 次の章へ続く丁の幕間は、その丁を読み終える次の章の側に出す（どの丁の幕間も本の中で1回だけ）
+  // 展示レイアウトは丁ごとにまとめ、丁の変わり目に間をとる
   const komaGroups = useMemo(() => {
-    const groups: {
-      koma: number;
-      items: FlowItem[];
-      interlude: boolean;
-      /** 原本の位置を測ってある段落に、丁の中で 1 から振る番号（段落の key → 番号） */
-      markOf: Map<string, number>;
-      marks: InterludeMark[];
-    }[] = [];
+    const groups: { koma: number; items: FlowItem[] }[] = [];
     for (const item of chapter?.items ?? []) {
       const koma = item.type === "koma" ? item.koma.koma : item.koma;
-      let group = groups[groups.length - 1];
-      if (!group || group.koma !== koma) {
-        group = {
-          koma,
-          items: [],
-          interlude: !(item.type === "koma" && item.continues.to),
-          markOf: new Map(),
-          marks: [],
-        };
-        groups.push(group);
-      }
-      group.items.push(item);
-      const regions = item.type === "section" ? item.section.regions : undefined;
-      if (regions?.length) {
-        const n = group.marks.length + 1;
-        group.markOf.set(item.key, n);
-        group.marks.push({ n, regions });
-      }
+      const group = groups[groups.length - 1];
+      if (group && group.koma === koma) group.items.push(item);
+      else groups.push({ koma, items: [item] });
     }
     return groups;
+  }, [chapter]);
+
+  // 段落が原本のどこに書かれているか（段落の id → 原寸の矩形）。下の帯の朱の枠に使う
+  const regionsOf = useMemo(() => {
+    const map = new Map<string, readonly Rect[]>();
+    for (const item of chapter?.items ?? []) {
+      if (item.type === "section" && item.section.regions?.length) {
+        map.set(sectionAnchorId(item.koma, item.index), item.section.regions);
+      }
+    }
+    return map;
   }, [chapter]);
 
   // 着地点から読者が自分で動いたら、その章でしおりの記録を始める
@@ -292,12 +292,30 @@ export default function Chapter() {
       {zoomKoma !== null && (
         <KomaZoom koma={zoomKoma} onClose={() => setZoomKoma(null)} />
       )}
-      {openTerm && <TermSheet term={openTerm} onClose={() => setOpenTerm(null)} />}
+      {openTerm && <TermSheet term={openTerm} onClose={closeTerm} />}
+      {exhibit && genponOpen && (
+        <GenponView
+          koma={active.koma}
+          regions={regionsOf.get(active.anchor)}
+          onClose={closeGenpon}
+          onZoom={zoomFromGenpon}
+        />
+      )}
     </>
+  );
+
+  // 本文の段落まで読み進めたら出す（章扉を見ているあいだは出さない）
+  const strip = exhibit && active.anchor !== "" && komas.includes(active.koma) && (
+    <GenponStrip
+      koma={active.koma}
+      regions={regionsOf.get(active.anchor)}
+      onOpen={() => setGenponOpen(true)}
+    />
   );
 
   const nav = (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 backdrop-blur">
+      {strip}
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3">
         {prev ? (
           <Link
@@ -342,34 +360,30 @@ export default function Chapter() {
           onToggleGenbun={toggleGenbun}
         />
         {komaGroups.map((group) => (
-          <Fragment key={group.koma}>
-            <div className="mx-auto max-w-2xl px-5 py-12">
-              <div className={showGenbun ? "space-y-10" : "space-y-6"}>
-                {group.items.map((item) =>
-                  item.type === "koma" ? (
-                    <KomaRule key={item.key} item={item} showLabel />
-                  ) : (
-                    <SectionBlock
-                      key={item.key}
-                      section={item.section}
-                      koma={item.koma}
-                      index={item.index}
-                      showGenbun={showGenbun}
-                      lang={lang}
-                      onOpenKoma={setZoomKoma}
-                      onOpenTerm={setOpenTerm}
-                      mark={group.markOf.get(item.key)}
-                    />
-                  )
-                )}
-              </div>
+          <div key={group.koma} className="mx-auto max-w-2xl px-5 py-6 first:pt-12">
+            <div className={showGenbun ? "space-y-10" : "space-y-6"}>
+              {group.items.map((item) =>
+                item.type === "koma" ? (
+                  <KomaRule key={item.key} item={item} showLabel />
+                ) : (
+                  <SectionBlock
+                    key={item.key}
+                    section={item.section}
+                    koma={item.koma}
+                    index={item.index}
+                    showGenbun={showGenbun}
+                    lang={lang}
+                    onOpenKoma={setZoomKoma}
+                    onOpenTerm={setOpenTerm}
+                  />
+                )
+              )}
             </div>
-            {group.interlude && (
-              <KomaInterlude koma={group.koma} onZoom={setZoomKoma} marks={group.marks} />
-            )}
-          </Fragment>
+          </div>
         ))}
         <div className="mx-auto max-w-2xl px-5">{sourceNote}</div>
+        {/* 下の帯のぶん、最後の段落が帯に隠れないよう余白を足す */}
+        <div aria-hidden="true" className="h-24" />
         {zoom}
         {nav}
       </div>

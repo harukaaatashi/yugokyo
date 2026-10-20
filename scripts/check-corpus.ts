@@ -3,6 +3,7 @@
  * - koma がファイル名と一致し 1..38 の範囲
  * - 必須フィールドが揃っている
  * - image が public/ 配下に実在する
+ * - 江戸の語（terms）が訳文・原文と合っていて、原本の字の画像が揃っている
  * - 章（src/lib/chapters.ts）が全セクションを過不足なく覆っている
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
@@ -124,6 +125,17 @@ for (const f of files) {
                 c.koma >= 1 && c.koma <= 38 && c.x >= 0 && c.y >= 0 &&
                 c.w > 0 && c.h > 0 && c.x + c.w <= 1600 && c.y + c.h <= 1383;
               if (!ok) errors.push(`${where} の crop が原本画像の範囲外`);
+              // 原本の字の画像（npm run make:glyphs）が crop と食い違っていないこと。
+              // 本文にはめる1字ずつの画像は、原本の表記が訳語と同じ語だけ（src/lib/terms.ts）
+              const stem = join(root, "public", "glyphs", `${c.koma}-${c.x}-${c.y}`);
+              const word = String(t.word);
+              const need = [`${stem}.png`];
+              if (String(t.source).includes(word)) {
+                need.push(...Array.from(word, (_, k) => `${stem}-${k}.png`));
+              }
+              if (!need.every((path) => existsSync(path))) {
+                errors.push(`${where} の原本の字の画像がない（npm run make:glyphs を流す）`);
+              }
             }
           }
         }

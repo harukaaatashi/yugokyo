@@ -31,7 +31,7 @@ export function isSplittable(koma: number): boolean {
 }
 
 /**
- * 見開き画像のうち本が写っている範囲（原寸の座標）。幕間はこの範囲だけを見せる。
+ * 見開き画像のうち本が写っている範囲（原寸の座標）。下の帯と原本の見開きはこの範囲だけを見せる。
  * `src/index.css` の `.koma-book` はこの値から作った割合なので、変えるときは両方を直す
  */
 export const BOOK_RECT = { x: 128, y: 52, w: 1382, h: 1090 } as const;
@@ -41,6 +41,16 @@ export interface Rect {
   y: number;
   w: number;
   h: number;
+}
+
+/** 原寸の座標を、本だけを切り出した枠（`.koma-book`）の中の割合にする。朱の枠を重ねるのに使う */
+export function bookBoxStyle(r: Rect) {
+  return {
+    left: `${((r.x - BOOK_RECT.x) / BOOK_RECT.w) * 100}%`,
+    top: `${((r.y - BOOK_RECT.y) / BOOK_RECT.h) * 100}%`,
+    width: `${(r.w / BOOK_RECT.w) * 100}%`,
+    height: `${(r.h / BOOK_RECT.h) * 100}%`,
+  };
 }
 
 /**
