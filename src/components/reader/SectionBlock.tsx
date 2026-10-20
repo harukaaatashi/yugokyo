@@ -37,6 +37,11 @@ interface Props {
   onOpenKoma: (koma: number) => void;
   /** 訳文に残した江戸の語を開く。渡されたときだけ語を出す（展示レイアウト） */
   onOpenTerm?: (term: Term) => void;
+  /**
+   * 注を本文の流れに出さない（展示レイアウト）。「原文」スイッチを入れたときだけ、原文の下に添える。
+   * 要の語は押せば札が出るので、段落ごとの「注をひらく」は読む流れを止めるだけになる（DESIGN §9）
+   */
+  quietNotes?: boolean;
 }
 
 /** 行の中の語を TermWord に置き換える。語ごとに、段落で最初に出てきた1か所だけ */
@@ -96,6 +101,7 @@ function SectionBlock({
   lang,
   onOpenKoma,
   onOpenTerm,
+  quietNotes = false,
 }: Props) {
   const side = pageSideOf(koma, index);
   // しおりの着地点。読書位置はこの id で記録する
@@ -160,7 +166,17 @@ function SectionBlock({
           <Honkoku text={section.original} />
         </blockquote>
       )}
-      {note && <NoteDisclosure lang={noteLang}>{note}</NoteDisclosure>}
+      {note &&
+        (quietNotes ? (
+          (showGenbun || !text) && (
+            <p lang={noteLang} className="mt-3 pl-4 text-caption text-ink-soft">
+              <span className="mr-2 font-genbun text-shu">{ui.note}</span>
+              {note}
+            </p>
+          )
+        ) : (
+          <NoteDisclosure lang={noteLang}>{note}</NoteDisclosure>
+        ))}
     </article>
   );
 }

@@ -11,7 +11,6 @@ import {
   sectionAnchorId,
   TOTAL_CHAPTERS,
   type Chapter as ChapterData,
-  type FlowItem,
 } from "../lib/corpus";
 import { useActiveKoma } from "../lib/useActiveKoma";
 import { useShowGenbun } from "../lib/useShowGenbun";
@@ -203,18 +202,6 @@ export default function Chapter() {
     };
   }, [chapter, hash, wide, paneHeight, exhibit]);
 
-  // 展示レイアウトは丁ごとにまとめ、丁の変わり目に間をとる
-  const komaGroups = useMemo(() => {
-    const groups: { koma: number; items: FlowItem[] }[] = [];
-    for (const item of chapter?.items ?? []) {
-      const koma = item.type === "koma" ? item.koma.koma : item.koma;
-      const group = groups[groups.length - 1];
-      if (group && group.koma === koma) group.items.push(item);
-      else groups.push({ koma, items: [item] });
-    }
-    return groups;
-  }, [chapter]);
-
   // 段落が原本のどこに書かれているか（段落の id → 原寸の矩形）。下の帯の朱の枠に使う
   const regionsOf = useMemo(() => {
     const map = new Map<string, readonly Rect[]>();
@@ -359,28 +346,25 @@ export default function Chapter() {
           showGenbun={showGenbun}
           onToggleGenbun={toggleGenbun}
         />
-        {komaGroups.map((group) => (
-          <div key={group.koma} className="mx-auto max-w-2xl px-5 py-6 first:pt-12">
-            <div className={showGenbun ? "space-y-10" : "space-y-6"}>
-              {group.items.map((item) =>
-                item.type === "koma" ? (
-                  <KomaRule key={item.key} item={item} showLabel />
-                ) : (
-                  <SectionBlock
-                    key={item.key}
-                    section={item.section}
-                    koma={item.koma}
-                    index={item.index}
-                    showGenbun={showGenbun}
-                    lang={lang}
-                    onOpenKoma={setZoomKoma}
-                    onOpenTerm={setOpenTerm}
-                  />
-                )
-              )}
-            </div>
-          </div>
-        ))}
+        <div className={`mx-auto max-w-2xl px-5 pt-12 ${showGenbun ? "space-y-10" : "space-y-6"}`}>
+          {chapter.items.map((item) =>
+            item.type === "koma" ? (
+              <KomaRule key={item.key} item={item} quiet />
+            ) : (
+              <SectionBlock
+                key={item.key}
+                section={item.section}
+                koma={item.koma}
+                index={item.index}
+                showGenbun={showGenbun}
+                lang={lang}
+                onOpenKoma={setZoomKoma}
+                onOpenTerm={setOpenTerm}
+                quietNotes
+              />
+            )
+          )}
+        </div>
         <div className="mx-auto max-w-2xl px-5">{sourceNote}</div>
         {/* 下の帯のぶん、最後の段落が帯に隠れないよう余白を足す */}
         <div aria-hidden="true" className="h-24" />
