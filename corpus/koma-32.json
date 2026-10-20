@@ -2,29 +2,37 @@
   "koma": 32,
   "label": "敷金証文と家作売渡証文のひな形",
   "image": "/koma/koma-32.jpg",
-  "summary": "契約書テンプレート集の中核。譲渡証文の結びの決まり文句、敷金（保証金）の受取証文、そして間口・奥行・代金を書き込む建物売渡証文。上段では薪の早見表が百文台へ続く。",
+  "summary": "契約書テンプレート集の中核。譲渡証文の結びの決まり文句、敷金（保証金）の受取証文（返済の約束つき）、そして間口・奥行・代金を書き込む建物売渡証文。上段では薪の早見表が百文台へ続く。",
   "sections": [
     {
       "kind": "text",
-      "original": "……為（ため）後日（ごじつ）、湯屋譲（ゆず）り｛の｝證文（しょうもん）仍（よっ）て件（くだん）の如（ごと）し\n年号月日　何町　誰／文人（?）　誰／人々　誰\n\n一　金何拾両也　湯屋敷金（しきがね）｛として｝慥（たしか）に受け取り｛候こと｝実正（じっしゃう）也。但（ただし）文字金（もんじきん）〓〓……右後日のため、｛敷｝金の證文仍て件の如し",
-      "modern": "「後日のため、湯屋譲りの証文よってくだんのごとし。年号月日、売主・証人連名」——契約書の結びの定型句。続いて「金◯拾両、湯屋の敷金としてたしかに受け取りました」という敷金（保証金）の受取証文のひな形が載ります。",
-      "english": "“For future reference, this deed for the transfer of a bathhouse is given as above. Era, year, month, day—signed jointly by the seller and witnesses.” This is the set closing formula of a contract. Next comes a model receipt for a security deposit: “The sum of ____ ryō, which I confirm I have duly received as the security deposit on the bathhouse.”",
-      "note": "「仍如件（よってくだんのごとし）」は江戸の証文の締めの決まり文句。文字金は品位の高い正金（小判）指定の意とみられますが未確定です。",
-      "noteEn": "Yotte kudan no gotoshi (“hence, as stated above”) was the stock phrase that closed Edo deeds. Monjikin seems to mean that payment must be in high-grade genuine gold coin (koban), but this is uncertain."
+      "original": "｛……趣（おもむき）ニ付（つき）、若（もし）後（のち）ニ付（つき）｝何様（なにやう）之（の）｛六ヶ敷（むつかしき）｝出入（でいり）出来（しゅったい）候共（さふらふとも）、請人（うけにん）引請（ひきうけ）急度（きっと）埒明（らちあけ）、貴殿（きでん）へ少（すこし）も苦労（くらう）相掛（あひかけ）申（まうす）間敷（まじく）候（さふらふ）事\n右之通（みぎのとほ）り譲（ゆづ）り渡世（とせい）為致（いたさせ）候上（さふらふうへ）ハ、｛…（判読困難）｝何事（なにごと）｛…｝背（そむ）き申（まうす）間敷（まじく）候（さふらふ）。為（ため）後日（ごじつ）、湯屋譲（ゆず）り申（まうす）證文（しょうもん）仍如件（よってくだんのごとし）\n年号月日\n　何町誰店\n　｛請｝人（にん）　誰\n　｛人主｝　誰\n誰殿（どの）\n\n湯屋敷金（しきがね）請取（うけとり）申（まうす）金子（きんす）之事\n一　金何拾両也　但（ただし）文字金（もんじきん）｛之｝\n右之金子請取｛慥（たしか）ニ納（をさめ）｝実正（じっしゃう）也。向後（きゃうご）ニ至（いた）り、湯屋（ゆや）｛譲（ゆづ）り申（まうし）候節（さふらふせつ）ハ｝此（この）書面（しょめん）之（の）金子（きんす）無相違（さうゐなく）｛返済（へんさい）可（べく）｝申（まうし）候（さふらふ）。為（ため）後日（ごじつ）、湯屋敷金（しきがね）請取（うけとり）證文（しょうもん）仍如件（よってくだんのごとし）\n年号月日\n　何町｛請取主｝　誰\n誰殿（どの）",
+      "modern": "（前の丁から続く湯屋譲渡証文の結び）……どんな面倒なもめごとが起きても、請人（保証人）が引き受けてきっと片をつけ、あなたには少しも苦労をかけません。\n右のとおり譲り渡して商売させる以上は、何事についても約束に背きません。後日のため、湯屋譲りの証文はこのとおりです。\n年号月日　何町の誰店（売主）、請人・人主の連署——宛名は「誰殿」（買主）。\n\n続いて「湯屋敷金請取の証文」のひな形。金何拾両（ただし文字金）、右の金子はたしかに受け取って納めました。今後、湯屋を譲るときには、この書面の金子を間違いなくお返しします。後日のため、敷金請取の証文はこのとおり。年号月日、何町の請取主から誰殿へ。",
+      "english": "(The close of the bathhouse transfer deed continued from the previous spread) … However troublesome a dispute may arise, the guarantor will take it on and settle it without fail, and will not cause you the slightest trouble.\nHaving transferred the business as above, I shall not go against this in any matter. For future reference, this deed for the transfer of a bathhouse is given as above.\nEra, year, month, day—signed by the seller (a tenant of So-and-so in ____ Town), the guarantor, and the sponsor, and addressed to “Mr. So-and-so” (the buyer).\n\nNext comes a model “receipt for a bathhouse security deposit”: the sum of ____ ryō (in monjikin gold); I have duly received and deposited it. Hereafter, when the bathhouse is given up, I will return the sum stated in this document without fail. For future reference, this receipt is given as above. Era, year, month, day, from the recipient in ____ Town to Mr. So-and-so.",
+      "note": "31丁から続く湯屋譲渡証文の結びと、敷金（保証金）の受取証文のひな形。「何様之六ヶ敷出入出来候共…急度埒明…少も苦労相掛申間敷候」「為後日…仍如件」は江戸の証文の決まり文句で、この型を字形・ルビと突き合わせて読みました。以前の版で「……」「〓〓」にしていた部分のほか、連署の「文人（?）」「人々」は「請人」「人主」とみられること（なお未確定）、宛名の「誰殿」と敷金証文の見出し「湯屋敷金請取申金子之事」を読み落としていたことがわかりました。敷金証文には「湯屋を譲るときはこの金子を相違なく返す」という返済の約束までが入っています。文字金は、元文期の小判（「文」の字の刻印がある文字金）での受け渡しを指定する意とみられますが未確定です。冒頭の数句は崩れが強く、未確定です。",
+      "noteEn": "The close of the bathhouse transfer deed continued from spread 31, and a model receipt for a security deposit. “However troublesome a dispute may arise … settle it without fail … not cause you the slightest trouble” and “For future reference … given as above” are stock formulas of Edo deeds, and the text was read by matching these patterns against the shapes of the characters and their printed readings. Besides filling passages an earlier version left as “……” or illegible, it turned out that the co-signers read earlier as “bunnin (?)” and “hitobito” are most likely the guarantor (ukenin) and sponsor (hitonushi)—still uncertain—and that the addressee “Mr. So-and-so” and the heading of the deposit receipt had been missed. The deposit receipt even includes a promise to return the money when the bathhouse is given up. Monjikin seems to specify payment in Genbun-era gold coins (stamped with the character 文), but this is uncertain. The first few phrases are heavily cursive and remain uncertain."
     },
     {
       "kind": "heading",
-      "original": "湯屋家作（かさく）賣渡（うりわたし）證文之事",
+      "original": "湯屋家作（かさく）賣渡（うりわたし）申（まうす）證文之事",
       "modern": "湯屋の建物売渡証文のひな形",
       "english": "Model deed of sale for a bathhouse building"
     },
     {
       "kind": "text",
-      "original": "一　何町何丁目、家主（いへぬし）誰（たれ）支配（しはい）の地面（ぢめん）の内（うち）、（男女両風呂・男一ト風呂）、間口（まぐち）何間（なんげん）何尺（なんじゃく）・奥行（おくゆき）何間何尺｛の湯屋家作｝、代金何百何拾両｛にて｝売り渡し、右金子（きんす）慥（たしか）に受け取り候こと実正也。向後（きゃうこう）｛故障・違乱｝一切（いっさい）｛申すまじく｝、万一（まんいち）｛の節は｝加判（かはん）の者｛が｝〓〓……",
-      "modern": "「◯町◯丁目、家主◯◯支配の地面のうち、（男女両風呂か男湯のみか）、間口◯間◯尺・奥行◯間◯尺の湯屋の建物を、代金◯百◯拾両で売り渡し、代金はたしかに受け取りました。今後苦情は一切申しません。万一のときは連帯保証人が——」という建物売買契約。",
-      "english": "“Within the land at Block ____ of ____ Town, managed by landlord ____: the bathhouse building (men’s and women’s baths, or men’s bath only), with a frontage of ____ ken ____ shaku and a depth of ____ ken ____ shaku, is hereby sold for the sum of ____ ryō, and I truly confirm that I have received this money in full. Hereafter no complaint of any kind shall be raised. Should anything arise, the co-signing guarantor shall—” A contract for the sale of a building.",
-      "note": "間口・奥行の寸法欄まである本格的な不動産契約書。江戸の湯屋がどれほど高額な資産だったか（数百両＝いまの数千万円級）が伝わります。上段の薪早見表は百五十〜百八十五文まで続きます。",
-      "noteEn": "A full-fledged real-estate contract, right down to blanks for frontage and depth. It shows what a costly asset an Edo bathhouse was—several hundred ryō, on the order of tens of millions of yen today. In the upper band of the page, the firewood ready-reckoner continues from 150 up to 185 mon."
+      "original": "一　何町何丁目、家主（いへぬし）誰（たれ）支配（しはい）地面（ぢめん）之（の）｛内（うち）｝（男女両風呂・男一ト風呂）、間口（まぐち）何間（なんげん）何尺（なんじゃく）・奥行（おくゆき）何間何尺、但（ただし）｛居宅共｝家作（かさく）代金（だいきん）何百何拾両ニ相定（あひさだ）め、貴殿（きでん）方（かた）ニ売渡（うりわた）シ、右金子（きんす）慥（たしか）ニ受取（うけとり）申（まうす）処（ところ）実正（じっしゃう）也。然（しか）ル上（うへ）ハ向後（きゃうご）ニ至（いた）り、親類（しんるい）ハ勿論（もちろん）、横合（よこあひ）ゟ（より）異乱（いらん）申（まうす）者（もの）一切（いっさい）無之（これなく）候。万一（まんいち）故障（こしゃう）等（など）申（まうす）者（もの）有之（これあり）候ハヾ、加判（かはん）之（の）者共（ものども）罷出（まかりいで）急度（きっと）埒明（らちあけ）、貴殿（きでん）ニ聊（いささか）｛御苦難｝相掛（あひかけ）ケ申（まうす）間敷（まじく）｛…｝",
+      "modern": "「何町何丁目、家主◯◯が差配する地面のうちの湯屋（男女両風呂か、男湯だけか）、間口◯間◯尺・奥行◯間◯尺の建物を、代金◯百◯拾両と取り決めてあなたに売り渡し、右の代金はたしかに受け取りました。\nそのうえは今後、親類はもちろん、脇からとやかく言い立てる者は一切ありません。万一故障を申し立てる者があれば、連判の者どもが出向いてきっと片をつけ、あなたには少しも迷惑をかけません——」という建物売買契約。",
+      "english": "“Within the land at Block ____ of ____ Town, managed by landlord ____: the bathhouse (men’s and women’s baths, or men’s bath only), with a frontage of ____ ken ____ shaku and a depth of ____ ken ____ shaku, is hereby sold to you for the agreed sum of ____ ryō, and I truly confirm that I have received this money in full.\nHereafter, no one—relatives, of course, or anyone from outside—shall raise any objection. Should anyone raise a complaint, the co-signers will come forward and settle it without fail, and will not cause you the least trouble—” A contract for the sale of a building.",
+      "note": "間口・奥行・代金の空欄に書き込む本格的な建物売渡証文。「然ル上ハ向後ニ至り、親類ハ勿論、横合ゟ異乱申者一切無之候。万一故障等申者有之候ハヾ、加判之者共罷出急度埒明…」は不動産売買の定型の担保文言で、以前の版で〓や｛｝にしていた後半を、この型と字形・ルビを突き合わせて起こしました。江戸の湯屋がどれほど高額な資産だったか（数百両＝いまの数千万円級）が伝わります。「但居宅共」「御苦難」の部分と末尾は未確定です。上段の薪早見表（百文〜百八十五文）は、別の節に起こしました。",
+      "noteEn": "A full-fledged real-estate contract, with blanks for frontage, depth, and price. “Hereafter no one—relatives, of course, or anyone from outside—shall raise any objection; should anyone raise a complaint, the co-signers will come forward and settle it without fail …” is the standard guarantee clause of property sales, and the second half—left as illegible or uncertain in an earlier version—was read by matching this pattern against the characters and their printed readings. It shows what a costly asset an Edo bathhouse was—several hundred ryō, on the order of tens of millions of yen today. The phrases read as “including the residence” and “trouble,” and the very end, remain uncertain. The firewood ready-reckoner in the upper band (100 to 185 mon) is transcribed as a separate section."
+    },
+    {
+      "kind": "text",
+      "original": "（上段：薪買出し早割附のつづき）\n一　六ト　百\n一　五ト七ノ壱毛　百五\n一　五ト四ノ五毛　百十\n一　五ト弐ノ弐毛　百十五\n一　五ト　百二十\n一　四ト八ノ　百二十五\n一　四ト六ノ弐毛　百三十\n一　四ト四ノ四毛　百三十五\n一　四ト弐ノ九毛　百四十\n一　四ト壱ノ四毛　百四十五\n一　四ト　百五十\n一　三ト八ノ四毛　百五十五\n一　三ト七ノ五毛　百六十\n一　三ト六ノ四毛　百六十五\n一　三ト五ノ三毛　百七十\n一　三ト四ノ三毛　百七十五\n一　三ト三ノ三毛　百八十\n一　三ト弐ノ四毛　百八十五",
+      "modern": "前の丁の薪の早見表のつづき。薪1〆の値段が百文なら60文で0.6〆、百五十文なら0.4〆、百八十五文なら0.324〆——と、相場が上がるほど同じ銭で買える量が減っていくさまが一目でわかります。",
+      "english": "The firewood ready-reckoner continued from the previous spread. At 100 mon a kan, 60 mon buys 0.6 kan; at 150 mon, 0.4 kan; at 185 mon, 0.324 kan—you can see at a glance how the same money buys less and less as the price rises.",
+      "note": "「60÷相場」の検算で、百五十五文の行だけが合いません。印刷は「三ト八ノ四毛」ですが、計算では「三ト八ノ七毛」（0.387）。「七」を「四」と彫り誤った、原本側の誤刻とみられます。翻刻は印刷どおりにしています。",
+      "noteEn": "Checked as “60 ÷ price,” only the 155-mon row fails to match: the print has 3-to 8-no 4-mō, but the calculation gives 3-to 8-no 7-mō (0.387). This looks like an engraver’s slip in the original, cutting “four” for “seven.” The transcription follows the print as it stands."
     }
   ],
   "status": "ai-draft"

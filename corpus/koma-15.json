@@ -2,15 +2,15 @@
   "koma": 15,
   "label": "湯語教（二）— 湯屋磨かざれば光沢なし",
   "image": "/koma/koma-15.jpg",
-  "summary": "本書でいちばん有名な一句「湯屋磨かざれば光沢なし、光なければ常に客入らず」の丁。掃除・薪・釜という経営の要点が、漢文訓読調の対句でたたみかけられる。",
+  "summary": "本書でいちばん有名な一句「湯屋磨かざれば光沢なし、光なければ常に客入らず」の丁。掃除・薪・釜・使用人という経営の要点が、『実語教』の型を借りた対句でたたみかけられる。",
   "sections": [
     {
       "kind": "text",
       "original": "湯屋（ゆや）磨（みが）かざれば光澤（ひかり）なし\n光（ひかり）なければ常（つね）に客人（きゃく）入（い）らず\n石垣（いしがき）磨かざれば糠汁（ぬかじる）｛に穢（よご）る｝\n奇麗（きれい）なる湯屋は常に繁昌（はんじゃう）す",
       "modern": "湯屋は磨かなければピカピカにならない。ピカピカでなければ客は寄りつかない。流し場の石畳も磨かなければ糠汁で汚れる。きれいな湯屋はいつも繁昌する。",
       "english": "If a bathhouse isn’t polished, it won’t shine. If it doesn’t shine, customers won’t come. If the stone floor of the washing area isn’t scrubbed, it grows grimy with rice-bran water. A clean bathhouse always prospers.",
-      "note": "寺子屋の教科書『実語教』の冒頭「山高きが故に貴からず、樹有るを以て貴しと為す」の型をそっくり借りた、本書の看板フレーズ。「清潔こそ最大の集客」という主張は、現代の銭湯・サウナ経営にそのまま通じます。",
-      "noteEn": "The book’s signature line, borrowing wholesale the pattern that opens the terakoya textbook Jitsugokyō (“Teaching of True Words”): “A mountain is not precious because it is high; it is precious because it has trees.” Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today.",
+      "note": "元ネタは『実語教』の「玉磨かざれば光無し、光無きを石瓦とす。人学ばざれば智無し、智無きを愚人とす」。「玉」を「湯屋」に、「石瓦」を流し場の「石垣（石畳）」に替えた、本書の看板フレーズです。「清潔こそ最大の集客」という主張は、現代の銭湯・サウナ経営にそのまま通じます。",
+      "noteEn": "The model is the Jitsugokyō (“Teaching of True Words”): “A gem not polished has no luster; without luster it is a mere stone or tile. A person who does not study has no wisdom; without wisdom he is a fool.” Swapping “gem” for “bathhouse” and “stone or tile” for the stone floor of the washing area, this is the book’s signature line. Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today.",
       "terms": [
         {
           "word": "湯屋",
@@ -42,17 +42,17 @@
     },
     {
       "kind": "text",
-      "original": "風呂（ふろ）の内（うち）の湯（ゆ）は減（へ）ること有（あ）り\n井（ゐ）の内の水（みづ）は減らず\n｛一日づつ｝積（つ）む一日（いちにち）の現金（げんきん）\n一日の薪代（まきだい）に｛引き合はず｝\n薪（まき）高（たか）く費（つひ）えて常に引き合はず\n夏（なつ）の内（うち）は｛心掛けて｝｛焚き方を按配すべし｝",
-      "modern": "湯船の湯は減っても、井戸の水は尽きない（水はただ、惜しむな）。日々のあがり（現金収入）は、日々の薪代に食われて引き合わないもの。薪が高くつけば商売は成り立たないから、（薪の要らない）夏のうちから焚き方を工夫しておけ。",
-      "english": "The hot water in the tub may run low, but the water in the well never runs out (water costs nothing—don’t begrudge it). Each day’s cash takings get eaten up by each day’s firewood bill and never quite balance. If firewood costs too much, the business can’t survive, so use the summer (when firewood isn’t needed) to work out better ways of firing.",
-      "note": "収入より燃料費、という湯屋経営の急所。後の丁で薪の買い出し表や坪別の値段表が延々と続くのも、この危機感ゆえです。訓読の細部（特に最後の句）は未確定を含みます。",
-      "noteEn": "Fuel costs outrunning income—the sore spot of the bathhouse business. This sense of crisis is why later spreads go on and on with lists of firewood purchases and price tables by tsubo (a unit of measure). Some details of how the lines are read (especially the last one) are uncertain.",
+      "original": "風呂（ふろ）の内（うち）の湯（ゆ）は減（へ）ること有（あ）り\n井（ゐ）の内の水（みづ）は減らず\n一日（いちにち）の現金（げんきん）を積（つ）むと雖（いへど）も\n一日の薪代（まきだい）には如（し）かず\n冬（ふゆ）は｛高（たか）く費（つひ）えて｝常（つね）に引（ひ）き合（あ）はず\n夏（なつ）の内（うち）は心掛（こころが）けて残（のこ）すべし",
+      "modern": "湯船の湯は減っても、井戸の水は尽きない（水はただ、惜しむな）。\n一日の現金のあがりを積み上げても、一日の薪代にはかなわない。\n冬は燃料がかさんで、いつも収支が合わない。\nだから夏のうちに心がけて蓄えを残しておけ。",
+      "english": "The hot water in the tub may run low, but the water in the well never runs out (water costs nothing—don’t begrudge it).\nPile up a day’s cash takings, and it still won’t match a day’s firewood bill.\nIn winter the fuel costs mount and the books never balance.\nSo during the summer, take care to set something aside.",
+      "note": "『実語教』の「倉の内の財は朽つること有り、身の内の才は朽つること無し。千両の金を積むと雖も、一日の学に如かず。兄弟常に合はず、慈悲を兄弟と為す」の型。「千両の金」と「一日の学」を「一日の現金」と「一日の薪代」に替えて、収入より燃料費という湯屋経営の急所を突きます。5句目の1字目は、ルビ「ふゆ」から「冬」と読み直しました（以前の版は「薪」）。",
+      "noteEn": "Patterned on the Jitsugokyō (“Teaching of True Words”): “Treasure in the storehouse can rot; talent within you never rots. Pile up a thousand ryō of gold, and it is not worth one day of study. Brothers do not always get along; let compassion be your brother.” Swapping “a thousand ryō of gold” and “a day of study” for “a day’s cash” and “a day’s firewood bill,” it hits the sore spot of the bathhouse business: fuel costs outrunning income. The first character of the fifth line has been reread as “winter” from its printed reading fuyu (an earlier version read it as “firewood”).",
       "terms": [
         {
           "word": "薪",
           "yomi": "まき",
           "mean": "湯を沸かす燃料。薪代は湯屋のいちばん重い出費で、後の丁には薪の相場表が続く。",
-          "source": "一日の薪代に引き合はず",
+          "source": "一日の薪代には如かず",
           "crop": {
             "koma": 15,
             "x": 940,
@@ -62,6 +62,14 @@
           }
         }
       ]
+    },
+    {
+      "kind": "text",
+      "original": "釜（かま）厚（あつ）ければ永（なが）く損（そん）ぜず｛湯（ゆ）の沸（わ）くを｝遅（おそ）し\n釜（かま）薄（うす）ければ是（これ）財物（ざいもつ）の釜（かま）とす\n一日（いちにち）に薪（まき）一本（いっぽん）｛除（よ）けて焚（た）けば｝\n三百六拾本（さんびゃくろくじっぽん）｛の虚焚（むだだき）を除く｝\n一本（いっぽん）疎（おろそか）にせざれば数日（すじつ）を助（たす）く\n況（いはん）や一生（いっしゃう）数年（すねん）の｛安堵（あんど）をや｝\n故（かるがゆゑ）に客（きゃく）ばかり｛にては｝足（た）ること能（あた）はず\n心（こころ）附（づ）けて｛釜（かま）を｝焚（た）くべし\n召仕（めしつかひ）は譬（たと）へば手足（てあし）の如（ごと）し\n朝夕（てうせき）客（きゃく）の愛想（あいさう）を尽（つく）せ",
+      "modern": "釜が厚ければ長もちはするが、湯の沸きが遅い。\n釜が薄ければ（早く沸いて薪が浮くので）、それこそ「財産になる釜」だ。\n一日に薪を一本ずつ節約すれば、\n一年で三百六十本の無駄焚きがなくなる。\n一本をおろそかにしなければ、それで数日がしのげる。\nまして一生、数年先の安心はなおさらだ。\nだから、客の入りだけでは足りない。\n気を配って釜を焚け。\n使用人は、いわば自分の手足のようなもの。\n朝に夕に、客への愛想を尽くさせよ。",
+      "english": "A thick kettle lasts a long time but is slow to heat the water.\nA thin kettle (quick to boil, sparing the firewood) is the kettle that makes you money.\nSave one stick of firewood a day,\nand you cut out 360 sticks of wasted burning a year.\nDon’t treat a single stick carelessly, and it will carry you through several days—\nhow much more, then, your peace of mind over years and a lifetime.\nSo customers alone are not enough:\ntend the kettle fire with care.\nYour servants are, so to speak, your own hands and feet.\nMorning and evening, have them give the customers every courtesy.",
+      "note": "見開き左ページの10句。以前の版はこのページをまるごと読み落としていました。『実語教』の「財物は永く存せず、才智を財物と為す」を「釜厚ければ永く損ぜず……釜薄ければ是れ財物の釜」に、「故に書を読みて倦むこと勿れ」を「故に客ばかりにては足ること能はず」に替えるなど、句の型を手がかりに読んでいます。薪一本の節約を年に積み上げる計算は、燃料費に追われる湯屋の本音。動詞まわりの訓読には未確定を含みます。",
+      "noteEn": "The ten lines on the left-hand page of this spread, which an earlier version missed entirely. They were read with the Jitsugokyō’s line patterns as a guide—for example, “Riches do not last long; make talent and wisdom your riches” becomes “A thick kettle lasts long … a thin kettle is the kettle that makes you money,” and “Therefore never tire of reading books” becomes “So customers alone are not enough.” Adding up one stick of firewood saved per day over a year is the honest voice of a bathhouse hounded by fuel costs. Some readings around the verbs are uncertain."
     }
   ],
   "status": "ai-draft"

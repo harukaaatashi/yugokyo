@@ -93,6 +93,15 @@ for (const f of files) {
             if (typeof t.word === "string" && !String(s.modern ?? "").includes(t.word)) {
               errors.push(`${where} が訳文に出てこない`);
             }
+            // 原文での言い回しは、原文からルビ・未確定の括弧・改行・空白を除いたものにそのまま含まれること
+            // （原文を読み直したときに、札の引用だけが古いまま残らないように）
+            const flat = (x: string) => x.replace(/[\s　]/g, "");
+            const plainOriginal = flat(
+              original.replace(/（[ぁ-ゖー]+）/g, "").replace(/[｛｝]/g, "")
+            );
+            if (typeof t.source === "string" && !plainOriginal.includes(flat(t.source))) {
+              errors.push(`${where} の source が原文に見つからない`);
+            }
             const c = t.crop as Record<string, number> | undefined;
             if (c !== undefined) {
               // 原寸 1600×1383 の内側に収まる矩形

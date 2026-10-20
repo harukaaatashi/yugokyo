@@ -2,23 +2,23 @@
   "koma": 18,
   "label": "湯語教（五）— 客の生態と、湯の効能",
   "image": "/koma/koma-18.jpg",
-  "summary": "客の生態カタログの続き（子どもの月代剃り、桶の隠し置き、嫁姑の噂話……）から一転、「夏は暑さを凌ぎ、冬は寒さを防ぐ」と湯の効能を讃えて章が締めくくりに向かう。",
+  "summary": "困った客の生態カタログの続き（不人情な輩、糠袋を返さない女客、湯船の湯を汲む者、子どもの月代剃り、嫁姑の噂……）から、「夏は暑さを凌ぎ、冬は寒さを防ぐ」と湯の効能を讃え、「客は店の亭主」「有ることは書き付けよ」という心得に着地する。",
   "sections": [
     {
       "kind": "text",
-      "original": "子供（こども）の月代（さかやき）｛を剃（そ）りて泣（な）かせる者あり｝\n小桶（こをけ）を隠（かく）し置（お）き｛独り占めにする者あり｝\n女（をんな）は髪（かみ）を洗（あら）ひ糠袋（ぬかぶくろ）｛を貸し借りし｝\n嫁（よめ）姑（しうとめ）の｛噂（うはさ）沢山（たくさん）｝\n混（こ）み合（あ）ひて喧（かまびす）しき噺（はなし）｛尽きず｝",
-      "modern": "子どもの月代（さかやき）を剃って泣かせる者あり。小桶をこっそり確保してひとり占めする者あり。女湯では髪を洗い、糠袋の貸し借りをし、嫁と姑の噂話がどっさり。混み合えばおしゃべりのにぎやかなこと——。",
-      "english": "Some shave a child’s sakayaki and set the child wailing. Some secretly stash a small bucket to keep all to themselves. In the women’s bath they wash their hair, lend and borrow bran bags, and trade gossip galore about daughters-in-law and mothers-in-law. And when it’s crowded, oh, the chatter—",
-      "note": "月代は額から頭頂を剃る江戸の髪型で、子どもは剃られるたびに大泣きするのが定番。女湯パートは『浮世風呂』二編（女湯の巻）と同じ題材です。判読不能の句を飛ばした部分的な翻刻です。",
-      "noteEn": "The sakayaki was the Edo hairstyle with the forehead and crown shaved, and children famously bawled every time it was done. The women’s-bath part shares its subject with the second part of Ukiyoburo (“The Bathhouse of the Floating World”), the women’s-bath volume. Illegible lines have been skipped; the transcription is partial."
+      "original": "斯（かか）る不人情（ふにんじゃう）の輩（ともがら）｛は早（はや）く断（ことわ）るべし｝\n女（をんな）は髪（かみ）を洗（あら）ひ糠袋（ぬかぶくろ）を返（かへ）さず\n中（なか）の湯（ゆ）を汲（く）んで｛人（ひと）の愛想（あいさう）尽（づ）かしと為（す）る｝\n｛裸（はだか）にて｝礼儀（れいぎ）を延（の）べて長湯（ながゆ）と為（す）る\n子供（こども）の月代（さかやき）を剃（そ）って泣（な）き喚（わめ）く\n小桶（こをけ）を｛置（お）き隠（かく）し｝近（ちか）く引（ひ）き附（つ）く\n｛この句、判読困難｝\n嫁（よめ）姑（しうとめ）の噂（うはさ）｛話（はなし）尽（つ）きず｝\n混多雑（ごったまぜ）喧々（がやがや）と｛鬧（さわが）し｝\n｛湯（ゆ）より来（きた）りて…却（かへつ）て風邪（かぜ）を引（ひ）く（判読困難）｝",
+      "modern": "こういう不人情な連中は、早めに断るがよい。\n女客は髪を洗って、借りた糠袋を返さない。\n湯船の湯を自分の桶で汲んで、まわりに愛想を尽かされる。\n裸のまま長々と挨拶を交わして、長湯になる。\n子どもは月代を剃られて泣きわめく。\n小桶をこっそり置き隠して、手もとに引き寄せておく。\n（判読できない句）\n嫁と姑の噂話は尽きない。\nごった混ぜで、がやがやと騒がしい。\n（湯から上がって……かえって風邪を引く、とも読めるが判読困難）",
+      "english": "Such heartless types are best turned away early.\nWomen wash their hair and never return the rice-bran bags they borrowed.\nSome dip into the tub with their own buckets and disgust everyone around them.\nSome stand naked trading long courtesies until it turns into a long soak.\nChildren howl when their foreheads are shaved.\nSome hide away a small bucket and keep it pulled close at hand.\n(an illegible line)\nThe gossip about brides and mothers-in-law never ends.\nA jumble of people, noisy and clamorous.\n(Possibly “come out of the bath … and catch cold after all,” but hard to read.)",
+      "note": "見開き右ページの10句。以前の版は5句だけで、うち「糠袋を貸し借りし」は誤りで、実際は「糠袋を返さず」でした。湯船の湯を自分の桶で汲む、裸で長々と挨拶して長湯になる——『浮世風呂』と同じ「困った客」図鑑です。4列目上段は崩れが強く、なお判読できていません。",
+      "noteEn": "The ten lines on the right-hand page. An earlier version had only five, and its “lend and borrow rice-bran bags” was a misreading—the text actually says they “don’t return” them. Dipping into the tub with your own bucket, standing naked exchanging long courtesies—this is the same “problem customer” guide as Ukiyoburo (“The Bathhouse of the Floating World”). The top line of the fourth column is heavily cursive and remains unread."
     },
     {
       "kind": "text",
-      "original": "夏（なつ）は暑（あつ）さを凌（しの）ぎ、冬（ふゆ）は寒（さむ）さを防（ふせ）ぐ\n一日（いちにち）の｛骨休（ほねやす）め｝｛は湯に如（し）くなし｝\n｛これらの｝人（ひと）皆（みな）｛湯の恩を言ふ｝\n安穏（あんのん）安穏｛の｝商売（しゃうばい）｛なり｝\n暖（あたた）かなる時（とき）も寒（さむ）さを忘（わす）るべからず\n有（あ）る言（こと）は書（か）き付（つ）け｛置くべし｝",
-      "modern": "湯は夏には暑さをしのがせ、冬には寒さを防いでくれる。一日の骨休めに湯ほどよいものはなく、誰もが湯の恩を口にする。なんとも安穏なよい商売ではないか。ただし、暖かい季節にも冬の寒さ（への備え）を忘れるな。用事はなんでも帳面に書きつけておけ。",
-      "english": "A bath helps you bear the heat in summer and keeps out the cold in winter. Nothing beats a bath for resting your bones at the end of the day, and everyone speaks gratefully of it. What a peaceful, pleasant trade this is! Even so, in the warm season do not forget the winter cold (and prepare for it). Write every bit of business down in your account book.",
-      "note": "湯の効能讃美でしめつつ、最後は「備えよ」「記録せよ」という経営者の実務感覚に着地するのがこの本らしいところ。訓読の細部は未確定を含みます。",
-      "noteEn": "It winds up by praising the bath’s benefits, then lands on a business owner’s practical sense—“be prepared,” “keep records”—which is very much this book’s style. Some details of the reading are uncertain."
+      "original": "朝（あさ）潜口（くぐりぐち）より来（きた）りて戸（と）を敲（たた）き\n｛晩（ばん）は遅（おそ）く来（きた）りて｝枡（ます）を宛（あて）がふ\n夏（なつ）は暑（あつ）さを凌（しの）ぎ冬（ふゆ）は寒（さむ）さを防（ふせ）ぐ\n一日（いちにち）の休（やす）み｛有（あ）ることを幸（さいはひ）に願（ねが）ふ｝\n｛気随（きずゐ）｝我儘（わがまま）仕（し）次第（しだい）\n安（やす）い哉（かな）安（やす）い哉（かな）此（この）商売（あきなひ）\n是等（これら）の人（ひと）皆（みな）｛暖（あたた）かなりと言（い）ふ｝\n暖（あたた）かなる時（とき）は其（その）寒（さむ）さを｛忘（わす）れず｝\n客（きゃく）は店（みせ）の｛亭主（ていしゅ）と成（な）る｝\n有（あ）る言（こと）は書（か）き附（つ）けて｛置（お）き長（なが）く残（のこ）すべし｝",
+      "modern": "朝は（開店前から）くぐり戸に来て戸を叩き、\n晩は遅くに来て（湯銭の）枡を差し出す。\n湯は夏には暑さをしのがせ、冬には寒さを防いでくれる。\n（客は）一日の休みがあればありがたいと願う。\n気ままわがまま、したい放題。\nなんと安い、安い商売だろう。\nこういう人たちはみな「温まった」と言う。\n暖かいときでも、寒さの（ありがたみ／備え）を忘れない。\n客こそが店の主人である。\n何かあれば書き付けて、長く残しておけ。",
+      "english": "In the morning they come to the wicket door and knock,\nand at night they come late and hold out their coins in the measure box.\nThe bath helps you bear the heat in summer and keeps off the cold in winter.\nOn a day off, people count themselves lucky to come.\nThey do just as they please, as willful as can be—\nand what a cheap, cheap trade this is!\nAll these people say, “That warmed me up.”\nEven when it’s warm, don’t forget the cold.\nThe customer is the master of the shop.\nWhatever happens, write it down and keep it for a long time.",
+      "note": "見開き左ページの10句。朝は開店前から戸を叩き、晩は閉店まぎわに来る——客に振り回される湯屋の一日を描いたうえで、「安い哉安い哉此商売」（数文の湯銭でこれだけ好き勝手される）と自嘲し、「客は店の亭主」「書き付けて残せ」と経営の心得に着地します。「暖かなる時は其の寒さを忘れず」は『実語教』の「富むと雖も貧しきを忘るること勿れ」の型。動詞まわりの訓読には未確定を含みます。",
+      "noteEn": "The ten lines on the left-hand page. Customers knock before opening time and turn up just before closing—after this picture of a bathhouse day spent at the customers’ beck and call comes a wry “How cheap, how cheap this trade!” (a few coins buys all this willfulness), landing on management lessons: “the customer is the master of the shop” and “write things down.” “Even when it’s warm, don’t forget the cold” follows the Jitsugokyō (“Teaching of True Words”) pattern “Though you are rich, never forget poverty.” Some readings around the verbs are uncertain."
     }
   ],
   "status": "ai-draft"
