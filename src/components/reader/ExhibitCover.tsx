@@ -40,20 +40,23 @@ export default function ExhibitCover({
     <header className="lg:mx-auto lg:flex lg:max-w-5xl lg:flex-row-reverse lg:items-center lg:gap-12 lg:px-5 lg:pt-8">
       <figure className="lg:w-5/12 lg:shrink-0">
         {halfBook ? (
-          <BookCrop
-            src={src}
-            rect={halfBook}
-            alt={ui.spreadAlt(cover.koma)}
-            className="bg-paper-warm lg:rounded-2xl lg:border lg:border-line"
-          />
+          // 表紙・裏表紙は縦長なので、幅いっぱいにすると画面を占める。高さで決めて中央に置く
+          <div className="bg-paper-warm lg:bg-transparent">
+            <BookCrop
+              src={src}
+              rect={halfBook}
+              alt={ui.spreadAlt(cover.koma)}
+              className="mx-auto h-cover lg:h-cover-lg lg:rounded-2xl lg:border lg:border-line"
+            />
+          </div>
         ) : (
           <img
             src={src}
             alt={pageSrc ? ui.pageAlt(cover.koma, cover.side) : ui.spreadAlt(cover.koma)}
-            className={`block h-cover w-full bg-paper-warm object-cover ${align} lg:h-auto lg:max-h-pane-lg lg:rounded-2xl lg:border lg:border-line lg:object-contain`}
+            className={`block h-cover w-full bg-paper-warm object-cover ${align} lg:mx-auto lg:h-auto lg:max-h-cover-lg lg:w-auto lg:max-w-full lg:rounded-2xl lg:border lg:border-line lg:object-contain`}
           />
         )}
-        <figcaption className="px-5 pt-2 text-caption text-ink-soft lg:px-1">
+        <figcaption className="px-5 pt-2 text-caption text-ink-soft lg:px-1 lg:text-center">
           {pageSrc ? ui.coverCaption(cover.koma, cover.side) : ui.coverCaptionSpread(cover.koma)}
         </figcaption>
       </figure>
