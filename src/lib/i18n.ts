@@ -70,8 +70,12 @@ const ja = {
   close: "閉じる",
 
   /* 展示レイアウト（章扉・幕間・江戸の語） */
-  interludeLabel: (koma: number) => `${kanjiNumber(koma)}丁`,
+  interludeTitle: (koma: number) => `いま読んだ${kanjiNumber(koma)}丁`,
   interludeAria: (koma: number) => `${koma}丁の原本`,
+  interludeGuide: (marks: number[]) =>
+    marks.length
+      ? `右上から縦に読みます。朱の枠が、上の${marks.map(kanjiNumber).join("・")}の段落です。`
+      : "右上から縦に読みます。",
   interludeCaption: "国立国会図書館蔵『洗湯手引草』",
   enlarge: "拡大して見る",
   coverCaption: (koma: number, side: "r" | "l") =>
@@ -81,8 +85,6 @@ const ja = {
   termCropAlt: (word: string) => `原本に書かれた「${word}」`,
   /** 段落の頭の番号と、幕間の朱の枠の番号 */
   paragraphMark: (n: number) => kanjiNumber(n),
-  interludeMarks: (marks: number[]) =>
-    `朱の枠が、いま読んだ${marks.map(kanjiNumber).join("・")}の段落`,
   regionAria: (n: number) => `${kanjiNumber(n)}の段落が書かれている所`,
 };
 
@@ -143,8 +145,12 @@ const en: UiText = {
   zoomNdl: "View at NDL Digital Collections",
   close: "Close",
 
-  interludeLabel: (koma) => `Spread ${koma}`,
+  interludeTitle: (koma) => `Spread ${koma}, which you just read`,
   interludeAria: (koma) => `The original, spread ${koma}`,
+  interludeGuide: (marks) =>
+    marks.length
+      ? `Read in vertical columns from the top right. The red frames mark paragraphs ${marks.join(", ")} above.`
+      : "Read in vertical columns from the top right.",
   interludeCaption: "National Diet Library, Sentō Tebikigusa",
   enlarge: "View larger",
   coverCaption: (koma, side) => `Photo: spread ${koma}, ${side === "r" ? "right" : "left"} page`,
@@ -152,8 +158,6 @@ const en: UiText = {
   termFrom: (koma) => `Original, spread ${koma}`,
   termCropAlt: (word) => `“${word}” as written in the original`,
   paragraphMark: (n) => String(n),
-  interludeMarks: (marks) =>
-    `The red frames show paragraphs ${marks.join(", ")} you just read`,
   regionAria: (n) => `Where paragraph ${n} is written`,
 };
 
