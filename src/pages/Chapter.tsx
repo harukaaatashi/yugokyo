@@ -40,6 +40,9 @@ function isReload(): boolean {
   return nav?.type === "reload";
 }
 
+/** 下の帯を、スクロールが止まってからこれだけ経ったら出す（ms） */
+const STRIP_REST_MS = 900;
+
 /** 着地からこれ以上動いたら「読者が自分で読み進めた」とみなす */
 const ARM_DISTANCE = 64;
 
@@ -76,6 +79,22 @@ export default function Chapter() {
   const [zoomKoma, setZoomKoma] = useState<number | null>(null);
   const [openTerm, setOpenTerm] = useState<Term | null>(null);
   const [genponOpen, setGenponOpen] = useState(false);
+  // 下の帯はスクロール中は引っ込め、止まって少し経ったら出す（出しっぱなしだと読む場所が狭い）
+  const [resting, setResting] = useState(false);
+  useEffect(() => {
+    if (!exhibit) return;
+    let timer = 0;
+    const onScroll = () => {
+      setResting(false);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setResting(true), STRIP_REST_MS);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.clearTimeout(timer);
+    };
+  }, [exhibit]);
   // 開いている札・見開きの effect が、スクロールのたびの再描画で張り直されないよう関数を固定する
   const closeTerm = useCallback(() => setOpenTerm(null), []);
   const closeGenpon = useCallback(() => setGenponOpen(false), []);
@@ -307,11 +326,13 @@ export default function Chapter() {
     </>
   );
 
-  // 本文の段落まで読み進めたら出す（章扉を見ているあいだは出さない）
-  const strip = exhibit && active.anchor !== "" && komas.includes(active.koma) && (
+  // 本文の段落まで読み進め、スクロールの手を止めたら出す（章扉を見ているあいだは出さない）。
+  // 開閉を動かすため、引っ込めているあいだも置いたままにする
+  const strip = exhibit && komas.includes(active.koma) && (
     <GenponStrip
       koma={active.koma}
       regions={regionsOf.get(active.anchor)}
+      shown={active.anchor !== "" && resting}
       onOpen={() => setGenponOpen(true)}
     />
   );
