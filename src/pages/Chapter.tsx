@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import {
   chapterById,
@@ -10,15 +10,21 @@ import {
   saveProgress,
   TOTAL_CHAPTERS,
   type Chapter as ChapterData,
+  type FlowItem,
 } from "../lib/corpus";
 import { useActiveKoma } from "../lib/useActiveKoma";
 import { useShowGenbun } from "../lib/useShowGenbun";
 import { useLang } from "../lib/lang";
 import { UI, type UiText } from "../lib/i18n";
+import { viewerMode } from "../lib/viewerMode";
+import type { Term } from "../lib/terms";
 import SectionBlock from "../components/reader/SectionBlock";
 import KomaRule from "../components/reader/KomaRule";
 import KomaPane from "../components/reader/KomaPane";
 import KomaZoom from "../components/reader/KomaZoom";
+import ExhibitCover from "../components/reader/ExhibitCover";
+import KomaInterlude from "../components/reader/KomaInterlude";
+import { TermSheet } from "../components/reader/TermSheet";
 
 const WIDE = "(min-width: 1024px)";
 
@@ -58,12 +64,15 @@ export default function Chapter() {
   const { id } = useParams();
   const { hash } = useLocation();
   const chapter = id ? chapterById.get(id) : undefined;
+  // 展示レイアウト（既定）。本文の横に写真パネルを置かず、章扉と幕間で原本を見せる
+  const exhibit = viewerMode === "exhibit";
 
   const rootRef = useRef<HTMLDivElement>(null);
   const paneRef = useRef<HTMLElement>(null);
   const landedRef = useRef<string>("");
   const [paneHeight, setPaneHeight] = useState(0);
   const [zoomKoma, setZoomKoma] = useState<number | null>(null);
+  const [openTerm, setOpenTerm] = useState<Term | null>(null);
   const wide = useIsWide();
   const { lang } = useLang();
   const ui = UI[lang];
@@ -80,7 +89,8 @@ export default function Chapter() {
   const toggleGenbun = (next: boolean) => {
     const root = rootRef.current;
     if (root) {
-      const paneBottom = wide ? 0 : (paneRef.current?.getBoundingClientRect().bottom ?? 0);
+      const paneBottom =
+        wide || exhibit ? 0 : (paneRef.current?.getBoundingClientRect().bottom ?? 0);
       // パネルの真下で読んでいる段落（パネルに隠れていない最初のもの）を目印にする
       const el = Array.from(
         root.querySelectorAll<HTMLElement>("article[data-koma], h2[data-koma], figure[data-koma]")
@@ -122,7 +132,7 @@ export default function Chapter() {
   const active = useActiveKoma(
     rootRef,
     initialSpot,
-    wide ? 0 : paneHeight,
+    wide || exhibit ? 0 : paneHeight,
     chapter?.def.id ?? ""
   );
 
@@ -138,16 +148,18 @@ export default function Chapter() {
     });
     observer.observe(pane);
     return () => observer.disconnect();
-  }, [wide, chapter?.def.id]);
+  }, [wide, exhibit, chapter?.def.id]);
 
   // 章やハッシュが変わったときの着地。パネルの高さが確定してから動かす
   useEffect(() => {
     if (!chapter) return;
     const key = `${chapter.def.id}${hash}`;
     if (landedRef.current === key) return;
-    if (!wide && paneHeight === 0) return;
+    // 写真パネルがあるレイアウトでは、パネルの高さが測れるまで待つ
+    if (!exhibit && !wide && paneHeight === 0) return;
     landedRef.current = key;
     setZoomKoma(null);
+    setOpenTerm(null);
     armedRef.current = null;
     setArmed(null);
 
@@ -177,7 +189,25 @@ export default function Chapter() {
     return () => {
       cancelled = true;
     };
-  }, [chapter, hash, wide, paneHeight]);
+  }, [chapter, hash, wide, paneHeight, exhibit]);
+
+  // 展示レイアウトは丁ごとにまとめ、丁を読み終えたところに幕間を挟む。
+  // 次の章へ続く丁の幕間は、その丁を読み終える次の章の側に出す（どの丁の幕間も本の中で1回だけ）
+  const komaGroups = useMemo(() => {
+    const groups: { koma: number; items: FlowItem[]; interlude: boolean }[] = [];
+    for (const item of chapter?.items ?? []) {
+      const koma = item.type === "koma" ? item.koma.koma : item.koma;
+      const last = groups[groups.length - 1];
+      if (last && last.koma === koma) last.items.push(item);
+      else
+        groups.push({
+          koma,
+          items: [item],
+          interlude: !(item.type === "koma" && item.continues.to),
+        });
+    }
+    return groups;
+  }, [chapter]);
 
   // 着地点から読者が自分で動いたら、その章でしおりの記録を始める
   const chapterId = chapter?.def.id ?? null;
@@ -221,6 +251,110 @@ export default function Chapter() {
   const continuesToNext = chapter.items.some(
     (it) => it.type === "koma" && it.continues.to
   );
+
+  const sourceNote = (
+    <div className="mt-10 space-y-2 text-caption text-ink-soft">
+      {continuesToNext && <p>{ui.continuesTo}</p>}
+      <p>
+        {ui.sourceLabel}{" "}
+        <a
+          href={ndlViewerUrl(chapter.komaFrom)}
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:text-yu-blue transition-colors"
+        >
+          {ui.ndlTitle}
+        </a>
+        {ui.sourceTail}
+      </p>
+    </div>
+  );
+
+  const zoom = (
+    <>
+      {zoomKoma !== null && (
+        <KomaZoom koma={zoomKoma} onClose={() => setZoomKoma(null)} />
+      )}
+      {openTerm && <TermSheet term={openTerm} onClose={() => setOpenTerm(null)} />}
+    </>
+  );
+
+  const nav = (
+    <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3">
+        {prev ? (
+          <Link
+            to={`/chapter/${prev.def.id}`}
+            className="inline-flex min-h-11 items-center rounded-full border border-yu-blue px-5 font-maru text-sm font-bold text-yu-blue hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue"
+          >
+            {ui.prev}
+          </Link>
+        ) : (
+          <span />
+        )}
+        <span className="text-caption text-ink-soft tabular-nums">
+          {positionLabel(chapter, ui)}
+        </span>
+        {next ? (
+          <Link
+            to={`/chapter/${next.def.id}`}
+            className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
+          >
+            {ui.next}
+          </Link>
+        ) : (
+          <Link
+            to="/about"
+            className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors"
+          >
+            {ui.finish}
+          </Link>
+        )}
+      </div>
+    </nav>
+  );
+
+  if (exhibit) {
+    return (
+      <div ref={rootRef}>
+        <ExhibitCover
+          chapter={chapter}
+          lang={lang}
+          position={positionLabel(chapter, ui)}
+          showGenbun={showGenbun}
+          onToggleGenbun={toggleGenbun}
+        />
+        {komaGroups.map((group) => (
+          <Fragment key={group.koma}>
+            <div className="mx-auto max-w-2xl px-5 py-12">
+              <div className={showGenbun ? "space-y-10" : "space-y-6"}>
+                {group.items.map((item) =>
+                  item.type === "koma" ? (
+                    <KomaRule key={item.key} item={item} showLabel />
+                  ) : (
+                    <SectionBlock
+                      key={item.key}
+                      section={item.section}
+                      koma={item.koma}
+                      index={item.index}
+                      showGenbun={showGenbun}
+                      lang={lang}
+                      onOpenKoma={setZoomKoma}
+                      onOpenTerm={setOpenTerm}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+            {group.interlude && <KomaInterlude koma={group.koma} onZoom={setZoomKoma} />}
+          </Fragment>
+        ))}
+        <div className="mx-auto max-w-2xl px-5">{sourceNote}</div>
+        {zoom}
+        {nav}
+      </div>
+    );
+  }
 
   return (
     <div
@@ -274,59 +408,11 @@ export default function Chapter() {
           )}
         </div>
 
-        <div className="mt-10 space-y-2 text-caption text-ink-soft">
-          {continuesToNext && <p>{ui.continuesTo}</p>}
-          <p>
-            {ui.sourceLabel}{" "}
-            <a
-              href={ndlViewerUrl(chapter.komaFrom)}
-              target="_blank"
-              rel="noreferrer"
-              className="underline hover:text-yu-blue transition-colors"
-            >
-              {ui.ndlTitle}
-            </a>
-            {ui.sourceTail}
-          </p>
-        </div>
+        {sourceNote}
       </div>
 
-      {zoomKoma !== null && (
-        <KomaZoom koma={zoomKoma} onClose={() => setZoomKoma(null)} />
-      )}
-
-      <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3">
-          {prev ? (
-            <Link
-              to={`/chapter/${prev.def.id}`}
-              className="inline-flex min-h-11 items-center rounded-full border border-yu-blue px-5 font-maru text-sm font-bold text-yu-blue hover:bg-yu-blue-soft transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue"
-            >
-              {ui.prev}
-            </Link>
-          ) : (
-            <span />
-          )}
-          <span className="text-caption text-ink-soft tabular-nums">
-            {positionLabel(chapter, ui)}
-          </span>
-          {next ? (
-            <Link
-              to={`/chapter/${next.def.id}`}
-              className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yu-blue focus-visible:ring-offset-2"
-            >
-              {ui.next}
-            </Link>
-          ) : (
-            <Link
-              to="/about"
-              className="inline-flex min-h-11 items-center rounded-full bg-yu-blue px-5 font-maru text-sm font-bold text-white hover:bg-yu-blue-deep transition-colors"
-            >
-              {ui.finish}
-            </Link>
-          )}
-        </div>
-      </nav>
+      {zoom}
+      {nav}
     </div>
   );
 }

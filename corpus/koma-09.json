@@ -18,7 +18,15 @@
       "modern": "こうして皇后は大慈悲の願を立て、破風造りの立派な浴室を建てて「千人の垢を洗い清めよう」と誓われた。それからは、天下を行き交う旅人が、身分の高い者も低い者も分けへだてなく湯を使えるようになった。これが銭湯のはじまりだと昔から伝えられている。",
       "english": "And so the Empress made a great vow of compassion. She built a splendid gabled bath hall and vowed, “I will wash clean the grime of a thousand people.” From then on, travelers coming and going across the land, high and low alike, could use the bath without distinction. This, it has long been said, was how bathhouses began.",
       "note": "「破風造りの浴室」に注目。江戸の銭湯の入口が神社仏閣のような唐破風（からはふ）屋根なのは、この皇后の浴室に由来する——という由緒づけです。いまも古い銭湯に残る唐破風のルーツ語り。",
-      "noteEn": "Note the “gabled bath hall.” The entrances of Edo bathhouses had karahafu gables like those of shrines and temples, and the claim here is that they go back to the Empress’s bath hall. It is an origin story for the karahafu gables still seen on old bathhouses today."
+      "noteEn": "Note the “gabled bath hall.” The entrances of Edo bathhouses had karahafu gables like those of shrines and temples, and the claim here is that they go back to the Empress’s bath hall. It is an origin story for the karahafu gables still seen on old bathhouses today.",
+      "terms": [
+        {
+          "word": "破風",
+          "yomi": "はふ",
+          "mean": "屋根の端の山形の部分。光明皇后の浴室にちなんで、湯屋の入口に破風屋根を付けたと伝わる。",
+          "source": "破風造の浴室を建て営み"
+        }
+      ]
     }
   ],
   "status": "ai-draft"

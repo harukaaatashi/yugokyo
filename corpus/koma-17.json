@@ -10,7 +10,15 @@
       "modern": "掘り抜き井戸の水は、夏は冷たく冬は温かい。\n深井戸の釣り縄は、早めに取り替えよ。\n薪の徳は山より高い。\n（この句は訓読未詳）\n（〓〓は）一人二人で押さえよ。\n大勢で押し合えば、しまいには喧嘩になる。\n三助が拾い集めた落ち銭は、取りのけておけ。\nこれはタダで手に入る足し前になる。\n弱いものだなあ、弱いものだなあ、この商売は。\n（この句は判読困難）",
       "english": "A dug well is cool in summer and warm in winter.\nReplace the rope of a deep well early.\nThe virtue of firewood is higher than the mountains.\n(The reading of this line is unclear.)\n(…) should be held down by one or two people.\nWhen a crowd pushes and shoves, it ends in a fight.\nThe stray coins the sansuke (bath attendant) picks up should be set aside—\nthey are a free bit of padding for the takings.\nHow feeble, how feeble this business is!\n(This line is hard to read.)",
       "note": "前の丁の「水の恩は海より深し」に続けて「薪の徳は山より高し」。『童子教』の「父の恩は山よりも高く、母の徳は海よりも深し」の対を二つの丁にまたがって借り、水と燃料という湯屋のランニングコスト二大巨頭を語ります。以前の版にあった「塵芥も捨てず溜め置けば、これ無銭の焚き付けとなる」は画像と合わず、実際は「三助の拾ひ落ち銭…是れ無銭の埋草と為す」と読めます（「三助」の2字目は「賢」に近い字形で、ルビから「さんすけ」と判断）。「大勢押し合へば終に喧嘩と成る」「弱き哉弱き哉此の商売」も読み落としていました。4句目・10句目は判読できず、｛｝の箇所は未確定です。",
-      "noteEn": "After “our debt to water is deeper than the sea” on the previous spread comes “the virtue of firewood is higher than the mountains.” Borrowing, across two spreads, the Dōjikyō (“Teaching for Children”) pair “A father’s debt is higher than the mountains; a mother’s virtue is deeper than the sea,” it takes up water and fuel, the two giants of a bathhouse’s running costs. An earlier version’s “Don’t throw away dust and rubbish—saved up, it becomes free kindling” does not match the image; it actually reads “the stray coins the sansuke picks up … make a free bit of padding” (the second character of sansuke looks like 賢, but the printed reading gives sansuke). The lines “when a crowd shoves, it ends in a fight” and “how feeble this business is” had also been missed. Lines 4 and 10 could not be read, and the parts in braces remain uncertain."
+      "noteEn": "After “our debt to water is deeper than the sea” on the previous spread comes “the virtue of firewood is higher than the mountains.” Borrowing, across two spreads, the Dōjikyō (“Teaching for Children”) pair “A father’s debt is higher than the mountains; a mother’s virtue is deeper than the sea,” it takes up water and fuel, the two giants of a bathhouse’s running costs. An earlier version’s “Don’t throw away dust and rubbish—saved up, it becomes free kindling” does not match the image; it actually reads “the stray coins the sansuke picks up … make a free bit of padding” (the second character of sansuke looks like 賢, but the printed reading gives sansuke). The lines “when a crowd shoves, it ends in a fight” and “how feeble this business is” had also been missed. Lines 4 and 10 could not be read, and the parts in braces remain uncertain.",
+      "terms": [
+        {
+          "word": "掘り抜き井戸",
+          "yomi": "ほりぬきいど",
+          "mean": "地中深くまで掘り抜いた井戸。夏は冷たく冬は温かい水が湧く。",
+          "source": "堀井戸は夏冷やかにして冬温か"
+        }
+      ]
     },
     {
       "kind": "text",

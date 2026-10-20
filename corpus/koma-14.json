@@ -26,7 +26,22 @@
       "modern": "薪が高いからといって、たんと焚くわけにはいかない。\n古材を薪にできてこそ貴いのだ。\n湯屋株が太ったからといって、偉ぶって人と折り合わないようではいけない（この句の読みは未確定）。\n客がたくさん入ってこそ「富貴」というものだ。\n湯屋は一生の財産。\n自分が死んでも、子どもが株主になって継いでいく。\n湯屋株こそ万代の財産。\n命が終わっても、株は滅びない。",
       "english": "Because firewood is dear, you can’t burn it freely.\nWhat is precious is having old timber to use as firewood.\nJust because your bathhouse license has grown fat, don’t put on airs and fall out with others (the reading of this line is uncertain).\nA crowd of customers—that is true “wealth and honor.”\nA bathhouse is a fortune for a lifetime.\nWhen you die, your child becomes the license holder and carries it on.\nA bathhouse license is a fortune for ten thousand ages.\nYour life may end, but the license never dies.",
       "note": "元ネタの『実語教』は「山高きが故に貴からず、樹有るを以て貴しと為す。人肥えたるが故に貴からず、智有るを以て貴しと為す。富はこれ一生の財、身滅すれば即ち共に滅す。智はこれ万代の財、命終れば即ち随って行く」。「智」を「湯屋株」に置き換えるのがこの本最大の笑いどころ。湯屋株は幕府公認の営業権で、実際に売買・相続されました。「樹」を「古木」に替えた2句目は、薪代を浮かせるため解体材（古木）を燃やした湯屋の実務そのもので、巻末の「諸薪・古木の相場」につながります。本文は上下2段組みで、列ごとに上段→下段の順に読みます（以前の版はこの2句目を読み落としていました）。ルビがほぼ全文に振られているため、ここからの翻刻は序よりずっと確度が高めです。",
-      "noteEn": "The model, the Jitsugokyō (“Teaching of True Words”), reads: “A mountain is not precious because it is high; it is precious because it has trees. A person is not precious because he is fat; he is precious because he has wisdom. Wealth is a treasure for one lifetime; when you die, it perishes with you. Wisdom is a treasure for ten thousand ages; when your life ends, it goes with you.” Swapping “wisdom” for the bathhouse license (kabu) is the book’s biggest joke. The license was a shogunate-approved right to do business, and it really was bought, sold, and inherited. The second line, swapping “trees” for “old timber,” reflects real practice—bathhouses burned salvaged building timber (furuki) to save on firewood—and links to the “prices of firewood and old timber” at the end of the book. The verse is printed in two tiers, read top then bottom within each column (an earlier version missed this second line). Because nearly every character from here on carries a printed reading, the transcription is much more reliable than in the preface."
+      "noteEn": "The model, the Jitsugokyō (“Teaching of True Words”), reads: “A mountain is not precious because it is high; it is precious because it has trees. A person is not precious because he is fat; he is precious because he has wisdom. Wealth is a treasure for one lifetime; when you die, it perishes with you. Wisdom is a treasure for ten thousand ages; when your life ends, it goes with you.” Swapping “wisdom” for the bathhouse license (kabu) is the book’s biggest joke. The license was a shogunate-approved right to do business, and it really was bought, sold, and inherited. The second line, swapping “trees” for “old timber,” reflects real practice—bathhouses burned salvaged building timber (furuki) to save on firewood—and links to the “prices of firewood and old timber” at the end of the book. The verse is printed in two tiers, read top then bottom within each column (an earlier version missed this second line). Because nearly every character from here on carries a printed reading, the transcription is much more reliable than in the preface.",
+      "terms": [
+        {
+          "word": "湯屋株",
+          "yomi": "ゆやかぶ",
+          "mean": "湯屋を営む権利。売り買いも相続もできる財産で、この本は「万代の財」と呼ぶ。",
+          "source": "湯株は是万代の財",
+          "crop": {
+            "koma": 14,
+            "x": 177,
+            "y": 138,
+            "w": 106,
+            "h": 167
+          }
+        }
+      ]
     }
   ],
   "status": "ai-draft"

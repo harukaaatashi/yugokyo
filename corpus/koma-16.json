@@ -10,7 +10,15 @@
       "modern": "体は毎日、泥棒を遠ざけることに使い、\n心は夜ごと気苦労が絶えない。\n客の少ない時間に見張りを怠れば、\n盗まれてから恨んで悔やんでも、\nいくら言い訳したところで何の得にもならない。\nだから、夏の昼寝にかまけて番を怠るな。\n添え番がぼんやり座っていれば、眠気が増すばかり。\n込み合っているときの番こそ怠るな。\n隣の湯屋とは、いつも気が合わないもの。\n表向きは愛想よく、腹の内では針を構えるように気を張っておけ。",
       "english": "By day, the body is spent keeping thieves away;\nby night, the heart is never free of worry.\nLet the watch lapse in the slack hours,\nand once you’ve been robbed, resent and regret it as you will,\nno excuse will do you any good.\nSo don’t let summer drowsiness make you neglect the watch.\nAn assistant watchman who just sits idle only grows sleepier.\nNever slacken the watch when the place is crowded.\nYou will never quite get along with the bathhouse next door.\nKeep a pleasant face, but inside stay as sharp as a needle.",
       "note": "『実語教』の「四大日々に衰へ、心神夜々に暗し。幼き時勤学せざれば、老いて後恨み悔ゆと雖も、尚ほ所益有ること無し。故に書を読みて倦むこと勿れ、学文に怠る時勿れ。眠りを除きて通夜誦せよ」を、ほぼ一句ずつ番台の用心に置き換えています。「幼き時勤学せざれば」→「透いた時の間勤番せざれば」、「書を読みて倦むこと勿れ」→「番を怠ること勿れ」、「眠りを除きて」→「眠りを増す」。以前の版の1句目「仕舞ひ能く塞げば盗賊を遮る」は誤読で、実際は「四大日々…盗賊」。末尾の「隣の湯屋」の対句も読み落としていました。訓読の細部（｛｝の箇所）は未確定です。",
-      "noteEn": "Almost line for line, this turns the Jitsugokyō (“Teaching of True Words”)—“The four elements weaken day by day; the spirit darkens night by night. If you do not study when young, though you resent and regret it in old age, it will be of no use. So never tire of reading, never slacken in learning; give up sleep and recite through the night”—into advice for the man at the bantai. “If you do not study when young” becomes “if you don’t keep watch in the slack hours,” “never tire of reading” becomes “never neglect the watch,” and “give up sleep” becomes “sleep only grows.” An earlier version misread the first line as “shut up tight at closing and you’ll keep out thieves”; it actually begins “the four elements, day by day … thieves.” The closing couplet about the bathhouse next door had also been missed. Details of the reading (in braces) remain uncertain."
+      "noteEn": "Almost line for line, this turns the Jitsugokyō (“Teaching of True Words”)—“The four elements weaken day by day; the spirit darkens night by night. If you do not study when young, though you resent and regret it in old age, it will be of no use. So never tire of reading, never slacken in learning; give up sleep and recite through the night”—into advice for the man at the bantai. “If you do not study when young” becomes “if you don’t keep watch in the slack hours,” “never tire of reading” becomes “never neglect the watch,” and “give up sleep” becomes “sleep only grows.” An earlier version misread the first line as “shut up tight at closing and you’ll keep out thieves”; it actually begins “the four elements, day by day … thieves.” The closing couplet about the bathhouse next door had also been missed. Details of the reading (in braces) remain uncertain.",
+      "terms": [
+        {
+          "word": "番",
+          "yomi": "ばん",
+          "mean": "番台に座って、脱衣場や客を見張る役目。",
+          "source": "故に夏の眠りに偏りて番を怠ること勿れ"
+        }
+      ]
     },
     {
       "kind": "text",

@@ -10,7 +10,21 @@
       "modern": "「親元の在所も檀那寺も、働き手の出どころも相違ありません」「給金を残らず受け取った上は、少しもご迷惑はおかけしません」「決めた年季はきっと勤めます。違約があれば保証人が出てきて必ず埒を明けます。よって請状くだんのごとし」——署名欄には請人・証人・人主（雇い主側）の名が並びます。",
       "english": "“There is no discrepancy as to the parents’ home village or family temple, nor as to the worker’s origins.” “Having received the wages in full, we will cause you no trouble whatsoever.” “The agreed term will be served without fail. Should any breach occur, the guarantor will come forward and settle the matter without fail. Hence this letter of guarantee, as above.” The signature lines bear the names of the guarantor, a witness, and the ninnushi (the party on the employer’s side).",
       "note": "「人主（にんぬし）」は奉公人を差し出す側の責任者。三者連署で身元を固める、江戸の雇用の標準形です。",
-      "noteEn": "The ninnushi was the person responsible on the side that sent the servant. Securing a servant’s identity with three co-signers was the standard form of Edo employment."
+      "noteEn": "The ninnushi was the person responsible on the side that sent the servant. Securing a servant’s identity with three co-signers was the standard form of Edo employment.",
+      "terms": [
+        {
+          "word": "年季",
+          "yomi": "ねんき",
+          "mean": "奉公する約束の期間。",
+          "source": "定めの年季相勤め申すべく候"
+        },
+        {
+          "word": "請人",
+          "yomi": "うけにん",
+          "mean": "奉公人の身元を保証する人。奉公人が逃げたり約束を破ったりしたときは、請人が責任を負った。",
+          "source": "請人罷り出で、急度埒明け申すべく候"
+        }
+      ]
     },
     {
       "kind": "text",

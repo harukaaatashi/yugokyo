@@ -10,7 +10,15 @@
       "modern": "「◯町◯丁目、家主◯◯の支配地にある湯屋（男女両風呂か男湯だけかを記す）の建物と商売道具一式を、別紙の帳面のとおり（あなたに）渡世させることは確かです。」\n続いて、湯屋の地代、奉公人の給金その他の諸費用、毎月◯両◯分ずつ、金◯十両……といった金銭の取り決め（細部は判読困難）。\nそのうえで、すぐに明け渡し、商売道具と帳面類は残らず間違いなく引き渡すこと。\n一、お上のご法度は言うまでもなく、お触れや町の決まりを念入りに大切に守ること。\n一、宗旨は代々◯宗で、◯町◯寺の檀家に間違いなく、寺手形（寺請証文）も取ってある——。",
       "english": "“The bathhouse building (state whether it has both men’s and women’s baths or a men’s bath only) on land at Block ____ of ____ Town managed by landlord ____, together with the full set of business equipment as listed in the attached ledger, I truly hand over to you to run as your trade.”\nNext come the money terms—ground rent, servants’ wages and other expenses, ____ ryō ____ bu each month, ____ ryō in gold, and so on (details hard to read).\nThen: the premises are to be vacated promptly, and the business equipment and all ledgers handed over without fail.\nItem: Not to mention the laws of the authorities, all official notices and the rules of the town are to be carefully observed.\nItem: My family has belonged for generations to the ____ sect, as a parishioner of ____ Temple in ____ Town without question, and I hold a temple certificate—",
       "note": "江戸の売渡証文の型（「…之通り…実正也」「御公儀様御法度之儀は不及申」「宗旨之儀は代々何宗にて何寺旦那」）と照らして、以前の版の「……」の多くを実際の文字に置き換えました。「男女両風呂・男一ト風呂」は割書きで、どちらかを選んで書く欄。23丁の株数調べと同じ区分です。宗旨・寺手形はキリシタン禁制下の身元証明で、江戸の売買契約の必須項目でした。金銭の取り決めの段（2行目）と明け渡しの段の後半は崩れが強く、判読困難なまま残しています。冒頭の「文人」は32丁の署名欄にも出る語で、読みは未確定です。",
-      "noteEn": "Compared against the standard forms of an Edo deed of sale (“…as listed … this is true,” “not to mention the laws of the authorities,” “for generations of the ____ sect, parishioner of ____ Temple”), many of the gaps an earlier version marked “…” have been replaced with the actual text. “Both baths / men’s bath only” is printed in small split lines, a blank where you choose one—the same categories as the license counts on spread 23. Religious affiliation and the temple certificate were proof of identity under the ban on Christianity, and a required item in Edo sales contracts. The money terms (line 2) and the second half of the hand-over clause are heavily cursive and remain hard to read. “Bunnin” at the start also appears in the signature block on spread 32; its reading is uncertain."
+      "noteEn": "Compared against the standard forms of an Edo deed of sale (“…as listed … this is true,” “not to mention the laws of the authorities,” “for generations of the ____ sect, parishioner of ____ Temple”), many of the gaps an earlier version marked “…” have been replaced with the actual text. “Both baths / men’s bath only” is printed in small split lines, a blank where you choose one—the same categories as the license counts on spread 23. Religious affiliation and the temple certificate were proof of identity under the ban on Christianity, and a required item in Edo sales contracts. The money terms (line 2) and the second half of the hand-over clause are heavily cursive and remain hard to read. “Bunnin” at the start also appears in the signature block on spread 32; its reading is uncertain.",
+      "terms": [
+        {
+          "word": "檀家",
+          "yomi": "だんか",
+          "mean": "決まった寺に属して、その寺を支える家。宗旨と寺は身元の証明にも使われた。",
+          "source": "何町何寺旦那紛れ無く"
+        }
+      ]
     },
     {
       "kind": "text",

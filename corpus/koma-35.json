@@ -10,7 +10,15 @@
       "modern": "文化年間、枯れ松の薪が値上がりし、房州（千葉）や上州から船で運ばれるようになった。松切は一駄◯百文、陸送（車力）か船かで値が変わる。三番松は両につき◯百◯十、船便・車力で銀百二十匁から——という相場の記録。",
       "english": "In the Bunka era, the price of dead-pine firewood rose, and it began to be shipped in by boat from Bōshū (Chiba) and Jōshū. Cut pine sold for some hundreds of mon (figure unclear) per horse-load, and the price differed depending on whether it came by cart (shariki) or by boat. Grade-three pine ran to a figure in the hundreds (unclear) per ryō, and from 120 monme of silver by boat or cart—so runs this record of market prices.",
       "note": "薪の産地・輸送手段・等級ごとの値段が並ぶ、湯屋のコスト管理の要。金額と品目の読み取りは自信のない箇所が多く、暫定です。",
-      "noteEn": "Prices are listed by producing region, means of transport, and grade of firewood—the heart of a bathhouse’s cost control. Many of the amounts and item names are uncertain readings, so this is provisional."
+      "noteEn": "Prices are listed by producing region, means of transport, and grade of firewood—the heart of a bathhouse’s cost control. Many of the amounts and item names are uncertain readings, so this is provisional.",
+      "terms": [
+        {
+          "word": "一駄",
+          "yomi": "いちだ",
+          "mean": "馬一頭に背負わせる荷の量。薪などを取り引きするときの単位。",
+          "source": "松切は一駄三百七十文にて賣り買ひあり"
+        }
+      ]
     },
     {
       "kind": "text",

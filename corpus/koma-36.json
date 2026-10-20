@@ -10,7 +10,15 @@
       "modern": "天保12年（1841）8月、横山町で新しく湯屋を開業したいという者があり、その地の家主から願い出た——という届出の実例。続いて享和3年（1803）11月の触書「町内で新規に湯屋を開業したい者があれば、奉行所へ願い出て指図を受けよ」。",
       "english": "In the 8th month of Tenpō 12 (1841), someone in Yokoyama-chō wished to open a new bathhouse, and the landlord there submitted a petition—a real example of such a filing. Next comes an ordinance of the 11th month of Kyōwa 3 (1803): “If anyone in town wishes to start a new bathhouse business, they are to petition the magistrate’s office and receive its instructions.”",
       "note": "湯屋の開業が完全な許可制だったことを示す公文書の写し。組合の株を買い、地主の同意を得て、奉行所に願い出る——これが江戸で銭湯を始める手順でした。",
-      "noteEn": "Copies of official documents showing that opening a bathhouse required full government permission. Buy a license from the guild, get the landowner’s consent, and petition the magistrate’s office—that was how you started a bathhouse in Edo."
+      "noteEn": "Copies of official documents showing that opening a bathhouse required full government permission. Buy a license from the guild, get the landowner’s consent, and petition the magistrate’s office—that was how you started a bathhouse in Edo.",
+      "terms": [
+        {
+          "word": "触書",
+          "yomi": "ふれがき",
+          "mean": "お上が人々に知らせた法令や命令の文書。",
+          "source": "享和三亥年十一月　中町　御触の通り"
+        }
+      ]
     },
     {
       "kind": "text",

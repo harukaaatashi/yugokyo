@@ -10,7 +10,35 @@
       "modern": "湯屋は磨かなければピカピカにならない。ピカピカでなければ客は寄りつかない。流し場の石畳も磨かなければ糠汁で汚れる。きれいな湯屋はいつも繁昌する。",
       "english": "If a bathhouse isn’t polished, it won’t shine. If it doesn’t shine, customers won’t come. If the stone floor of the washing area isn’t scrubbed, it grows grimy with rice-bran water. A clean bathhouse always prospers.",
       "note": "元ネタは『実語教』の「玉磨かざれば光無し、光無きを石瓦とす。人学ばざれば智無し、智無きを愚人とす」。「玉」を「湯屋」に、「石瓦」を流し場の「石垣（石畳）」に替えた、本書の看板フレーズです。「清潔こそ最大の集客」という主張は、現代の銭湯・サウナ経営にそのまま通じます。",
-      "noteEn": "The model is the Jitsugokyō (“Teaching of True Words”): “A gem not polished has no luster; without luster it is a mere stone or tile. A person who does not study has no wisdom; without wisdom he is a fool.” Swapping “gem” for “bathhouse” and “stone or tile” for the stone floor of the washing area, this is the book’s signature line. Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today."
+      "noteEn": "The model is the Jitsugokyō (“Teaching of True Words”): “A gem not polished has no luster; without luster it is a mere stone or tile. A person who does not study has no wisdom; without wisdom he is a fool.” Swapping “gem” for “bathhouse” and “stone or tile” for the stone floor of the washing area, this is the book’s signature line. Its claim that cleanliness is the best way to draw customers holds just as true for bathhouse and sauna owners today.",
+      "terms": [
+        {
+          "word": "湯屋",
+          "yomi": "ゆや",
+          "mean": "江戸での銭湯の呼び名。上方では「風呂屋」と呼んだ。",
+          "source": "湯屋磨かざれば光澤なし",
+          "crop": {
+            "koma": 15,
+            "x": 1293,
+            "y": 132,
+            "w": 122,
+            "h": 160
+          }
+        },
+        {
+          "word": "糠汁",
+          "yomi": "ぬかじる",
+          "mean": "米ぬかを布袋に入れて体を洗った、その汁。流し場を汚すもとになった。",
+          "source": "石垣磨かざれば糠汁に穢る",
+          "crop": {
+            "koma": 15,
+            "x": 1167,
+            "y": 378,
+            "w": 116,
+            "h": 164
+          }
+        }
+      ]
     },
     {
       "kind": "text",
@@ -18,7 +46,22 @@
       "modern": "湯船の湯は減っても、井戸の水は尽きない（水はただ、惜しむな）。\n一日の現金のあがりを積み上げても、一日の薪代にはかなわない。\n冬は燃料がかさんで、いつも収支が合わない。\nだから夏のうちに心がけて蓄えを残しておけ。",
       "english": "The hot water in the tub may run low, but the water in the well never runs out (water costs nothing—don’t begrudge it).\nPile up a day’s cash takings, and it still won’t match a day’s firewood bill.\nIn winter the fuel costs mount and the books never balance.\nSo during the summer, take care to set something aside.",
       "note": "『実語教』の「倉の内の財は朽つること有り、身の内の才は朽つること無し。千両の金を積むと雖も、一日の学に如かず。兄弟常に合はず、慈悲を兄弟と為す」の型。「千両の金」と「一日の学」を「一日の現金」と「一日の薪代」に替えて、収入より燃料費という湯屋経営の急所を突きます。5句目の1字目は、ルビ「ふゆ」から「冬」と読み直しました（以前の版は「薪」）。",
-      "noteEn": "Patterned on the Jitsugokyō (“Teaching of True Words”): “Treasure in the storehouse can rot; talent within you never rots. Pile up a thousand ryō of gold, and it is not worth one day of study. Brothers do not always get along; let compassion be your brother.” Swapping “a thousand ryō of gold” and “a day of study” for “a day’s cash” and “a day’s firewood bill,” it hits the sore spot of the bathhouse business: fuel costs outrunning income. The first character of the fifth line has been reread as “winter” from its printed reading fuyu (an earlier version read it as “firewood”)."
+      "noteEn": "Patterned on the Jitsugokyō (“Teaching of True Words”): “Treasure in the storehouse can rot; talent within you never rots. Pile up a thousand ryō of gold, and it is not worth one day of study. Brothers do not always get along; let compassion be your brother.” Swapping “a thousand ryō of gold” and “a day of study” for “a day’s cash” and “a day’s firewood bill,” it hits the sore spot of the bathhouse business: fuel costs outrunning income. The first character of the fifth line has been reread as “winter” from its printed reading fuyu (an earlier version read it as “firewood”).",
+      "terms": [
+        {
+          "word": "薪",
+          "yomi": "まき",
+          "mean": "湯を沸かす燃料。薪代は湯屋のいちばん重い出費で、後の丁には薪の相場表が続く。",
+          "source": "一日の薪代には如かず",
+          "crop": {
+            "koma": 15,
+            "x": 940,
+            "y": 882,
+            "w": 115,
+            "h": 100
+          }
+        }
+      ]
     },
     {
       "kind": "text",
