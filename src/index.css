@@ -67,10 +67,39 @@
     height: auto;
   }
 
-  /* 本文に残した江戸の語のルビ */
+  /* 本文に残した江戸の語のルビ。朱は「押すと原本の字が出る」の手がかり（DESIGN §6） */
   .term rt {
-    @apply text-rubi text-ink-soft font-body font-normal select-none;
-    letter-spacing: 0;
+    @apply text-rubi text-shu font-genbun font-normal select-none;
+    letter-spacing: 0.2em;
+  }
+  /* 本文にはめる原本の筆の字。字の高さを地の文より少し大きくし、行の下端に合わせる */
+  .term-glyph {
+    display: inline-flex;
+    align-items: flex-end;
+    vertical-align: -0.3em;
+  }
+  .term-glyph > img {
+    height: 1.5em;
+    width: auto;
+  }
+  /* 語の札が下からすっと出る */
+  .sheet-up {
+    animation: sheet-up 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  @keyframes sheet-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sheet-up {
+      animation: none;
+    }
   }
 
   /* 固定された原本写真の下にアンカーが潜らないようにする。
